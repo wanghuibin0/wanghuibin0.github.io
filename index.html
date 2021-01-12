@@ -72,9 +72,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-记录一次C-实验" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-record-a-cpp-experiment" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/01/12/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1C-%E5%AE%9E%E9%AA%8C/" class="article-date">
+    <a href="/2021/01/12/record-a-cpp-experiment/" class="article-date">
   <time class="dt-published" datetime="2021-01-12T22:41:33.000Z" itemprop="datePublished">2021-01-12</time>
 </a>
     
@@ -86,7 +86,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/12/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1C-%E5%AE%9E%E9%AA%8C/">记录一次C++实验</a>
+      <a class="p-name article-title" href="/2021/01/12/record-a-cpp-experiment/">记录一次C++实验</a>
     </h1>
   
 
@@ -98,14 +98,14 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  A() : a&#123;<span class="number">0</span>&#125; &#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;constructing A\n&quot;</span>; &#125;</span><br><span class="line">  A(<span class="keyword">const</span> A&amp; other) : a&#123;other.a&#125; &#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;copy constructing A\n&quot;</span>; &#125;</span><br><span class="line">  A(A&amp;&amp; other) : a&#123;other.a&#125; &#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;move constructing A\n&quot;</span>; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">goo</span><span class="params">()</span> </span>&#123; a = a * <span class="number">2</span>; <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;calling goo\n&quot;</span>; &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">  <span class="keyword">int</span> a;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">A <span class="title">foo</span><span class="params">(A x)</span> </span>&#123;</span><br><span class="line">  x.goo();</span><br><span class="line">  <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  A x;</span><br><span class="line">  A y = foo(x);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>不加任何优化选项，编译运行。<br>输出结果如下：</p>
 <blockquote>
-<p>constructing A<br>copy constructing A<br>calling goo<br>move constructing A</p>
+<p>constructing A <br><br>copy constructing A <br><br>calling goo <br><br>move constructing A</p>
 </blockquote>
 <p>结果验证了我的猜想，即：返回局部构造的class/struct时，是移动语义，调用的是移动构造函数（前提是存在移动构造函数，如果只实现了拷贝构造函数，那么移动构造函数就不存在，这时只能调用拷贝构造函数）。<br>目的是将子函数构造的对象转交给父函数，从高层语义上讲，调用移动或拷贝构造函数应该都是可以的。但是，由于局部变量在函数结束时需要销毁，如果先拷贝再把自身销毁，效率有亏。而直接将自己掌握的资源移动给父函数，效率更高。所以，至少在g++编译器实现上，采用的是移动语义。至于c++标准对此有无规定，尚不得而知。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wanghuibin0.github.io/2021/01/12/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1C-%E5%AE%9E%E9%AA%8C/" data-id="ckju4xrq50002emn3bv3jfol0" data-title="记录一次C++实验" class="article-share-link">Share</a>
+      <a data-url="http://wanghuibin0.github.io/2021/01/12/record-a-cpp-experiment/" data-id="ckju5g24s00021ulr4398ca3n" data-title="记录一次C++实验" class="article-share-link">Share</a>
       
       
       
@@ -120,7 +120,7 @@
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/01/12/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-01-12T15:13:23.040Z" itemprop="datePublished">2021-01-12</time>
+  <time class="dt-published" datetime="2021-01-12T15:27:50.965Z" itemprop="datePublished">2021-01-12</time>
 </a>
     
   </div>
@@ -152,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wanghuibin0.github.io/2021/01/12/hello-world/" data-id="ckju4xrq60003emn3cz1zeg5f" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://wanghuibin0.github.io/2021/01/12/hello-world/" data-id="ckju5g24u00031ulrg73n07it" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -194,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wanghuibin0.github.io/2021/01/12/C++-programming-language/" data-id="ckju4xrq30001emn31ek9087p" data-title="C++-programming-language" class="article-share-link">Share</a>
+      <a data-url="http://wanghuibin0.github.io/2021/01/12/C++-programming-language/" data-id="ckju5g24r00011ulrf9abcc74" data-title="C++-programming-language" class="article-share-link">Share</a>
       
       
       
@@ -236,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://wanghuibin0.github.io/2021/01/09/MyFirstTest/" data-id="ckju4xrpy0000emn3hi8v8cm1" data-title="MyFirstTest" class="article-share-link">Share</a>
+      <a data-url="http://wanghuibin0.github.io/2021/01/09/MyFirstTest/" data-id="ckju5g24l00001ulr0hp20f63" data-title="MyFirstTest" class="article-share-link">Share</a>
       
       
       
@@ -279,7 +279,7 @@
       <ul>
         
           <li>
-            <a href="/2021/01/12/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1C-%E5%AE%9E%E9%AA%8C/">记录一次C++实验</a>
+            <a href="/2021/01/12/record-a-cpp-experiment/">记录一次C++实验</a>
           </li>
         
           <li>
