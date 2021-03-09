@@ -868,6 +868,15 @@ canvas_ribbon:
   zIndex: -1 # The display level of the ribbon
 
 
+cursor_effect:
+  enable: true
+  type: fireworks # fireworks：礼花 | explosion：爆炸 | love：浮出爱心 | text：浮出文字
+
+crash_title_cheat:
+  enable: true
+
+
+
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
 #! UNLESS YOU KNOW WHAT YOU ARE DOING
