@@ -6,7 +6,7 @@
   <link href="http://wanghuibin0.github.io/atom.xml" rel="self"/>
   
   <link href="http://wanghuibin0.github.io/"/>
-  <updated>2021-03-09T11:05:36.203Z</updated>
+  <updated>2021-03-09T11:53:35.522Z</updated>
   <id>http://wanghuibin0.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://wanghuibin0.github.io/2021/03/09/Apply-a-new-theme-NEXT/"/>
     <id>http://wanghuibin0.github.io/2021/03/09/Apply-a-new-theme-NEXT/</id>
     <published>2021-03-09T14:31:17.000Z</published>
-    <updated>2021-03-09T11:05:36.203Z</updated>
+    <updated>2021-03-09T11:53:35.522Z</updated>
     
     
       
@@ -46,8 +46,8 @@
     <title>Hello World</title>
     <link href="http://wanghuibin0.github.io/2021/03/09/hello-world/"/>
     <id>http://wanghuibin0.github.io/2021/03/09/hello-world/</id>
-    <published>2021-03-09T11:05:36.203Z</published>
-    <updated>2021-03-09T11:05:36.203Z</updated>
+    <published>2021-03-09T11:53:35.522Z</published>
+    <updated>2021-03-09T11:53:35.522Z</updated>
     
     
       
@@ -68,7 +68,7 @@
     <link href="http://wanghuibin0.github.io/2021/01/12/record-a-cpp-experiment/"/>
     <id>http://wanghuibin0.github.io/2021/01/12/record-a-cpp-experiment/</id>
     <published>2021-01-12T22:41:33.000Z</published>
-    <updated>2021-03-09T11:05:36.203Z</updated>
+    <updated>2021-03-09T11:53:35.522Z</updated>
     
     
       
@@ -83,6 +83,10 @@
     
     
     
+    <category term="cpp" scheme="http://wanghuibin0.github.io/tags/cpp/"/>
+    
+    <category term="实验" scheme="http://wanghuibin0.github.io/tags/%E5%AE%9E%E9%AA%8C/"/>
+    
   </entry>
   
   <entry>
@@ -90,7 +94,7 @@
     <link href="http://wanghuibin0.github.io/2021/01/12/C++-programming-language/"/>
     <id>http://wanghuibin0.github.io/2021/01/12/C++-programming-language/</id>
     <published>2021-01-12T12:53:39.000Z</published>
-    <updated>2021-03-09T11:05:36.203Z</updated>
+    <updated>2021-03-09T11:53:35.522Z</updated>
     
     
       
@@ -104,6 +108,8 @@
     
     
     
+    <category term="cpp" scheme="http://wanghuibin0.github.io/tags/cpp/"/>
+    
   </entry>
   
   <entry>
@@ -111,7 +117,7 @@
     <link href="http://wanghuibin0.github.io/2021/01/09/MyFirstTest/"/>
     <id>http://wanghuibin0.github.io/2021/01/09/MyFirstTest/</id>
     <published>2021-01-09T00:48:56.000Z</published>
-    <updated>2021-03-09T11:05:36.203Z</updated>
+    <updated>2021-03-09T11:53:35.522Z</updated>
     
     
       
