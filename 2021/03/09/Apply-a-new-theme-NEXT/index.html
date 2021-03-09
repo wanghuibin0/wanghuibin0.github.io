@@ -20,20 +20,23 @@
     var CONFIG = {"hostname":"wanghuibin0.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="今天有一个猜想：c++函数局部构造的class&#x2F;struct，如果要返回给父函数，是通过移动语义实现的。但我并不十分确定，于是做了个实验验证之。 123456789101112131415161718192021222324#include &lt;iostream&gt;using namespace std;class A &amp;#123;public:  A() : a&amp;#123;0&amp;#125;">
+  <meta name="description" content="今天给我的博客换了个新主题——NEXT，这也是社区最火的hexo主题。 界面展示博客归档 博文界面 清爽简洁有木有! 我也要好好经营我的blog啦。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记录一次C++实验">
-<meta property="og:url" content="http://wanghuibin0.github.io/2021/01/12/record-a-cpp-experiment/index.html">
+<meta property="og:title" content="更新主题啦——最火的NEXT主题">
+<meta property="og:url" content="http://wanghuibin0.github.io/2021/03/09/Apply-a-new-theme-NEXT/index.html">
 <meta property="og:site_name" content="WangHuibin&#39;s blog">
-<meta property="og:description" content="今天有一个猜想：c++函数局部构造的class&#x2F;struct，如果要返回给父函数，是通过移动语义实现的。但我并不十分确定，于是做了个实验验证之。 123456789101112131415161718192021222324#include &lt;iostream&gt;using namespace std;class A &amp;#123;public:  A() : a&amp;#123;0&amp;#125;">
+<meta property="og:description" content="今天给我的博客换了个新主题——NEXT，这也是社区最火的hexo主题。 界面展示博客归档 博文界面 清爽简洁有木有! 我也要好好经营我的blog啦。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-01-12T22:41:33.000Z">
+<meta property="og:image" content="http://wanghuibin0.github.io/2021/03/09/assets/image-20210309143535-x450ih0.png">
+<meta property="og:image" content="http://wanghuibin0.github.io/2021/03/09/assets/image-20210309143825-h7pr4gz.png">
+<meta property="article:published_time" content="2021-03-09T14:31:17.000Z">
 <meta property="article:modified_time" content="2021-03-09T06:48:57.019Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="code, blog">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://wanghuibin0.github.io/2021/03/09/assets/image-20210309143535-x450ih0.png">
 
-<link rel="canonical" href="http://wanghuibin0.github.io/2021/01/12/record-a-cpp-experiment/">
+<link rel="canonical" href="http://wanghuibin0.github.io/2021/03/09/Apply-a-new-theme-NEXT/">
 
 
 <script id="page-configurations">
@@ -46,7 +49,7 @@
   };
 </script>
 
-  <title>记录一次C++实验 | WangHuibin's blog</title>
+  <title>更新主题啦——最火的NEXT主题 | WangHuibin's blog</title>
   
 
 
@@ -151,7 +154,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://wanghuibin0.github.io/2021/01/12/record-a-cpp-experiment/">
+    <link itemprop="mainEntityOfPage" href="http://wanghuibin0.github.io/2021/03/09/Apply-a-new-theme-NEXT/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -164,7 +167,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          记录一次C++实验
+          更新主题啦——最火的NEXT主题
         </h1>
 
         <div class="post-meta">
@@ -173,16 +176,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2021-01-12 22:41:33" itemprop="dateCreated datePublished" datetime="2021-01-12T22:41:33+00:00">2021-01-12</time>
+              <time title="Created: 2021-03-09 14:31:17 / Modified: 06:48:57" itemprop="dateCreated datePublished" datetime="2021-03-09T14:31:17+00:00">2021-03-09</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-09 06:48:57" itemprop="dateModified" datetime="2021-03-09T06:48:57+00:00">2021-03-09</time>
-              </span>
 
           
 
@@ -195,13 +192,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>今天有一个猜想：c++函数局部构造的class/struct，如果要返回给父函数，是通过移动语义实现的。<br>但我并不十分确定，于是做了个实验验证之。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  A() : a&#123;<span class="number">0</span>&#125; &#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;constructing A\n&quot;</span>; &#125;</span><br><span class="line">  A(<span class="keyword">const</span> A&amp; other) : a&#123;other.a&#125; &#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;copy constructing A\n&quot;</span>; &#125;</span><br><span class="line">  A(A&amp;&amp; other) : a&#123;other.a&#125; &#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;move constructing A\n&quot;</span>; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">goo</span><span class="params">()</span> </span>&#123; a = a * <span class="number">2</span>; <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;calling goo\n&quot;</span>; &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">  <span class="keyword">int</span> a;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">A <span class="title">foo</span><span class="params">(A x)</span> </span>&#123;</span><br><span class="line">  x.goo();</span><br><span class="line">  <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  A x;</span><br><span class="line">  A y = foo(x);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>不加任何优化选项，编译运行。<br>输出结果如下：</p>
-<blockquote>
-<p>constructing A <br><br>copy constructing A <br><br>calling goo <br><br>move constructing A</p>
-</blockquote>
-<p>结果验证了我的猜想，即：返回局部构造的class/struct时，是移动语义，调用的是移动构造函数（前提是存在移动构造函数，如果只实现了拷贝构造函数，那么移动构造函数就不存在，这时只能调用拷贝构造函数）。<br>目的是将子函数构造的对象转交给父函数，从高层语义上讲，调用移动或拷贝构造函数应该都是可以的。但是，由于局部变量在函数结束时需要销毁，如果先拷贝再把自身销毁，效率有亏。而直接将自己掌握的资源移动给父函数，效率更高。所以，至少在g++编译器实现上，采用的是移动语义。至于c++标准对此有无规定，尚不得而知。</p>
+        <p>今天给我的博客换了个新主题——NEXT，这也是社区最火的hexo主题。</p>
+<h3 id="界面展示"><a href="#界面展示" class="headerlink" title="界面展示"></a>界面展示</h3><h4 id="博客归档"><a href="#博客归档" class="headerlink" title="博客归档"></a>博客归档</h4><p><img src="../assets/image-20210309143535-x450ih0.png" alt="image.png"></p>
+<h4 id="博文界面"><a href="#博文界面" class="headerlink" title="博文界面"></a>博文界面</h4><p><img src="../assets/image-20210309143825-h7pr4gz.png" alt="image.png"></p>
+<p>清爽简洁有木有!</p>
+<p>我也要好好经营我的blog啦。</p>
 
     </div>
 
@@ -217,13 +212,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/01/12/C++-programming-language/" rel="prev" title="C++-programming-language">
-      <i class="fa fa-chevron-left"></i> C++-programming-language
+    <a href="/2021/03/09/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/03/09/hello-world/" rel="next" title="Hello World">
-      Hello World <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -282,6 +274,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%95%8C%E9%9D%A2%E5%B1%95%E7%A4%BA"><span class="nav-number">1.</span> <span class="nav-text">界面展示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E5%BD%92%E6%A1%A3"><span class="nav-number">1.1.</span> <span class="nav-text">博客归档</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%9A%E6%96%87%E7%95%8C%E9%9D%A2"><span class="nav-number">1.2.</span> <span class="nav-text">博文界面</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
