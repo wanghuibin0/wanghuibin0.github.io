@@ -633,7 +633,7 @@ livere_uid: # <your_uid>
 # Gitalk
 # For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
 gitalk:
-  enable: false
+  enable: true
   github_id: # GitHub repo owner
   repo: # Repository name to store issues
   client_id: # GitHub Application Client ID
