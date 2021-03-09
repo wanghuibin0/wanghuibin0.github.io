@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hi, Hibert!</title>
+  <icon>http://wanghuibin0.github.io/icon.png</icon>
+  
+  <link href="http://wanghuibin0.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://wanghuibin0.github.io/"/>
+  <updated>2021-03-09T11:05:36.203Z</updated>
+  <id>http://wanghuibin0.github.io/</id>
+  
+  <author>
+    <name>Hibert Wang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>更新主题啦——最火的NexT主题</title>
+    <link href="http://wanghuibin0.github.io/2021/03/09/Apply-a-new-theme-NEXT/"/>
+    <id>http://wanghuibin0.github.io/2021/03/09/Apply-a-new-theme-NEXT/</id>
+    <published>2021-03-09T14:31:17.000Z</published>
+    <updated>2021-03-09T11:05:36.203Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今天给我的博客换了个新主题——NexT，这也是社区最火的hexo主题。&lt;/p&gt;
+&lt;h3 id=&quot;界面展示&quot;&gt;&lt;a href=&quot;#界面展示&quot; class=&quot;headerlink&quot; title=&quot;界面展示&quot;&gt;&lt;/a&gt;界面展示&lt;/h3&gt;&lt;h4 id=&quot;博客归档&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="杂谈" scheme="http://wanghuibin0.github.io/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="主题" scheme="http://wanghuibin0.github.io/tags/%E4%B8%BB%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://wanghuibin0.github.io/2021/03/09/hello-world/"/>
+    <id>http://wanghuibin0.github.io/2021/03/09/hello-world/</id>
+    <published>2021-03-09T11:05:36.203Z</published>
+    <updated>2021-03-09T11:05:36.203Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>记录一次C++实验</title>
+    <link href="http://wanghuibin0.github.io/2021/01/12/record-a-cpp-experiment/"/>
+    <id>http://wanghuibin0.github.io/2021/01/12/record-a-cpp-experiment/</id>
+    <published>2021-01-12T22:41:33.000Z</published>
+    <updated>2021-03-09T11:05:36.203Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今天有一个猜想：c++函数局部构造的class/struct，如果要返回给父函数，是通过移动语义实现的。&lt;br&gt;但我并不十分确定，于是做了个实验验证之。&lt;/p&gt;
+&lt;figure class=&quot;highlight c++&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>C++-programming-language</title>
+    <link href="http://wanghuibin0.github.io/2021/01/12/C++-programming-language/"/>
+    <id>http://wanghuibin0.github.io/2021/01/12/C++-programming-language/</id>
+    <published>2021-01-12T12:53:39.000Z</published>
+    <updated>2021-03-09T11:05:36.203Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;C-语言设计的两个基本原则&quot;&gt;&lt;a href=&quot;#C-语言设计的两个基本原则&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>MyFirstTest</title>
+    <link href="http://wanghuibin0.github.io/2021/01/09/MyFirstTest/"/>
+    <id>http://wanghuibin0.github.io/2021/01/09/MyFirstTest/</id>
+    <published>2021-01-09T00:48:56.000Z</published>
+    <updated>2021-03-09T11:05:36.203Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;My-first-Test&quot;&gt;&lt;a href=&quot;#My-first-Test&quot; class=&quot;headerlink&quot; title=&quot;My first Test&quot;&gt;&lt;/a&gt;My first</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
