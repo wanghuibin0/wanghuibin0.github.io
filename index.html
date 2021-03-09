@@ -199,7 +199,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-03-09 14:31:17 / 修改时间：11:53:35" itemprop="dateCreated datePublished" datetime="2021-03-09T14:31:17+00:00">2021-03-09</time>
+              <time title="创建时间：2021-03-09 14:31:17 / 修改时间：12:01:45" itemprop="dateCreated datePublished" datetime="2021-03-09T14:31:17+00:00">2021-03-09</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -222,12 +222,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>今天给我的博客换了个新主题——NexT，这也是社区最火的hexo主题。</p>
-<h3 id="界面展示"><a href="#界面展示" class="headerlink" title="界面展示"></a>界面展示</h3><h4 id="博客归档"><a href="#博客归档" class="headerlink" title="博客归档"></a>博客归档</h4><p><img src="/assets/image-20210309143535-x450ih0.png" alt="image.png"></p>
-<h4 id="博文界面"><a href="#博文界面" class="headerlink" title="博文界面"></a>博文界面</h4><p><img src="/assets/image-20210309143825-h7pr4gz.png" alt="image.png"></p>
-<p>清爽简洁有木有!</p>
-<p>我也要好好经营我的blog啦。</p>
-
+          <p>开始探索NexT主题</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/09/Apply-a-new-theme-NEXT/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -270,7 +273,7 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-03-09 11:53:35" itemprop="dateCreated datePublished" datetime="2021-03-09T11:53:35+00:00">2021-03-09</time>
+              <time title="创建时间：2021-03-09 12:01:45" itemprop="dateCreated datePublished" datetime="2021-03-09T12:01:45+00:00">2021-03-09</time>
             </span>
 
           
@@ -343,7 +346,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-09 11:53:35" itemprop="dateModified" datetime="2021-03-09T11:53:35+00:00">2021-03-09</time>
+                <time title="修改时间：2021-03-09 12:01:45" itemprop="dateModified" datetime="2021-03-09T12:01:45+00:00">2021-03-09</time>
               </span>
 
           
@@ -358,13 +361,14 @@
 
       
           <p>今天有一个猜想：c++函数局部构造的class/struct，如果要返回给父函数，是通过移动语义实现的。<br>但我并不十分确定，于是做了个实验验证之。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  A() : a&#123;<span class="number">0</span>&#125; &#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;constructing A\n&quot;</span>; &#125;</span><br><span class="line">  A(<span class="keyword">const</span> A&amp; other) : a&#123;other.a&#125; &#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;copy constructing A\n&quot;</span>; &#125;</span><br><span class="line">  A(A&amp;&amp; other) : a&#123;other.a&#125; &#123; <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;move constructing A\n&quot;</span>; &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">goo</span><span class="params">()</span> </span>&#123; a = a * <span class="number">2</span>; <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;calling goo\n&quot;</span>; &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">  <span class="keyword">int</span> a;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">A <span class="title">foo</span><span class="params">(A x)</span> </span>&#123;</span><br><span class="line">  x.goo();</span><br><span class="line">  <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  A x;</span><br><span class="line">  A y = foo(x);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>不加任何优化选项，编译运行。<br>输出结果如下：</p>
-<blockquote>
-<p>constructing A <br><br>copy constructing A <br><br>calling goo <br><br>move constructing A</p>
-</blockquote>
-<p>结果验证了我的猜想，即：返回局部构造的class/struct时，是移动语义，调用的是移动构造函数（前提是存在移动构造函数，如果只实现了拷贝构造函数，那么移动构造函数就不存在，这时只能调用拷贝构造函数）。<br>目的是将子函数构造的对象转交给父函数，从高层语义上讲，调用移动或拷贝构造函数应该都是可以的。但是，由于局部变量在函数结束时需要销毁，如果先拷贝再把自身销毁，效率有亏。而直接将自己掌握的资源移动给父函数，效率更高。所以，至少在g++编译器实现上，采用的是移动语义。至于c++标准对此有无规定，尚不得而知。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/01/12/record-a-cpp-experiment/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -414,7 +418,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-09 11:53:35" itemprop="dateModified" datetime="2021-03-09T11:53:35+00:00">2021-03-09</time>
+                <time title="修改时间：2021-03-09 12:01:45" itemprop="dateModified" datetime="2021-03-09T12:01:45+00:00">2021-03-09</time>
               </span>
 
           
@@ -482,7 +486,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-09 11:53:35" itemprop="dateModified" datetime="2021-03-09T11:53:35+00:00">2021-03-09</time>
+                <time title="修改时间：2021-03-09 12:01:45" itemprop="dateModified" datetime="2021-03-09T12:01:45+00:00">2021-03-09</time>
               </span>
 
           
