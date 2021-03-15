@@ -10,6 +10,7 @@ categories: '知识管理'
 ### 原理
 
 修改zotero的engines.json文件，将思源作为zotero的搜索引擎之一，从zotero跳转到思源的对应页面。
+<!--more-->
 
 ### engines.json
 
