@@ -178,6 +178,150 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wanghuibin0.github.io/2021/03/15/relate-zotero-with-siyuan/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hibert Wang">
+      <meta itemprop="description" content="Be honest to myself">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Hibert!">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/15/relate-zotero-with-siyuan/" class="post-title-link" itemprop="url">zotero与SiYuan联动</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-03-15 19:51:27 / 修改时间：11:57:34" itemprop="dateCreated datePublished" datetime="2021-03-15T19:51:27+00:00">2021-03-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">知识管理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="从zotero到思源"><a href="#从zotero到思源" class="headerlink" title="从zotero到思源"></a>从zotero到思源</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>修改zotero的engines.json文件，将思源作为zotero的搜索引擎之一，从zotero跳转到思源的对应页面。</p>
+<h3 id="engines-json"><a href="#engines-json" class="headerlink" title="engines.json"></a>engines.json</h3><p>关键就在于搜索引擎跳转使用的url模板，跳转时会根据文献条目的信息，填充到url模板里，然后再跳转到产生的url地址去。因此需要将定位思源的url进行拆分，将不变部分抽取出来作为模板，变化的部分作为变量填到文献条目的信息里，实际上，我们使用的是archive字段。</p>
+<p>engines.json添加如下entry:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">&quot;_name&quot;</span>: <span class="string">&quot;SiYuan&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;_alias&quot;</span>: <span class="string">&quot;SiYuan&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;_description&quot;</span>: <span class="string">&quot;Zotero和思源联动，页面ID存在archive字段&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;_icon&quot;</span>: <span class="string">&quot;https://cdn.jsdelivr.net/gh/wanghuibin0/picbed@main/img/20210312191013.png&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;_hidden&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">	<span class="attr">&quot;_urlTemplate&quot;</span>: <span class="string">&quot;http://127.0.0.1:6806/blocks/&#123;z:archive&#125;&quot;</span>,</span><br><span class="line">	<span class="attr">&quot;_urlParams&quot;</span>: [],</span><br><span class="line">	<span class="attr">&quot;_urlNamespaces&quot;</span>: &#123;</span><br><span class="line">		<span class="attr">&quot;z&quot;</span>: <span class="string">&quot;http://www.zotero.org/namespaces/openSearch#&quot;</span>,</span><br><span class="line">		<span class="attr">&quot;&quot;</span>: <span class="string">&quot;http://a9.com/-/spec/opensearch/1.1/&quot;</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">&quot;_iconSourceURI&quot;</span>: <span class="string">&quot;https://cdn.jsdelivr.net/gh/wanghuibin0/picbed@main/img/20210312191013.png&quot;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>完整的<a href="/assets/engines-20210315173931-1saihdw.json">engines.json</a>，可以直接拷贝到zotero的数据文件夹下的locate目录下。</p>
+<h3 id="将思源笔记页面关联到zotero中"><a href="#将思源笔记页面关联到zotero中" class="headerlink" title="将思源笔记页面关联到zotero中"></a>将思源笔记页面关联到zotero中</h3><p>使用中，需要先将思源中对应页面id（在对应笔记处点「复制URL」，截取斜杠号分割之后的最后一段，即为id），填到文献条目archive字段去。这样，产生的url刚好能跳转到对应的笔记去。</p>
+<h2 id="从思源到zotero"><a href="#从思源到zotero" class="headerlink" title="从思源到zotero"></a>从思源到zotero</h2><p>由于zotero支持形式如<code>zotero://XXX</code>的链接，所以可以直接在思源笔记需要的地方填入这种链接。利用链接，可以跳转到对应的zotero item，也可以直接打开附件pdf，甚至可以定位到pdf的特定页面。</p>
+<p><strong>查看文献条目</strong>：<code>zotero://select/library/items/CSUJ2GFP</code></p>
+<p><strong>查看附件pdf特定页</strong>：<code>zotero://open-pdf/library/items/ITBGH4GB?page=2</code></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://ld246.com/article/1613467723754">zotero 和思源笔记探索 - 链滴 (ld246.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/342780791">重磅｜Zotero + wolai 双向联动教程 - 知乎 (zhihu.com)</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://wanghuibin0.github.io/2021/03/15/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Hibert Wang">
+      <meta itemprop="description" content="Be honest to myself">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hi, Hibert!">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/15/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-15 11:57:34" itemprop="dateCreated datePublished" datetime="2021-03-15T11:57:34+00:00">2021-03-15</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://wanghuibin0.github.io/2021/03/14/A-problem-in-simulation-of-LianDi-login/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -201,10 +345,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-03-14 19:35:23 / 修改时间：16:33:57" itemprop="dateCreated datePublished" datetime="2021-03-14T19:35:23+00:00">2021-03-14</time>
+              <time title="创建时间：2021-03-14 19:35:23" itemprop="dateCreated datePublished" datetime="2021-03-14T19:35:23+00:00">2021-03-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-15 11:57:34" itemprop="dateModified" datetime="2021-03-15T11:57:34+00:00">2021-03-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -235,72 +385,6 @@
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://wanghuibin0.github.io/2021/03/14/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Hibert Wang">
-      <meta itemprop="description" content="Be honest to myself">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi, Hibert!">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/14/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-14 16:33:57" itemprop="dateCreated datePublished" datetime="2021-03-14T16:33:57+00:00">2021-03-14</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
       
     </div>
 
@@ -350,7 +434,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-14 16:33:57" itemprop="dateModified" datetime="2021-03-14T16:33:57+00:00">2021-03-14</time>
+                <time title="修改时间：2021-03-15 11:57:34" itemprop="dateModified" datetime="2021-03-15T11:57:34+00:00">2021-03-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -431,7 +515,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-14 16:33:57" itemprop="dateModified" datetime="2021-03-14T16:33:57+00:00">2021-03-14</time>
+                <time title="修改时间：2021-03-15 11:57:34" itemprop="dateModified" datetime="2021-03-15T11:57:34+00:00">2021-03-15</time>
               </span>
 
           
@@ -503,7 +587,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-14 16:33:57" itemprop="dateModified" datetime="2021-03-14T16:33:57+00:00">2021-03-14</time>
+                <time title="修改时间：2021-03-15 11:57:34" itemprop="dateModified" datetime="2021-03-15T11:57:34+00:00">2021-03-15</time>
               </span>
 
           
@@ -571,7 +655,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-14 16:33:57" itemprop="dateModified" datetime="2021-03-14T16:33:57+00:00">2021-03-14</time>
+                <time title="修改时间：2021-03-15 11:57:34" itemprop="dateModified" datetime="2021-03-15T11:57:34+00:00">2021-03-15</time>
               </span>
 
           
@@ -670,20 +754,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
