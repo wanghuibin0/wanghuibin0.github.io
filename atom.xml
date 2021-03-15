@@ -6,7 +6,7 @@
   <link href="http://wanghuibin0.github.io/atom.xml" rel="self"/>
   
   <link href="http://wanghuibin0.github.io/"/>
-  <updated>2021-03-15T12:03:31.222Z</updated>
+  <updated>2021-03-15T12:15:43.250Z</updated>
   <id>http://wanghuibin0.github.io/</id>
   
   <author>
@@ -21,16 +21,10 @@
     <link href="http://wanghuibin0.github.io/2021/03/15/relate-zotero-with-siyuan/"/>
     <id>http://wanghuibin0.github.io/2021/03/15/relate-zotero-with-siyuan/</id>
     <published>2021-03-15T19:51:27.000Z</published>
-    <updated>2021-03-15T12:03:31.222Z</updated>
+    <updated>2021-03-15T12:15:43.250Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;从zotero到思源&quot;&gt;&lt;a href=&quot;#从zotero到思源&quot; class=&quot;headerlink&quot; title=&quot;从zotero到思源&quot;&gt;&lt;/a&gt;从zotero到思源&lt;/h2&gt;&lt;h3 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot;</summary>
-        
-      
+    <summary type="html">&lt;h2 id=&quot;从zotero到思源&quot;&gt;&lt;a href=&quot;#从zotero到思源&quot; class=&quot;headerlink&quot; title=&quot;从zotero到思源&quot;&gt;&lt;/a&gt;从zotero到思源&lt;/h2&gt;&lt;h3 id=&quot;原理&quot;&gt;&lt;a href=&quot;#原理&quot; class=&quot;headerlink&quot; title=&quot;原理&quot;&gt;&lt;/a&gt;原理&lt;/h3&gt;&lt;p&gt;修改zotero的engines.json文件，将思源作为zotero的搜索引擎之一，从zotero跳转到思源的对应页面。&lt;/p&gt;</summary>
     
     
     
@@ -50,7 +44,7 @@
     <link href="http://wanghuibin0.github.io/2021/03/14/A-problem-in-simulation-of-LianDi-login/"/>
     <id>http://wanghuibin0.github.io/2021/03/14/A-problem-in-simulation-of-LianDi-login/</id>
     <published>2021-03-14T19:35:23.000Z</published>
-    <updated>2021-03-15T12:03:31.222Z</updated>
+    <updated>2021-03-15T12:15:43.250Z</updated>
     
     
     <summary type="html">&lt;p&gt;用 python 模拟登录链滴&lt;/p&gt;</summary>
@@ -73,7 +67,7 @@
     <link href="http://wanghuibin0.github.io/2021/03/09/Apply-a-new-theme-NEXT/"/>
     <id>http://wanghuibin0.github.io/2021/03/09/Apply-a-new-theme-NEXT/</id>
     <published>2021-03-09T14:31:17.000Z</published>
-    <updated>2021-03-15T12:03:31.222Z</updated>
+    <updated>2021-03-15T12:15:43.250Z</updated>
     
     
     <summary type="html">开始探索NexT主题</summary>
@@ -92,7 +86,7 @@
     <link href="http://wanghuibin0.github.io/2021/01/12/record-a-cpp-experiment/"/>
     <id>http://wanghuibin0.github.io/2021/01/12/record-a-cpp-experiment/</id>
     <published>2021-01-12T22:41:33.000Z</published>
-    <updated>2021-03-15T12:03:31.222Z</updated>
+    <updated>2021-03-15T12:15:43.250Z</updated>
     
     
     <summary type="html">&lt;p&gt;今天有一个猜想：c++函数局部构造的class/struct，如果要返回给父函数，是通过移动语义实现的。&lt;br&gt;但我并不十分确定，于是做了个实验验证之。&lt;/p&gt;</summary>
@@ -111,7 +105,7 @@
     <link href="http://wanghuibin0.github.io/2021/01/12/C++-programming-language/"/>
     <id>http://wanghuibin0.github.io/2021/01/12/C++-programming-language/</id>
     <published>2021-01-12T12:53:39.000Z</published>
-    <updated>2021-03-15T12:03:31.222Z</updated>
+    <updated>2021-03-15T12:15:43.250Z</updated>
     
     
       
