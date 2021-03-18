@@ -35,7 +35,7 @@ engines.json添加如下entry:
 },
 ```
 
-完整的[engines.json](/assets/engines-20210315173931-1saihdw.json)，可以直接拷贝到zotero的数据文件夹下的locate目录下。
+点击下载完整的<a href="/assets/engines-20210315173931-1saihdw.json" download="engines.json">engines.json</a>，可以直接拷贝到zotero的数据文件夹下的locate目录下。
 
 ### 将思源笔记页面关联到zotero中
 
