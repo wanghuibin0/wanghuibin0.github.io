@@ -2,11 +2,11 @@
 title: 课件下载利器
 date: 2021-03-19 14:17:31
 tags:
-  + 爬虫
-  + python
-  + 小工具
+  - 爬虫
+  - python
+  - 小工具
 categories:
-  + 计算机网络
+  - 计算机网络
 ---
 
 ## 缘起
@@ -16,8 +16,7 @@ categories:
 
 ## 课件下载脚本
 <script src="https://gist.github.com/wanghuibin0/42824b32c6da5aefdfe7ee6d2d0bdf84.js"></script>
-<!--
-```python
+<!---
 # Run this script with two command line arguments:
 #   1. the source url
 #   2. the destination folder
@@ -90,7 +89,6 @@ def _main():
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     _main()
-```
 -->
 
 ## 用法示例

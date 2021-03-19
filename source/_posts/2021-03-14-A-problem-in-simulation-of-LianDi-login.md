@@ -2,7 +2,7 @@
 title: 模拟登录链滴网站
 date: 2021-03-14 19:35:23
 tags: ['爬虫', 'python', '模拟登录']
-categories: 前端
+categories: 计算机网络
 ---
 
 用 python 模拟登录链滴
