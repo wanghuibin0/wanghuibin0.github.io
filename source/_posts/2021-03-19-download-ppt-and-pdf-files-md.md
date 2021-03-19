@@ -15,7 +15,8 @@ categories:
 <!--more-->
 
 ## 课件下载脚本
-
+<script src="https://gist.github.com/wanghuibin0/42824b32c6da5aefdfe7ee6d2d0bdf84.js"></script>
+<!--
 ```python
 # Run this script with two command line arguments:
 #   1. the source url
@@ -90,6 +91,7 @@ def _main():
 if __name__ == '__main__':
     _main()
 ```
+-->
 
 ## 用法示例
 
