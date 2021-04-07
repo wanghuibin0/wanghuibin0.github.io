@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wanghuibin0.github.io/categories/index.html</loc>
+    
+    <lastmod>2021-04-07</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wanghuibin0.github.io/tags/index.html</loc>
+    
+    <lastmod>2021-04-07</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wanghuibin0.github.io/2021/01/12/C++-programming-language/</loc>
     
     <lastmod>2021-04-07</lastmod>
@@ -59,20 +73,6 @@
   
   <url>
     <loc>http://wanghuibin0.github.io/assets/engines-20210315173931-1saihdw.json</loc>
-    
-    <lastmod>2021-04-07</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wanghuibin0.github.io/categories/index.html</loc>
-    
-    <lastmod>2021-04-07</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wanghuibin0.github.io/tags/index.html</loc>
     
     <lastmod>2021-04-07</lastmod>
     
