@@ -119,3 +119,6 @@ feed:
   icon: icon.png
   autodiscovery: true
   template:
+
+sitemap:
+  path: sitemap.xml
