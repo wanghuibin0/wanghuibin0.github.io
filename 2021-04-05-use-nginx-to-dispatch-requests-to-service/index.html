@@ -4,22 +4,20 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>利用Nginx实现服务请求按名称分发——再也不用担心记不住端口号啦 - Hibert's blog</title><meta name=Description content="关于 LoveIt 主题"><meta property="og:title" content="利用Nginx实现服务请求按名称分发——再也不用担心记不住端口号啦">
-<meta property="og:description" content="缘起
-在 vps 上部署了几个服务：nextcloud、ttrss、siyuan。这些服务监听着不同的端口，从浏览器访问时，必须输入特定的端口才能连上对应的服务。于是我突发奇想，何不效仿 dns 做法，用直观的名字去映射难记的数字呢？说干就干，决定用反向代理软件 Nginx，实现我这个想法。">
+<title>利用Nginx实现服务请求按名称分发 - Hibert's blog</title><meta name=Description content="关于 LoveIt 主题"><meta property="og:title" content="利用Nginx实现服务请求按名称分发">
+<meta property="og:description" content="缘起 在 vps 上部署了几个服务：nextcloud、ttrss、siyuan。这些服务监听着不同的端口，从浏览器访问时，必须输入特定的端口才能连上">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://wanghuibin0.github.io/2021-04-05-use-nginx-to-dispatch-requests-to-service/"><meta property="og:image" content="https://wanghuibin0.github.io/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-04-05T13:35:21+00:00">
-<meta property="article:modified_time" content="2021-11-24T15:24:14+08:00">
+<meta property="article:modified_time" content="2021-11-27T16:48:59+08:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://wanghuibin0.github.io/logo.png">
-<meta name=twitter:title content="利用Nginx实现服务请求按名称分发——再也不用担心记不住端口号啦">
-<meta name=twitter:description content="缘起
-在 vps 上部署了几个服务：nextcloud、ttrss、siyuan。这些服务监听着不同的端口，从浏览器访问时，必须输入特定的端口才能连上对应的服务。于是我突发奇想，何不效仿 dns 做法，用直观的名字去映射难记的数字呢？说干就干，决定用反向代理软件 Nginx，实现我这个想法。">
+<meta name=twitter:title content="利用Nginx实现服务请求按名称分发">
+<meta name=twitter:description content="缘起 在 vps 上部署了几个服务：nextcloud、ttrss、siyuan。这些服务监听着不同的端口，从浏览器访问时，必须输入特定的端口才能连上">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://wanghuibin0.github.io/2021-04-05-use-nginx-to-dispatch-requests-to-service/><link rel=prev href=https://wanghuibin0.github.io/2021-04-02-vpn-over-ssh/><link rel=next href=https://wanghuibin0.github.io/2021-04-21-program-semantics/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"利用Nginx实现服务请求按名称分发——再也不用担心记不住端口号啦","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/wanghuibin0.github.io\/2021-04-05-use-nginx-to-dispatch-requests-to-service\/"},"image":["https:\/\/wanghuibin0.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"计算机网络, Nginx","wordcount":541,"url":"https:\/\/wanghuibin0.github.io\/2021-04-05-use-nginx-to-dispatch-requests-to-service\/","datePublished":"2021-04-05T13:35:21+00:00","dateModified":"2021-11-24T15:24:14+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"hibert","logo":"https:\/\/wanghuibin0.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"hibert"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://wanghuibin0.github.io/2021-04-05-use-nginx-to-dispatch-requests-to-service/><link rel=prev href=https://wanghuibin0.github.io/2021-04-02-vpn-over-ssh/><link rel=next href=https://wanghuibin0.github.io/2021-04-21-program-semantics/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"利用Nginx实现服务请求按名称分发","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/wanghuibin0.github.io\/2021-04-05-use-nginx-to-dispatch-requests-to-service\/"},"image":["https:\/\/wanghuibin0.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"计算机网络, 服务器","wordcount":541,"url":"https:\/\/wanghuibin0.github.io\/2021-04-05-use-nginx-to-dispatch-requests-to-service\/","datePublished":"2021-04-05T13:35:21+00:00","dateModified":"2021-11-27T16:48:59+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"hibert","logo":"https:\/\/wanghuibin0.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"hibert"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -85,10 +83,10 @@
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>目录</h2>
 <div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">利用Nginx实现服务请求按名称分发——再也不用担心记不住端口号啦</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>hibert</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E5%90%8E%E7%AB%AF%E6%8A%80%E6%9C%AF/><i class="far fa-folder fa-fw"></i>后端技术</a></span></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">利用Nginx实现服务请求按名称分发</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>hibert</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E7%A5%9E%E5%A5%87%E7%9A%84%E5%B7%A5%E5%85%B7/><i class="far fa-folder fa-fw"></i>神奇的工具</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-04-05>2021-04-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 541 字&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id=/2021-04-05-use-nginx-to-dispatch-requests-to-service/ class=leancloud_visitors data-flag-title=利用Nginx实现服务请求按名称分发——再也不用担心记不住端口号啦>
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id=/2021-04-05-use-nginx-to-dispatch-requests-to-service/ class=leancloud_visitors data-flag-title=利用Nginx实现服务请求按名称分发>
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
 </span>&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
@@ -162,12 +160,13 @@
 <p>ps:</p>
 <p>最开始，想用 <code>proxy_pass</code> 反向代理的方式实现路径分流，但是对 Nginx 配置不熟，捣鼓半天也没成功，后来改为 <code>return 301</code> 重定向的方法，很容易达到了自己想要的效果。</p>
 <p>pps:</p>
-<p>中间曾觉得 Nginx 配置太复杂，一度想换 caddy 做。但是在了解 caddy 的过程中，发现 caddy 也不是完美的，简单是简单一些，但灵活性不如 Nginx。后来遂换回 Nginx。不过现在想想，如果只是简单的重定向，caddy 应该也是能够胜任的。</p></div><div class=post-footer id=post-footer>
+<p>中间曾觉得 Nginx 配置太复杂，一度想换 caddy 做。但是在了解 caddy 的过程中，发现 caddy 也不是完美的，简单是简单一些，但灵活性不如 Nginx。后来遂换回 Nginx。不过现在想想，如果只是简单的重定向，caddy 应该也是能够胜任的。</p>
+</div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>更新于 2021-11-24&nbsp;<a class=git-hash href=https://github.com/dillonzq/LoveIt/commit/e2db7497920f9f80e5bc8b5a57f23be2ea000a7d target=_blank title="commit by hibert(fighter9010@gmail.com) e2db7497920f9f80e5bc8b5a57f23be2ea000a7d: init">
-<i class="fas fa-hashtag fa-fw"></i>e2db749</a></span>
+<span>更新于 2021-11-27&nbsp;<a class=git-hash href=https://github.com/dillonzq/LoveIt/commit/06dff6afcfb45c563ad343ebccec842d5fb3532a target=_blank title="commit by Hibert(fighter9010@gmail.com) 06dff6afcfb45c563ad343ebccec842d5fb3532a: clarify the categories and tags">
+<i class="fas fa-hashtag fa-fw"></i>06dff6a</a></span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -176,17 +175,17 @@
 <a class=link-to-markdown href=/2021-04-05-use-nginx-to-dispatch-requests-to-service/index.md target=_blank>阅读原始文档</a>
 </span></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://wanghuibin0.github.io/2021-04-05-use-nginx-to-dispatch-requests-to-service/ data-title=利用Nginx实现服务请求按名称分发——再也不用担心记不住端口号啦 data-hashtags=计算机网络,Nginx><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://wanghuibin0.github.io/2021-04-05-use-nginx-to-dispatch-requests-to-service/ data-hashtag=计算机网络><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 Hacker News" data-sharer=hackernews data-url=https://wanghuibin0.github.io/2021-04-05-use-nginx-to-dispatch-requests-to-service/ data-title=利用Nginx实现服务请求按名称分发——再也不用担心记不住端口号啦><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://wanghuibin0.github.io/2021-04-05-use-nginx-to-dispatch-requests-to-service/ data-title=利用Nginx实现服务请求按名称分发——再也不用担心记不住端口号啦><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://wanghuibin0.github.io/2021-04-05-use-nginx-to-dispatch-requests-to-service/ data-title=利用Nginx实现服务请求按名称分发——再也不用担心记不住端口号啦><i class="fab fa-weibo fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://wanghuibin0.github.io/2021-04-05-use-nginx-to-dispatch-requests-to-service/ data-title=利用Nginx实现服务请求按名称分发 data-hashtags=计算机网络,服务器><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://wanghuibin0.github.io/2021-04-05-use-nginx-to-dispatch-requests-to-service/ data-hashtag=计算机网络><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 Hacker News" data-sharer=hackernews data-url=https://wanghuibin0.github.io/2021-04-05-use-nginx-to-dispatch-requests-to-service/ data-title=利用Nginx实现服务请求按名称分发><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://wanghuibin0.github.io/2021-04-05-use-nginx-to-dispatch-requests-to-service/ data-title=利用Nginx实现服务请求按名称分发><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://wanghuibin0.github.io/2021-04-05-use-nginx-to-dispatch-requests-to-service/ data-title=利用Nginx实现服务请求按名称分发><i class="fab fa-weibo fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/>计算机网络</a>,&nbsp;<a href=/tags/nginx/>Nginx</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/>计算机网络</a>,&nbsp;<a href=/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/>服务器</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
 </section>
 </div>
-<div class=post-nav><a href=/2021-04-02-vpn-over-ssh/ class=prev rel=prev title="VPN over SSH---利用SSH进行简易科学上网"><i class="fas fa-angle-left fa-fw"></i>VPN over SSH---利用SSH进行简易科学上网</a>
+<div class=post-nav><a href=/2021-04-02-vpn-over-ssh/ class=prev rel=prev title="VPN over SSH"><i class="fas fa-angle-left fa-fw"></i>VPN over SSH</a>
 <a href=/2021-04-21-program-semantics/ class=next rel=next title=编程语言的形式语义>编程语言的形式语义<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id=comments><div id=valine class=comment></div><noscript>

@@ -1,4 +1,4 @@
-# VPN over SSH---利用SSH进行简易科学上网
+# VPN over SSH
 
 今天在浏览《科技爱好者周刊》时，学会了一个神奇的技能：VPN over SSH，直接利用ssh搭建一个简易的VPN。虽然现在有了V2ray/Xray/Trojan/SSR等各种代理工具，但是这些都需要额外的步骤安装部署，如果只是临时使用的话，远远没有VPN over SSH简单方便，因为SSH在PC和服务器上基本都是标配了。
 <!--more-->
