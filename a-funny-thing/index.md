@@ -9,6 +9,7 @@
 *Professor*: /... Of course, your professor will no doubt assign some homeworks and projects, so you should do those;in particular, doing projects where you write real code to solve real problems is the best way to put the ideas within these notes into action. As Confucius said.../
 
 *Student*: /Oh, I know! ’I hear and I forget. I see and I remember. I do and I understand.’ Or something like that./
+
 *Professor*: /(surprised) How did you know what I was going to say?!/
 #+end_quote
 
