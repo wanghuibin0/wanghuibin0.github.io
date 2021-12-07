@@ -4,20 +4,20 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>如何批量压缩照片 - Hibert's blog</title><meta name=Description content="关于 LoveIt 主题"><meta property="og:title" content="如何批量压缩照片">
-<meta property="og:description" content="如何批量压缩照片 现在手机拍照出来的照片体积都很大，而手机厂商提供的云服务空间又有限，拍照片稍微多一点的话，空间很快就不够用了。周末去了趟径山">
+<title>Latex排版中文的问题汇总 - Hibert's blog</title><meta name=Description content="关于 LoveIt 主题"><meta property="og:title" content="Latex排版中文的问题汇总">
+<meta property="og:description" content="Latex排版中文的问题汇总 涉及两方面： 对中文字体的支持 对中文排版细节的处理 几个相关的宏包： CJK宏包：提供了对中文字体的支持 xeCJK和l">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://wanghuibin0.github.io/howto-reduce-photo-size-in-batches/"><meta property="og:image" content="https://wanghuibin0.github.io/logo.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-12-06T14:30:36+08:00">
-<meta property="article:modified_time" content="2021-12-06T14:42:40+08:00">
+<meta property="og:url" content="https://wanghuibin0.github.io/handle-chinese-in-latex/"><meta property="og:image" content="https://wanghuibin0.github.io/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-12-07T17:30:34+08:00">
+<meta property="article:modified_time" content="2021-12-07T17:48:20+08:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://wanghuibin0.github.io/logo.png">
-<meta name=twitter:title content="如何批量压缩照片">
-<meta name=twitter:description content="如何批量压缩照片 现在手机拍照出来的照片体积都很大，而手机厂商提供的云服务空间又有限，拍照片稍微多一点的话，空间很快就不够用了。周末去了趟径山">
+<meta name=twitter:title content="Latex排版中文的问题汇总">
+<meta name=twitter:description content="Latex排版中文的问题汇总 涉及两方面： 对中文字体的支持 对中文排版细节的处理 几个相关的宏包： CJK宏包：提供了对中文字体的支持 xeCJK和l">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://wanghuibin0.github.io/howto-reduce-photo-size-in-batches/><link rel=prev href=https://wanghuibin0.github.io/visit-jingshan-temple/><link rel=next href=https://wanghuibin0.github.io/handle-chinese-in-latex/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"如何批量压缩照片","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/wanghuibin0.github.io\/howto-reduce-photo-size-in-batches\/"},"image":["https:\/\/wanghuibin0.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"图像处理","wordcount":499,"url":"https:\/\/wanghuibin0.github.io\/howto-reduce-photo-size-in-batches\/","datePublished":"2021-12-06T14:30:36+08:00","dateModified":"2021-12-06T14:42:40+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"hibert","logo":"https:\/\/wanghuibin0.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"hibert"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://wanghuibin0.github.io/handle-chinese-in-latex/><link rel=prev href=https://wanghuibin0.github.io/howto-reduce-photo-size-in-batches/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Latex排版中文的问题汇总","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/wanghuibin0.github.io\/handle-chinese-in-latex\/"},"image":["https:\/\/wanghuibin0.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"latex","wordcount":515,"url":"https:\/\/wanghuibin0.github.io\/handle-chinese-in-latex\/","datePublished":"2021-12-07T17:30:34+08:00","dateModified":"2021-12-07T17:48:20+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"hibert","logo":"https:\/\/wanghuibin0.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"hibert"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -83,10 +83,10 @@
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>目录</h2>
 <div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">如何批量压缩照片</h1><div class=post-meta>
+</div><article class="page single"><h1 class="single-title animated flipInX">Latex排版中文的问题汇总</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>hibert</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E7%A5%9E%E5%A5%87%E7%9A%84%E5%B7%A5%E5%85%B7/><i class="far fa-folder fa-fw"></i>神奇的工具</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-06>2021-12-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 499 字&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id=/howto-reduce-photo-size-in-batches/ class=leancloud_visitors data-flag-title=如何批量压缩照片>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-07>2021-12-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 515 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id=/handle-chinese-in-latex/ class=leancloud_visitors data-flag-title=Latex排版中文的问题汇总>
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
 </span>&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
@@ -96,66 +96,157 @@
 </div>
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
-<li><a href=#headline-1>如何批量压缩照片</a>
+<li><a href=#headline-1>Latex排版中文的问题汇总</a>
+<ul>
+<li><a href=#headline-2>例子</a>
+</li>
+<li><a href=#headline-3>refs:</a>
+</li>
+</ul>
 </li>
 </ul>
 </nav></div>
 </div><div class=content id=content>
 <div id=outline-container-headline-1 class=outline-2>
 <h2 id=headline-1>
-如何批量压缩照片
+Latex排版中文的问题汇总
 </h2>
 <div id=outline-text-headline-1 class=outline-text-2>
-<p>现在手机拍照出来的照片体积都很大，而手机厂商提供的云服务空间又有限，拍照片稍微多一点的话，空间很快就不够用了。周末去了趟径山寺玩，拍了点照片，我的小米云空间就频频告急了。
-我检查了一下，发现随便拍的风景照，体积都有十几到二十兆，这么大的照片，质量也许好一些，对摄影爱好者可能有些意义，但对我这种只是偶尔拍着记录一下的人来说，意义其实不大。</p>
+<p>涉及两方面：</p>
+<ul>
+<li>
+<p>对中文字体的支持</p>
+</li>
+<li>
+<p>对中文排版细节的处理</p>
+</li>
+</ul>
+<p>几个相关的宏包：</p>
+<ul>
+<li>
+<p>CJK宏包：提供了对中文字体的支持</p>
+</li>
+<li>
+<p>xeCJK和luatexja宏包：处理中文排版细节</p>
+</li>
+<li>
+<p>ctex 宏包和文档类：进一步封装了 CJK、xeCJK、luatexja 等宏包，使得用户在排版中文时不用再考虑排版引擎等细节。能够识别操作系统和 TEX 发行版中安装的中文字体。</p>
+<ul>
+<li>
+<p>ctex 宏包：用于配合各种文档类排版中文</p>
+</li>
+<li>
+<p>ctex 文档类：对LATEX 的标准文档类进行了封装，对一些排版根据中文排版习惯做了调整，包括 ctexart/ctexrep/ctexbook/ctexbeamer。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>在archlinux上，安装texlive-langchinese 即可安装ctex宏包。</p>
 <p>
-我希望减小照片体积，稍微损失点质量也无妨（完全可以控制在肉眼看不出来的程度）。一来可以减少空间占用，便于备份，二来如果放在图床引用的话，对网络的压力也小。</p>
-<p>
-Linux 上用 ffmpeg 就可以很容易做到这件事。步骤如下：</p>
-<div class="src src-bash">
+注意：</p>
+<ol>
+<li>
+<p>源文件要保存为UTF-8编码。</p>
+</li>
+<li>
+<p>使用 xelatex 或 lualatex 命令编译。</p>
+</li>
+</ol>
+<div id=outline-container-headline-2 class=outline-3>
+<h3 id=headline-2>
+例子
+</h3>
+<div id=outline-text-headline-2 class=outline-text-3>
+<div class="src src-latex">
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>mkdir output  <span class=c1># output目录用来存放压缩后的照片文件</span>
-ls *.jpg <span class=p>|</span> xargs -I<span class=o>{}</span> ffmpeg -i <span class=o>{}</span> output/<span class=o>{}</span><span class=p>;</span> <span class=c1># 用ffmpeg默认的参数效果就已经很好了</span></code></pre></td></tr></table>
+<pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=k>\documentclass</span><span class=nb>{</span>ctexart<span class=nb>}</span>
+<span class=k>\begin</span><span class=nb>{</span>document<span class=nb>}</span>
+在<span class=k>\LaTeX</span><span class=nb>{}</span>中排版中文。
+汉字和English单词混排，通常不需要在中英文之间添加额外的空格。
+当然，为了代码的可读性，加上汉字和 English 之间的空格也无妨。
+汉字换行时不会引入多余的空格。
+<span class=k>\end</span><span class=nb>{</span>document<span class=nb>}</span></code></pre></td></tr></table>
 </div>
 </div>
 </div>
 <p>
-经过亲测，原先20M的照片，转换完成后只有1.8M，原先的 1/10 都不到。至于质量，我觉得完全可以接受，至少用肉眼，我是真的看不出来，作为记录或者展示，够用了！</p>
+用xelatex编译。</p>
+<div class="src src-bash">
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>xelatex test-zh.tex</code></pre></td></tr></table>
+</div>
+</div>
+</div>
 <p>
-ps: 照片文件最好还是用 jpg 格式，体积最小；我曾试了 png 和 webp，效果都不好，其中 png 采用无损压缩算法，还膨胀了好多倍，20M 转出来成了 60M。摄影图片一般色彩笔记丰富，jpg 才是最适合的格式。</p>
+如果是markdown或org mode文件，用pandoc转。</p>
+<div class="src src-bash">
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>pandoc test-zh.tex -o test-zh.pdf --pdf-engine<span class=o>=</span>xelatex -V <span class=nv>CJKmainfont</span><span class=o>=</span><span class=s2>&#34;WenQuanYi Zen Hei&#34;</span></code></pre></td></tr></table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id=outline-container-headline-3 class=outline-3>
+<h3 id=headline-3>
+refs:
+</h3>
+<div id=outline-text-headline-3 class=outline-text-3>
+<ul>
+<li>
+<p><a href=https://wiki.archlinux.org/title/TeX_Live_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>https://wiki.archlinux.org/title/TeX_Live_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</a></p>
+</li>
+<li>
+<p>一份（不太）简短的 LATEX2ε 介绍</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 </div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>更新于 2021-12-06&nbsp;<a class=git-hash href=https://github.com/dillonzq/LoveIt/commit/cb79aefbe06b1c896fa562f3c2b676fc8fff8268 target=_blank title="commit by hibert(fighter9010@gmail.com) cb79aefbe06b1c896fa562f3c2b676fc8fff8268: new post">
-<i class="fas fa-hashtag fa-fw"></i>cb79aef</a></span>
+<span>更新于 2021-12-07&nbsp;<a class=git-hash href=https://github.com/dillonzq/LoveIt/commit/09de0b74d71de83c31dc3222a4297bc08871658b target=_blank title="commit by hibert(fighter9010@gmail.com) 09de0b74d71de83c31dc3222a4297bc08871658b: new post">
+<i class="fas fa-hashtag fa-fw"></i>09de0b7</a></span>
 </div>
-<div class=post-info-license></div>
+<div class=post-info-license><span><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
 </div>
 <div class=post-info-line>
 <div class=post-info-md><span>
-<a class=link-to-markdown href=/howto-reduce-photo-size-in-batches/index.md target=_blank>阅读原始文档</a>
+<a class=link-to-markdown href=/handle-chinese-in-latex/index.md target=_blank>阅读原始文档</a>
 </span></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://wanghuibin0.github.io/howto-reduce-photo-size-in-batches/ data-title=如何批量压缩照片 data-hashtags=图像处理><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://wanghuibin0.github.io/howto-reduce-photo-size-in-batches/ data-hashtag=图像处理><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 Hacker News" data-sharer=hackernews data-url=https://wanghuibin0.github.io/howto-reduce-photo-size-in-batches/ data-title=如何批量压缩照片><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://wanghuibin0.github.io/howto-reduce-photo-size-in-batches/ data-title=如何批量压缩照片><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://wanghuibin0.github.io/howto-reduce-photo-size-in-batches/ data-title=如何批量压缩照片><i class="fab fa-weibo fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://wanghuibin0.github.io/handle-chinese-in-latex/ data-title=Latex排版中文的问题汇总 data-hashtags=latex><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://wanghuibin0.github.io/handle-chinese-in-latex/ data-hashtag=latex><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 Hacker News" data-sharer=hackernews data-url=https://wanghuibin0.github.io/handle-chinese-in-latex/ data-title=Latex排版中文的问题汇总><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://wanghuibin0.github.io/handle-chinese-in-latex/ data-title=Latex排版中文的问题汇总><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://wanghuibin0.github.io/handle-chinese-in-latex/ data-title=Latex排版中文的问题汇总><i class="fab fa-weibo fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/>图像处理</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/latex/>latex</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
 </section>
 </div>
-<div class=post-nav><a href=/visit-jingshan-temple/ class=prev rel=prev title=径山寺之行><i class="fas fa-angle-left fa-fw"></i>径山寺之行</a>
-<a href=/handle-chinese-in-latex/ class=next rel=next title=Latex排版中文的问题汇总>Latex排版中文的问题汇总<i class="fas fa-angle-right fa-fw"></i></a></div>
+<div class=post-nav><a href=/howto-reduce-photo-size-in-batches/ class=prev rel=prev title=如何批量压缩照片><i class="fas fa-angle-left fa-fw"></i>如何批量压缩照片</a></div>
 </div>
 <div id=comments><div id=valine class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.
