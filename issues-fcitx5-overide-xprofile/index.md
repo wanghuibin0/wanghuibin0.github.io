@@ -1,4 +1,4 @@
-# fcitx5与.xprofile中的setxkbmap执行顺序导致键盘按键覆盖
+# fcitx5覆盖.xprofile中的按键设置
 
 
 ## 问题的现象 {#问题的现象}
