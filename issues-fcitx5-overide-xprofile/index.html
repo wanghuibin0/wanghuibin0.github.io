@@ -4,20 +4,20 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>如何阅读之分析阅读 - Hibert's blog</title><meta name=Description content="关于 LoveIt 主题"><meta property="og:title" content="如何阅读之分析阅读">
-<meta property="og:description" content="分析阅读的目的 完整地吸取一本书的精华。 分析阅读的方法 第一阶段：整理内容大纲 依照书的种类与主题来分类。 使用最简短的文字说明整本书在谈些什么。 将">
+<title>fcitx5与.xprofile中的setxkbmap执行顺序导致键盘按键覆盖 - Hibert's blog</title><meta name=Description content="关于 LoveIt 主题"><meta property="og:title" content="fcitx5与.xprofile中的setxkbmap执行顺序导致键盘按键覆盖">
+<meta property="og:description" content="问题的现象 本来fcitx5正常。为了将caps lock映射为ctrl，我在.xprofile中放了这么几句： 1 2 setxkbmap -option ctrl:nocaps setxkbmap -option shift:both_capslock 结果出问题了：本">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://wanghuibin0.github.io/reading-skills-analytical/"><meta property="og:image" content="https://wanghuibin0.github.io/logo.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-12-13T00:32:00+08:00">
-<meta property="article:modified_time" content="2021-12-13T00:34:13+08:00">
+<meta property="og:url" content="https://wanghuibin0.github.io/issues-fcitx5-overide-xprofile/"><meta property="og:image" content="https://wanghuibin0.github.io/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-12-14T22:26:00+08:00">
+<meta property="article:modified_time" content="2021-12-14T22:27:00+08:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://wanghuibin0.github.io/logo.png">
-<meta name=twitter:title content="如何阅读之分析阅读">
-<meta name=twitter:description content="分析阅读的目的 完整地吸取一本书的精华。 分析阅读的方法 第一阶段：整理内容大纲 依照书的种类与主题来分类。 使用最简短的文字说明整本书在谈些什么。 将">
+<meta name=twitter:title content="fcitx5与.xprofile中的setxkbmap执行顺序导致键盘按键覆盖">
+<meta name=twitter:description content="问题的现象 本来fcitx5正常。为了将caps lock映射为ctrl，我在.xprofile中放了这么几句： 1 2 setxkbmap -option ctrl:nocaps setxkbmap -option shift:both_capslock 结果出问题了：本">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://wanghuibin0.github.io/reading-skills-analytical/><link rel=prev href=https://wanghuibin0.github.io/font-basics/><link rel=next href=https://wanghuibin0.github.io/issues-fcitx5-overide-xprofile/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"如何阅读之分析阅读","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/wanghuibin0.github.io\/reading-skills-analytical\/"},"image":["https:\/\/wanghuibin0.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"读书方法","wordcount":411,"url":"https:\/\/wanghuibin0.github.io\/reading-skills-analytical\/","datePublished":"2021-12-13T00:32:00+08:00","dateModified":"2021-12-13T00:34:13+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"hibert","logo":"https:\/\/wanghuibin0.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"hibert"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://wanghuibin0.github.io/issues-fcitx5-overide-xprofile/><link rel=prev href=https://wanghuibin0.github.io/reading-skills-analytical/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"fcitx5与.xprofile中的setxkbmap执行顺序导致键盘按键覆盖","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/wanghuibin0.github.io\/issues-fcitx5-overide-xprofile\/"},"image":["https:\/\/wanghuibin0.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"linux","wordcount":361,"url":"https:\/\/wanghuibin0.github.io\/issues-fcitx5-overide-xprofile\/","datePublished":"2021-12-14T22:26:00+08:00","dateModified":"2021-12-14T22:27:00+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"hibert","logo":"https:\/\/wanghuibin0.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"hibert"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -83,10 +83,10 @@
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>目录</h2>
 <div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">如何阅读之分析阅读</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>hibert</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E4%B9%A0%E6%83%AF%E5%85%BB%E6%88%90/><i class="far fa-folder fa-fw"></i>习惯养成</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-13>2021-12-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 411 字&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id=/reading-skills-analytical/ class=leancloud_visitors data-flag-title=如何阅读之分析阅读>
+</div><article class="page single"><h1 class="single-title animated flipInX">fcitx5与.xprofile中的setxkbmap执行顺序导致键盘按键覆盖</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>hibert</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/><i class="far fa-folder fa-fw"></i>问题记录</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-12-14>2021-12-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 361 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id=/issues-fcitx5-overide-xprofile/ class=leancloud_visitors data-flag-title=fcitx5与.xprofile中的setxkbmap执行顺序导致键盘按键覆盖>
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
 </span>&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
@@ -96,72 +96,73 @@
 </div>
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
-<li><a href=#分析阅读的目的>分析阅读的目的</a></li>
-<li><a href=#分析阅读的方法>分析阅读的方法</a></li>
-<li><a href=#分析阅读的应用>分析阅读的应用</a></li>
+<li><a href=#问题的现象>问题的现象</a></li>
+<li><a href=#问题的原因>问题的原因</a></li>
+<li><a href=#解决方案>解决方案</a></li>
 </ul>
 </nav></div>
-</div><div class=content id=content><h2 id=分析阅读的目的>分析阅读的目的</h2>
-<p>完整地吸取一本书的精华。</p>
-<h2 id=分析阅读的方法>分析阅读的方法</h2>
-<ul>
-<li>第一阶段：整理内容大纲
-<ol>
-<li>依照书的种类与主题来分类。</li>
-<li>使用最简短的文字说明整本书在谈些什么。</li>
-<li>将主要部分按顺序与关联性列举出来。将全书的大纲列举出来，并将各个部分的大纲也列出来。</li>
-<li>确定作者想要解决的问题。</li>
-<li>找出重要的单字，与作者达成共识。</li>
-</ol>
-</li>
-<li>第二阶段：诠释这本书的内容
-<ol>
-<li>将一本书中最重要的句子圈出来，找出其中的主旨。</li>
-<li>从相关文句的关联中，设法架构出一本书的基本论述。</li>
-<li>确定哪些问题已经被解决，哪些还没有被解决。</li>
-</ol>
-</li>
-<li>第三阶段：评论一本书
-<ol>
-<li>除非你已经完成大纲架构，也能诠释整本书了，否则不要轻易批评。</li>
-<li>当你不同意作者观点时，要理性的表达自己，不要无理的辩驳或争论。</li>
-<li>尊重知识与个人观点的不同，在做出任何判断之前，都要找出理论依据。</li>
-</ol>
-</li>
-</ul>
-<h2 id=分析阅读的应用>分析阅读的应用</h2>
-<ul>
-<li>分析阅读的成本较高。</li>
-<li>人的精力有限，不应该不分青红皂白的使用分析阅读。</li>
-<li>分析阅读应该用于阅读对自己有高价值的书籍。</li>
-<li>先经由检视阅读，判断书籍的价值，筛选出高价值的书籍。</li>
-</ul>
+</div><div class=content id=content><h2 id=问题的现象>问题的现象</h2>
+<p>本来fcitx5正常。为了将caps lock映射为ctrl，我在.xprofile中放了这么几句：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-sh data-lang=sh>setxkbmap -option ctrl:nocaps
+setxkbmap -option shift:both_capslock
+</code></pre></td></tr></table>
+</div>
+</div><p>结果出问题了：本来，fcitx5在中文输入状态按shift可以字母直接上屏并切换为英文输入状态，现在不仅不能正常切换，而且配置的caps lock转ctrl也未生效。</p>
+<h2 id=问题的原因>问题的原因</h2>
+<p>在<a href=https://fcitx-im.org/wiki/FAQ target=_blank rel="noopener noreffer">fcitx-FAQ</a>中看到这么一条：</p>
+<blockquote>
+<p>Fcitx now control keyboard layout and when switch layout, xmodmap setting will be overwritten.</p>
+</blockquote>
+<blockquote>
+<p>Since 4.2.7, Fcitx will try to load ~/.Xmodmap if it exists.</p>
+</blockquote>
+<p>虽说这是针对fcitx说的，我觉得对于fcitx5应该是同样的道理。简单说，就是.xprofile中的设置被后续启动的fcitx5给覆盖了。</p>
+<h2 id=解决方案>解决方案</h2>
+<p>在~/.Xmodmap中进行caps lock转ctrl的设置，因为fcitx5在启动时会兼顾到~/.Xmodmap,这样就不会无脑覆盖了。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>remove Lock = Caps_Lock
+keysym Caps_Lock = Control_L
+add Control = Control_L
+</code></pre></td></tr></table>
+</div>
+</div><p>重启机器，一切正常了。</p>
 </div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>更新于 2021-12-13&nbsp;<a class=git-hash href=https://github.com/dillonzq/LoveIt/commit/64cfff994e896d89ad2b5c37a45ea40f446a2126 target=_blank title="commit by hibert(fighter9010@gmail.com) 64cfff994e896d89ad2b5c37a45ea40f446a2126: new post">
-<i class="fas fa-hashtag fa-fw"></i>64cfff9</a></span>
+<span>更新于 2021-12-14&nbsp;<a class=git-hash href=https://github.com/dillonzq/LoveIt/commit/c492c4fd3fd6ccb5ec510bd34d16eaedfb554d66 target=_blank title="commit by hibert(fighter9010@gmail.com) c492c4fd3fd6ccb5ec510bd34d16eaedfb554d66: new post">
+<i class="fas fa-hashtag fa-fw"></i>c492c4f</a></span>
 </div>
 <div class=post-info-license></div>
 </div>
 <div class=post-info-line>
 <div class=post-info-md><span>
-<a class=link-to-markdown href=/reading-skills-analytical/index.md target=_blank>阅读原始文档</a>
+<a class=link-to-markdown href=/issues-fcitx5-overide-xprofile/index.md target=_blank>阅读原始文档</a>
 </span></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://wanghuibin0.github.io/reading-skills-analytical/ data-title=如何阅读之分析阅读 data-hashtags=读书方法><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://wanghuibin0.github.io/reading-skills-analytical/ data-hashtag=读书方法><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 Hacker News" data-sharer=hackernews data-url=https://wanghuibin0.github.io/reading-skills-analytical/ data-title=如何阅读之分析阅读><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://wanghuibin0.github.io/reading-skills-analytical/ data-title=如何阅读之分析阅读><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://wanghuibin0.github.io/reading-skills-analytical/ data-title=如何阅读之分析阅读><i class="fab fa-weibo fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://wanghuibin0.github.io/issues-fcitx5-overide-xprofile/ data-title=fcitx5与.xprofile中的setxkbmap执行顺序导致键盘按键覆盖 data-hashtags=linux><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://wanghuibin0.github.io/issues-fcitx5-overide-xprofile/ data-hashtag=linux><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 Hacker News" data-sharer=hackernews data-url=https://wanghuibin0.github.io/issues-fcitx5-overide-xprofile/ data-title=fcitx5与.xprofile中的setxkbmap执行顺序导致键盘按键覆盖><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://wanghuibin0.github.io/issues-fcitx5-overide-xprofile/ data-title=fcitx5与.xprofile中的setxkbmap执行顺序导致键盘按键覆盖><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://wanghuibin0.github.io/issues-fcitx5-overide-xprofile/ data-title=fcitx5与.xprofile中的setxkbmap执行顺序导致键盘按键覆盖><i class="fab fa-weibo fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/%E8%AF%BB%E4%B9%A6%E6%96%B9%E6%B3%95/>读书方法</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/linux/>linux</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
 </section>
 </div>
-<div class=post-nav><a href=/font-basics/ class=prev rel=prev title=字体基础知识><i class="fas fa-angle-left fa-fw"></i>字体基础知识</a>
-<a href=/issues-fcitx5-overide-xprofile/ class=next rel=next title=fcitx5与.xprofile中的setxkbmap执行顺序导致键盘按键覆盖>fcitx5与.xprofile中的setxkbmap执行顺序导致键盘按键覆盖<i class="fas fa-angle-right fa-fw"></i></a></div>
+<div class=post-nav><a href=/reading-skills-analytical/ class=prev rel=prev title=如何阅读之分析阅读><i class="fas fa-angle-left fa-fw"></i>如何阅读之分析阅读</a></div>
 </div>
 <div id=comments><div id=valine class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.
