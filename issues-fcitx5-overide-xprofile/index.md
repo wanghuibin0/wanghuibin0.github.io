@@ -1,4 +1,4 @@
-# fcitx5覆盖.xprofile中的按键设置
+# 如何解决fcitx5覆盖.xprofile中按键设置的问题
 
 
 ## 问题的现象 {#问题的现象}
