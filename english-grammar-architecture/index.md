@@ -138,7 +138,8 @@
 
 ## 用动词串起所有语法概念 {#用动词串起所有语法概念}
 
-<img src="/ox-hugo/2021-12-18_18-38-22_screenshot.png" alt="2021-12-18_18-38-22_screenshot.png" width="600px" />
+{{< figure src="/ox-hugo/2021-12-18_18-38-22_screenshot.png" width="600px" >}}
+
 推荐参考里的这个视频，是我见过讲语法讲得最清晰的。
 
 
