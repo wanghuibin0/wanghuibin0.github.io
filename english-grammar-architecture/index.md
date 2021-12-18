@@ -121,7 +121,7 @@
 
 谓语动词无法独自完成要表达的任务，需要 **助动词** 帮助完成其任务
 
-{{< figure src="/ox-hugo/2021-12-18_17-11-21_screenshot.png" >}}
+{{< figure src="/ox-hugo/2021-12-18_17-11-21_screenshot.png" width="600px" >}}
 
 
 ## 非谓语动词 {#非谓语动词}
@@ -138,7 +138,7 @@
 
 ## 用动词串起所有语法概念 {#用动词串起所有语法概念}
 
-![](/ox-hugo/2021-12-18_18-38-22_screenshot.png)
+<img src="/ox-hugo/2021-12-18_18-38-22_screenshot.png" alt="2021-12-18_18-38-22_screenshot.png" width="600px" />
 推荐参考里的这个视频，是我见过讲语法讲得最清晰的。
 
 
