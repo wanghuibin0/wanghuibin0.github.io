@@ -4,20 +4,20 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>少则得，多则惑 - Hibert's blog</title><meta name=Description content="关于 LoveIt 主题"><meta property="og:title" content="少则得，多则惑">
-<meta property="og:description" content="如题。 是以圣人抱一以为天下式。">
+<title>LaTeX如何将两段代码并排放置 - Hibert's blog</title><meta name=Description content="关于 LoveIt 主题"><meta property="og:title" content="LaTeX如何将两段代码并排放置">
+<meta property="og:description" content="排版一段代码用lstlisting环境（listing宏包） 将每一段代码用minipage环境包起来成为一个个box（注意设置每个minip">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://wanghuibin0.github.io/posts/2022/01/less-is-more/"><meta property="og:image" content="https://wanghuibin0.github.io/logo.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2022-01-19T09:06:00+08:00">
-<meta property="article:modified_time" content="2022-01-19T09:07:35+08:00">
+<meta property="og:url" content="https://wanghuibin0.github.io/posts/2022/01/latex-typeset-code-list/"><meta property="og:image" content="https://wanghuibin0.github.io/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-01-21T23:09:00+08:00">
+<meta property="article:modified_time" content="2022-01-21T23:10:42+08:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://wanghuibin0.github.io/logo.png">
-<meta name=twitter:title content="少则得，多则惑">
-<meta name=twitter:description content="如题。 是以圣人抱一以为天下式。">
+<meta name=twitter:title content="LaTeX如何将两段代码并排放置">
+<meta name=twitter:description content="排版一段代码用lstlisting环境（listing宏包） 将每一段代码用minipage环境包起来成为一个个box（注意设置每个minip">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://wanghuibin0.github.io/posts/2022/01/less-is-more/><link rel=prev href=https://wanghuibin0.github.io/posts/2022/01/growth-mindset/><link rel=next href=https://wanghuibin0.github.io/posts/2022/01/latex-typeset-code-list/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"少则得，多则惑","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/wanghuibin0.github.io\/posts\/2022\/01\/less-is-more\/"},"image":["https:\/\/wanghuibin0.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"修身","wordcount":15,"url":"https:\/\/wanghuibin0.github.io\/posts\/2022\/01\/less-is-more\/","datePublished":"2022-01-19T09:06:00+08:00","dateModified":"2022-01-19T09:07:35+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"hibert","logo":"https:\/\/wanghuibin0.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"hibert"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://wanghuibin0.github.io/posts/2022/01/latex-typeset-code-list/><link rel=prev href=https://wanghuibin0.github.io/posts/2022/01/less-is-more/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"LaTeX如何将两段代码并排放置","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/wanghuibin0.github.io\/posts\/2022\/01\/latex-typeset-code-list\/"},"image":["https:\/\/wanghuibin0.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"LaTex","wordcount":214,"url":"https:\/\/wanghuibin0.github.io\/posts\/2022\/01\/latex-typeset-code-list\/","datePublished":"2022-01-21T23:09:00+08:00","dateModified":"2022-01-21T23:10:42+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"hibert","logo":"https:\/\/wanghuibin0.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"hibert"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -83,10 +83,10 @@
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>目录</h2>
 <div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">少则得，多则惑</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>hibert</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E6%96%B9%E6%B3%95%E8%AE%BA/><i class="far fa-folder fa-fw"></i>方法论</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-01-19>2022-01-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 15 字&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id=/posts/2022/01/less-is-more/ class=leancloud_visitors data-flag-title=少则得，多则惑>
+</div><article class="page single"><h1 class="single-title animated flipInX">LaTeX如何将两段代码并排放置</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>hibert</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E7%A5%9E%E5%A5%87%E7%9A%84%E5%B7%A5%E5%85%B7/><i class="far fa-folder fa-fw"></i>神奇的工具</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-01-21>2022-01-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 214 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id=/posts/2022/01/latex-typeset-code-list/ class=leancloud_visitors data-flag-title=LaTeX如何将两段代码并排放置>
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
 </span>&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
@@ -95,34 +95,108 @@
 <span><i class="details-icon fas fa-angle-right"></i></span>
 </div>
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents></nav></div>
-</div><div class=content id=content><p>如题。
-是以圣人抱一以为天下式。</p>
-</div><div class=post-footer id=post-footer>
+</div><div class=content id=content><ol>
+<li>排版一段代码用lstlisting环境（listing宏包）</li>
+<li>将每一段代码用minipage环境包起来成为一个个box（注意设置每个minipage的宽度）</li>
+<li>若要给代码整体画个外框，可以将所有box一起放在framed环境（framed宏包）中</li>
+<li>整体放入figure环境中，成为浮动体</li>
+</ol>
+<p>示例代码：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-latex data-lang=latex><span class=k>\begin</span><span class=nb>{</span>figure<span class=nb>}</span>[!htb]
+        <span class=k>\lstset</span><span class=nb>{</span>language=C,
+                numbers=left,
+                numbersep=3pt,
+                <span class=c>%frame=single,
+</span><span class=c></span>                tabsize=2,
+                xleftmargin=.05<span class=k>\textwidth</span>,
+                <span class=c>%xrightmargin=.05\textwidth,
+</span><span class=c></span>                basicstyle=<span class=k>\footnotesize</span>,
+            <span class=nb>}</span>
+<span class=k>\begin</span><span class=nb>{</span>framed<span class=nb>}</span>
+
+<span class=k>\begin</span><span class=nb>{</span>minipage<span class=nb>}</span>[b]<span class=nb>{</span>0.45<span class=k>\columnwidth</span><span class=nb>}</span>
+<span class=k>\begin</span><span class=nb>{</span>lstlisting<span class=nb>}</span>
+int callee(int x)<span class=nb>{</span>
+    return x;
+<span class=nb>}</span>
+<span class=k>\end</span><span class=nb>{</span>lstlisting<span class=nb>}</span>
+<span class=k>\end</span><span class=nb>{</span>minipage<span class=nb>}</span>
+<span class=k>\rule</span><span class=nb>{</span>.1pt<span class=nb>}{</span>36mm<span class=nb>}</span>
+<span class=k>\hspace</span><span class=nb>{</span>5pt<span class=nb>}</span>
+<span class=k>\begin</span><span class=nb>{</span>minipage<span class=nb>}</span>[b]<span class=nb>{</span>0.3<span class=k>\columnwidth</span><span class=nb>}</span>
+<span class=k>\begin</span><span class=nb>{</span>lstlisting<span class=nb>}</span>
+int caller() <span class=nb>{</span>
+    return callee(5);
+<span class=nb>}</span>
+<span class=k>\end</span><span class=nb>{</span>lstlisting<span class=nb>}</span>
+<span class=k>\end</span><span class=nb>{</span>minipage<span class=nb>}</span>
+
+<span class=k>\end</span><span class=nb>{</span>framed<span class=nb>}</span>
+<span class=k>\caption</span><span class=nb>{</span>An example program<span class=nb>}</span>
+<span class=k>\end</span><span class=nb>{</span>figure<span class=nb>}</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>更新于 2022-01-19&nbsp;<a class=git-hash href=https://github.com/dillonzq/LoveIt/commit/97d8dc223699ba8458b0b17c0ade685eb9dbfbec target=_blank title="commit by hibert(fighter9010@gmail.com) 97d8dc223699ba8458b0b17c0ade685eb9dbfbec: new post">
-<i class="fas fa-hashtag fa-fw"></i>97d8dc2</a></span>
+<span>更新于 2022-01-21&nbsp;<a class=git-hash href=https://github.com/dillonzq/LoveIt/commit/727953a5dc1b7894bbd5ef5f712c9fee6d25b0fc target=_blank title="commit by hibert(fighter9010@gmail.com) 727953a5dc1b7894bbd5ef5f712c9fee6d25b0fc: new post">
+<i class="fas fa-hashtag fa-fw"></i>727953a</a></span>
 </div>
 <div class=post-info-license></div>
 </div>
 <div class=post-info-line>
 <div class=post-info-md><span>
-<a class=link-to-markdown href=/posts/2022/01/less-is-more/index.md target=_blank>阅读原始文档</a>
+<a class=link-to-markdown href=/posts/2022/01/latex-typeset-code-list/index.md target=_blank>阅读原始文档</a>
 </span></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://wanghuibin0.github.io/posts/2022/01/less-is-more/ data-title=少则得，多则惑 data-hashtags=修身><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://wanghuibin0.github.io/posts/2022/01/less-is-more/ data-hashtag=修身><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 Hacker News" data-sharer=hackernews data-url=https://wanghuibin0.github.io/posts/2022/01/less-is-more/ data-title=少则得，多则惑><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://wanghuibin0.github.io/posts/2022/01/less-is-more/ data-title=少则得，多则惑><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://wanghuibin0.github.io/posts/2022/01/less-is-more/ data-title=少则得，多则惑><i class="fab fa-weibo fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://wanghuibin0.github.io/posts/2022/01/latex-typeset-code-list/ data-title=LaTeX如何将两段代码并排放置 data-hashtags=LaTex><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://wanghuibin0.github.io/posts/2022/01/latex-typeset-code-list/ data-hashtag=LaTex><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 Hacker News" data-sharer=hackernews data-url=https://wanghuibin0.github.io/posts/2022/01/latex-typeset-code-list/ data-title=LaTeX如何将两段代码并排放置><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://wanghuibin0.github.io/posts/2022/01/latex-typeset-code-list/ data-title=LaTeX如何将两段代码并排放置><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://wanghuibin0.github.io/posts/2022/01/latex-typeset-code-list/ data-title=LaTeX如何将两段代码并排放置><i class="fab fa-weibo fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/%E4%BF%AE%E8%BA%AB/>修身</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/latex/>latex</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
 </section>
 </div>
-<div class=post-nav><a href=/posts/2022/01/growth-mindset/ class=prev rel=prev title=成长型思维><i class="fas fa-angle-left fa-fw"></i>成长型思维</a>
-<a href=/posts/2022/01/latex-typeset-code-list/ class=next rel=next title=LaTeX如何将两段代码并排放置>LaTeX如何将两段代码并排放置<i class="fas fa-angle-right fa-fw"></i></a></div>
+<div class=post-nav><a href=/posts/2022/01/less-is-more/ class=prev rel=prev title=少则得，多则惑><i class="fas fa-angle-left fa-fw"></i>少则得，多则惑</a></div>
 </div>
 <div id=comments><div id=valine class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.
