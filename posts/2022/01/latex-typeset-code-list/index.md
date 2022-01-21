@@ -3,8 +3,9 @@
 
 1.  排版一段代码用lstlisting环境（listing宏包）
 2.  将每一段代码用minipage环境包起来成为一个个box（注意设置每个minipage的宽度）
-3.  若要给代码整体画个外框，可以将所有box一起放在framed环境（framed宏包）中
-4.  整体放入figure环境中，成为浮动体
+3.  中间可以用\rule命令画线，用\hspace调整间距
+4.  若要给代码整体画个外框，可以将所有box一起放在framed环境（framed宏包）中
+5.  整体放入figure环境中，成为浮动体
 
 示例代码：
 
