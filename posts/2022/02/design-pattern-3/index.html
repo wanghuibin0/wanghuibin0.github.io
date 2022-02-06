@@ -4,20 +4,20 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>读书笔记-设计模式-创建型模式 - Hibert's blog</title><meta name=Description content="关于 LoveIt 主题"><meta property="og:title" content="读书笔记-设计模式-创建型模式">
-<meta property="og:description" content="简单工厂模式 场景 创建一系列类似的产品，这些产品有差异，但属于同一类 方案 创建产品的基类，为抽象产品 一系列具体的产品继承自抽象产品 创建一个工厂类">
+<title>读书笔记-设计模式-结构型模式 - Hibert's blog</title><meta name=Description content="关于 LoveIt 主题"><meta property="og:title" content="读书笔记-设计模式-结构型模式">
+<meta property="og:description" content="适配器模式 场景 想使用一个已经存在的类，而它的接口不符合需求 方案 基于多重继承的 Adaptor类实现需要的接口，同时私有继承（实现继承）那个已经">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://wanghuibin0.github.io/posts/2022/02/design-pattern-2/"><meta property="og:image" content="https://wanghuibin0.github.io/logo.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2022-02-06T16:41:00+08:00">
-<meta property="article:modified_time" content="2022-02-06T17:21:36+08:00">
+<meta property="og:url" content="https://wanghuibin0.github.io/posts/2022/02/design-pattern-3/"><meta property="og:image" content="https://wanghuibin0.github.io/logo.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-02-06T20:54:00+08:00">
+<meta property="article:modified_time" content="2022-02-06T20:55:17+08:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://wanghuibin0.github.io/logo.png">
-<meta name=twitter:title content="读书笔记-设计模式-创建型模式">
-<meta name=twitter:description content="简单工厂模式 场景 创建一系列类似的产品，这些产品有差异，但属于同一类 方案 创建产品的基类，为抽象产品 一系列具体的产品继承自抽象产品 创建一个工厂类">
+<meta name=twitter:title content="读书笔记-设计模式-结构型模式">
+<meta name=twitter:description content="适配器模式 场景 想使用一个已经存在的类，而它的接口不符合需求 方案 基于多重继承的 Adaptor类实现需要的接口，同时私有继承（实现继承）那个已经">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://wanghuibin0.github.io/posts/2022/02/design-pattern-2/><link rel=prev href=https://wanghuibin0.github.io/posts/2022/02/design-pattern-1/><link rel=next href=https://wanghuibin0.github.io/posts/2022/02/design-pattern-3/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"读书笔记-设计模式-创建型模式","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/wanghuibin0.github.io\/posts\/2022\/02\/design-pattern-2\/"},"image":["https:\/\/wanghuibin0.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"方法学, 读书笔记","wordcount":1498,"url":"https:\/\/wanghuibin0.github.io\/posts\/2022\/02\/design-pattern-2\/","datePublished":"2022-02-06T16:41:00+08:00","dateModified":"2022-02-06T17:21:36+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"hibert","logo":"https:\/\/wanghuibin0.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"hibert"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://wanghuibin0.github.io/posts/2022/02/design-pattern-3/><link rel=prev href=https://wanghuibin0.github.io/posts/2022/02/design-pattern-2/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"读书笔记-设计模式-结构型模式","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/wanghuibin0.github.io\/posts\/2022\/02\/design-pattern-3\/"},"image":["https:\/\/wanghuibin0.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"方法学, 读书笔记","wordcount":1317,"url":"https:\/\/wanghuibin0.github.io\/posts\/2022\/02\/design-pattern-3\/","datePublished":"2022-02-06T20:54:00+08:00","dateModified":"2022-02-06T20:55:17+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"hibert","logo":"https:\/\/wanghuibin0.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"hibert"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -83,10 +83,10 @@
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>目录</h2>
 <div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">读书笔记-设计模式-创建型模式</h1><div class=post-meta>
+</div><article class="page single"><h1 class="single-title animated flipInX">读书笔记-设计模式-结构型模式</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>hibert</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/><i class="far fa-folder fa-fw"></i>软件设计</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-02-06>2022-02-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1498 字&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id=/posts/2022/02/design-pattern-2/ class=leancloud_visitors data-flag-title=读书笔记-设计模式-创建型模式>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-02-06>2022-02-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1317 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id=/posts/2022/02/design-pattern-3/ class=leancloud_visitors data-flag-title=读书笔记-设计模式-结构型模式>
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
 </span>&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
@@ -96,7 +96,15 @@
 </div>
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
-<li><a href=#简单工厂模式>简单工厂模式</a>
+<li><a href=#适配器模式>适配器模式</a>
+<ul>
+<li><a href=#场景>场景</a></li>
+<li><a href=#方案>方案</a></li>
+<li><a href=#uml表示>UML表示</a></li>
+<li><a href=#两种方案的权衡>两种方案的权衡</a></li>
+</ul>
+</li>
+<li><a href=#桥接模式>桥接模式</a>
 <ul>
 <li><a href=#场景>场景</a></li>
 <li><a href=#方案>方案</a></li>
@@ -104,7 +112,19 @@
 <li><a href=#其他>其他</a></li>
 </ul>
 </li>
-<li><a href=#工厂方法模式>工厂方法模式</a>
+<li><a href=#组合模式>组合模式</a>
+<ul>
+<li><a href=#场景>场景</a></li>
+<li><a href=#方案>方案</a></li>
+<li><a href=#uml表示>UML表示</a>
+<ul>
+<li><a href=#类图>类图</a></li>
+<li><a href=#动态对象图>动态对象图</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href=#装饰模式>装饰模式</a>
 <ul>
 <li><a href=#场景>场景</a></li>
 <li><a href=#方案>方案</a></li>
@@ -112,151 +132,142 @@
 <li><a href=#其他>其他</a></li>
 </ul>
 </li>
-<li><a href=#抽象工厂模式>抽象工厂模式</a>
+<li><a href=#外观模式>外观模式</a>
 <ul>
 <li><a href=#场景>场景</a></li>
 <li><a href=#方案>方案</a></li>
 <li><a href=#uml表示>UML表示</a></li>
 </ul>
 </li>
-<li><a href=#建造者模式>建造者模式</a>
+<li><a href=#享元模式>享元模式</a>
 <ul>
 <li><a href=#场景>场景</a></li>
 <li><a href=#方案>方案</a></li>
 <li><a href=#uml表示>UML表示</a></li>
 </ul>
 </li>
-<li><a href=#原型模式>原型模式</a>
+<li><a href=#代理模式>代理模式</a>
 <ul>
 <li><a href=#场景>场景</a></li>
 <li><a href=#方案>方案</a></li>
 <li><a href=#uml表示>UML表示</a></li>
 </ul>
 </li>
-<li><a href=#单例模式>单例模式</a>
-<ul>
-<li><a href=#场景>场景</a></li>
-<li><a href=#方案>方案</a></li>
-<li><a href=#uml表示>UML表示</a></li>
-</ul>
-</li>
-<li><a href=#对创建型模式的讨论>对创建型模式的讨论</a></li>
+<li><a href=#结构型模式的讨论>结构型模式的讨论</a></li>
 </ul>
 </nav></div>
-</div><div class=content id=content><h2 id=简单工厂模式>简单工厂模式</h2>
+</div><div class=content id=content><h2 id=适配器模式>适配器模式</h2>
 <h3 id=场景>场景</h3>
-<p>创建一系列类似的产品，这些产品有差异，但属于同一类</p>
+<p>想使用一个已经存在的类，而它的接口不符合需求</p>
 <h3 id=方案>方案</h3>
-<ol>
-<li>创建产品的基类，为抽象产品</li>
-<li>一系列具体的产品继承自抽象产品</li>
-<li>创建一个工厂类，该工厂知道所有的具体产品，可以根据传入的参数构造相应的具体产品，返回抽象产品</li>
-<li>客户不需要知道具体产品类，只需要知道工厂类以及具体产品，就可以请求工厂为之构造具体产品</li>
-</ol>
+<ul>
+<li>基于多重继承的
+Adaptor类实现需要的接口，同时私有继承（实现继承）那个已经存在的类Adaptee。
+Adaptor类在实现接口的时候，将使用私有继承来的Adaptee来实现。</li>
+<li>基于对象组合的
+Adaptor类实现需要的接口，其内部保存一个Adaptee的引用。
+Adaptor类在实现接口的时候，将委托Adaptee完成相应的功能。</li>
+</ul>
 <h3 id=uml表示>UML表示</h3>
-<figure><img src=/ox-hugo/2022-02-06_14-59-16_screenshot.png>
+<ul>
+<li>
+<p>基于多重继承的</p>
+<figure><img src=/ox-hugo/2022-02-06_18-50-27_screenshot.png>
+</figure>
+</li>
+<li>
+<p>基于对象组合的</p>
+<figure><img src=/ox-hugo/2022-02-06_18-50-57_screenshot.png>
+</figure>
+</li>
+</ul>
+<h3 id=两种方案的权衡>两种方案的权衡</h3>
+<p>对象适配器比较灵活，允许适配Adaptee以及它的所有子类。而类适配器则不行。
+对象适配器需要额外的指针，类适配器不需要。</p>
+<h2 id=桥接模式>桥接模式</h2>
+<h3 id=场景>场景</h3>
+<p>要将抽象部分与它的实现部分分离，使它们都可以独立地变化</p>
+<h3 id=方案>方案</h3>
+<p>将抽象和实现部分分别放在独立的类层次结构中，其中一个针对接口，另一个针对实现，针对接口的类层次结构需要保存一个关于实现的对象的引用。</p>
+<h3 id=uml表示>UML表示</h3>
+<figure><img src=/ox-hugo/2022-02-06_19-04-45_screenshot.png>
 </figure>
 <h3 id=其他>其他</h3>
-<p>这里的工厂类也可以简化为一个普通的创建函数</p>
-<h2 id=工厂方法模式>工厂方法模式</h2>
+<p>虽然UML类图与对象适配器很相似，但是两者的目的不同，对象适配器是为了实现接口的转换，而桥接模式是为了将接口和实现分离。</p>
+<h2 id=组合模式>组合模式</h2>
 <h3 id=场景>场景</h3>
-<p>也是要创建同一类但有差异的产品，每个产品的创建过程都比之前要复杂一些。
-那么如果用简单工厂模式，工厂类的设计逻辑就比较复杂。</p>
+<p>处理具有整体-部分层次结构特征的对象，一些复杂的组件是由简单的组件组合而成，这些复杂的组件又是更复杂组件的组成部分。
+想对所有组件进行统一处理。</p>
 <h3 id=方案>方案</h3>
-<p>为每一个产品都配一个对应的工厂，这个工厂就只负责这一种产品</p>
-<ol>
-<li>创建一个抽象产品类和一个抽象工厂类</li>
-<li>具体的产品类继承自抽象产品类，具体的工厂类继承自抽象工厂类</li>
-<li>具体的产品和具体的工厂存在着一一对应关系，一个工厂只负责一种产品的构造</li>
-<li>客户不需要知道具体的产品，但需要知道具体的工厂，给具体工厂发请求就可以得到具体的产品了</li>
-</ol>
+<p>关键是让所有组件继承自同一接口。复杂组件保存有简单组件的引用。
+形成的动态结构是树状的。</p>
 <h3 id=uml表示>UML表示</h3>
-<figure><img src=/ox-hugo/2022-02-06_15-21-44_screenshot.png>
+<h4 id=类图>类图</h4>
+<figure><img src=/ox-hugo/2022-02-06_19-17-13_screenshot.png>
+</figure>
+<h4 id=动态对象图>动态对象图</h4>
+<figure><img src=/ox-hugo/2022-02-06_19-18-19_screenshot.png>
+</figure>
+<h2 id=装饰模式>装饰模式</h2>
+<h3 id=场景>场景</h3>
+<p>希望给某个对象而不是整个类添加一些功能。用继承方式不够灵活。</p>
+<h3 id=方案>方案</h3>
+<p>将组件嵌入另一个对象中（装饰对象保存有原组件的引用）。装饰对象接受到请求时，在将请求发给原组件前后，可以自由执行一些额外的动作。
+由于原组件和所有的装饰类都继承自同一接口，所以可以递归地嵌套多个装饰对象，从而添加任意多的功能。
+形成的动态结构有点类似于链表。</p>
+<h3 id=uml表示>UML表示</h3>
+<figure><img src=/ox-hugo/2022-02-06_19-32-11_screenshot.png>
 </figure>
 <h3 id=其他>其他</h3>
-<p>在C++中可以利用模板将产品和对应的工厂联系起来（将产品作为工厂模板的参数）</p>
-<figure><img src=/ox-hugo/2022-02-06_17-06-34_screenshot.png>
-</figure>
-<h2 id=抽象工厂模式>抽象工厂模式</h2>
+<p>与组合模式相比，可以将装饰视为一个退化的、仅有一个组件的组合。然而，装饰仅给对象添加一些额外的职责，而组合的目的在于对象的聚集。</p>
+<h2 id=外观模式>外观模式</h2>
 <h3 id=场景>场景</h3>
-<p>产品不再是只有同一类了，产品也有多类，但是这些不同类的产品又需要同时对客户提供</p>
+<p>为子系统的一组接口提供一个一致的界面</p>
 <h3 id=方案>方案</h3>
-<p>一个具体工厂不再只生产一种具体产品了，而是负责生产一组产品。</p>
+<p>提供一个高层接口，给客户一个一致的界面。而该接口的具体实现委托给子系统。</p>
+<h3 id=uml表示>UML表示</h3>
+<figure><img src=/ox-hugo/2022-02-06_19-43-44_screenshot.png>
+</figure>
+<h2 id=享元模式>享元模式</h2>
+<h3 id=场景>场景</h3>
+<p>运行过程中创建了大量的对象，造成很大的存储开销。而且对象的大多数状态都可变为外部状态。</p>
+<h3 id=方案>方案</h3>
+<p>享元模式通过共享技术实现相同或相似对象的重用。
+在享元模式中可以共享的相同内容称为内部状态(Intrinsic State)，而那些需要外部环境来设置的不能共享的内容称为外部状态(Extrinsic State)，
+由于区分了内部状态和外部状态，因此可以通过设置不同的外部状态使得相同的对象可以具有一些不同的特征，而相同的内部状态是可以共享的。</p>
+<h3 id=uml表示>UML表示</h3>
+<figure><img src=/ox-hugo/2022-02-06_20-34-22_screenshot.png>
+</figure>
+<h2 id=代理模式>代理模式</h2>
+<h3 id=场景>场景</h3>
+<p>一个客户不想或者不能直接引用一个对象</p>
+<h3 id=方案>方案</h3>
+<p>通过引入一个新的对象（如小图片和远程代理 对象）来实现对真实对象的操作或者将新的对象作为真实对象的一个替身。</p>
+<h3 id=uml表示>UML表示</h3>
+<figure><img src=/ox-hugo/2022-02-06_20-43-37_screenshot.png>
+</figure>
+<h2 id=结构型模式的讨论>结构型模式的讨论</h2>
 <ol>
-<li>对于每一类产品，都创建一个抽象产品类</li>
-<li>对于每一个抽象产品类，都创建一系列具体产品类</li>
-<li>创建一个抽象工厂类</li>
-<li>创建一系列具体工厂类，每个具体工厂都负责一组产品的构造</li>
-<li>客户不知道具体产品，只知道抽象产品类，也知道具体工厂类，给具体工厂发请求就可以得到那一组具体的产品了</li>
-</ol>
-<h3 id=uml表示>UML表示</h3>
-<figure><img src=/ox-hugo/2022-02-06_15-32-45_screenshot.png>
-</figure>
-<h2 id=建造者模式>建造者模式</h2>
-<h3 id=场景>场景</h3>
-<p>一个复杂对象拥有多个组成部分，如汽车，它包括车轮、方向盘、发送机等各种部件。</p>
-<h3 id=方案>方案</h3>
-<p>一步一步构造整个复杂对象。</p>
-<ol>
-<li>创建一个抽象类builder，和若干个具体builder</li>
-<li>builder负责构造复杂对象的各个部分</li>
-<li>创建一个具体类director，内部保存了一个builder的引用，但不知道builder具体是哪个类</li>
-<li>director负责构造整个复杂对象，而构造的方法是给自己关联的builder发消息，让builder把各个组成部分构造出来</li>
-<li>客户只需要知道具体的builder，把这个builder交给director，然后请求director构造复杂对象即可</li>
-</ol>
-<h3 id=uml表示>UML表示</h3>
-<figure><img src=/ox-hugo/2022-02-06_16-19-54_screenshot.png>
-</figure>
-<h2 id=原型模式>原型模式</h2>
-<h3 id=场景>场景</h3>
-<p>原型模式多用于创建复杂的或者耗时的实例，因为这种情况下，复制一个已经存在的实例使程序运行更高效</p>
-<h3 id=方案>方案</h3>
-<p>给对象添加一个clone方法，用于实现对自身的拷贝。
-需要注意的是clone的具体实现，是深拷贝还是浅拷贝，要视具体情况而定。</p>
-<h3 id=uml表示>UML表示</h3>
-<figure><img src=/ox-hugo/2022-02-06_16-28-42_screenshot.png>
-</figure>
-<h2 id=单例模式>单例模式</h2>
-<h3 id=场景>场景</h3>
-<p>有些类只需要唯一实例</p>
-<h3 id=方案>方案</h3>
-<p>一个类能返回对象一个引用(永远是同一个)和一个获得该实例的方法（必须是静态方法，通常使用getInstance这个名称）；
-当我们调用这个方法时，如果类持有的引用不为空就返回这个引用，如果类保持的引用为空就创建该类的实例并将实例的引用赋予该类保持的引用；
-同时我们还将该类的构造函数定义为私有方法，这样其他处的代码就无法通过调用该类的构造函数来实例化该类的对象，只有通过该类提供的静态方法来得到该类的唯一实例。</p>
-<p>多线程场景下要小心设计。</p>
-<h3 id=uml表示>UML表示</h3>
-<figure><img src=/ox-hugo/2022-02-06_16-34-11_screenshot.png>
-</figure>
-<h2 id=对创建型模式的讨论>对创建型模式的讨论</h2>
-<ol>
-<li>抽象工厂模式，建造者模式，原型模式都是依赖于对象组合，都涉及到创建一个新的负责创建产品对象的「工厂对象」
-<ul>
-<li>抽象工厂模式由这个工厂对象产生多个类的对象</li>
-<li>建造者模式由这个工厂对象使用一个相对复杂的协议，逐步创建一个复杂产品</li>
-<li>原型模式由该工厂对象通过拷贝原型对象来创建产品对象</li>
-</ul>
-</li>
-<li>如何选择创建型模式
-<ul>
-<li>先从最简单的如工厂方法模式开始，当发现需要更大的灵活性时，再根据需要选用其他的创建型模式</li>
-</ul>
-</li>
+<li>适配器模式和桥接模式
+适配器用于解决两个已有接口不匹配的问题。桥接模式是为了将抽象和实现两者独立演化。</li>
+<li>组合模式和装饰模式
+都基于递归组合来组织可变数目的对象，但目的不同。组合模式旨在使整体与部分统一处理，而装饰模式旨在给对象添加职责。</li>
 </ol>
 </div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>更新于 2022-02-06&nbsp;<a class=git-hash href=https://github.com/dillonzq/LoveIt/commit/4c5a15004f63740f5353e498f337ce9732b3f8ca target=_blank title="commit by hibert(fighter9010@gmail.com) 4c5a15004f63740f5353e498f337ce9732b3f8ca: edit">
-<i class="fas fa-hashtag fa-fw"></i>4c5a150</a></span>
+<span>更新于 2022-02-06&nbsp;<a class=git-hash href=https://github.com/dillonzq/LoveIt/commit/be7da4fec6557b284289b848fce2cd186206e287 target=_blank title="commit by hibert(fighter9010@gmail.com) be7da4fec6557b284289b848fce2cd186206e287: new post">
+<i class="fas fa-hashtag fa-fw"></i>be7da4f</a></span>
 </div>
 <div class=post-info-license></div>
 </div>
 <div class=post-info-line>
 <div class=post-info-md><span>
-<a class=link-to-markdown href=/posts/2022/02/design-pattern-2/index.md target=_blank>阅读原始文档</a>
+<a class=link-to-markdown href=/posts/2022/02/design-pattern-3/index.md target=_blank>阅读原始文档</a>
 </span></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-2/ data-title=读书笔记-设计模式-创建型模式 data-hashtags=方法学,读书笔记><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-2/ data-hashtag=方法学><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 Hacker News" data-sharer=hackernews data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-2/ data-title=读书笔记-设计模式-创建型模式><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-2/ data-title=读书笔记-设计模式-创建型模式><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-2/ data-title=读书笔记-设计模式-创建型模式><i class="fab fa-weibo fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-3/ data-title=读书笔记-设计模式-结构型模式 data-hashtags=方法学,读书笔记><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-3/ data-hashtag=方法学><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 Hacker News" data-sharer=hackernews data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-3/ data-title=读书笔记-设计模式-结构型模式><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-3/ data-title=读书笔记-设计模式-结构型模式><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-3/ data-title=读书笔记-设计模式-结构型模式><i class="fab fa-weibo fa-fw"></i></a></span>
 </div>
 </div>
 </div>
@@ -266,8 +277,7 @@
 <span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
 </section>
 </div>
-<div class=post-nav><a href=/posts/2022/02/design-pattern-1/ class=prev rel=prev title=读书笔记-设计模式-引言><i class="fas fa-angle-left fa-fw"></i>读书笔记-设计模式-引言</a>
-<a href=/posts/2022/02/design-pattern-3/ class=next rel=next title=读书笔记-设计模式-结构型模式>读书笔记-设计模式-结构型模式<i class="fas fa-angle-right fa-fw"></i></a></div>
+<div class=post-nav><a href=/posts/2022/02/design-pattern-2/ class=prev rel=prev title=读书笔记-设计模式-创建型模式><i class="fas fa-angle-left fa-fw"></i>读书笔记-设计模式-创建型模式</a></div>
 </div>
 <div id=comments><div id=valine class=comment></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.
