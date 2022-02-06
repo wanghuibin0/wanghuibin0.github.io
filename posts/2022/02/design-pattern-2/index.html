@@ -9,7 +9,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://wanghuibin0.github.io/posts/2022/02/design-pattern-2/"><meta property="og:image" content="https://wanghuibin0.github.io/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2022-02-06T16:41:00+08:00">
-<meta property="article:modified_time" content="2022-02-06T16:42:01+08:00">
+<meta property="article:modified_time" content="2022-02-06T17:07:15+08:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://wanghuibin0.github.io/logo.png">
 <meta name=twitter:title content="读书笔记-设计模式-创建型模式">
@@ -17,7 +17,7 @@
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://wanghuibin0.github.io/posts/2022/02/design-pattern-2/><link rel=prev href=https://wanghuibin0.github.io/posts/2022/02/design-pattern-1/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"读书笔记-设计模式-创建型模式","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/wanghuibin0.github.io\/posts\/2022\/02\/design-pattern-2\/"},"image":["https:\/\/wanghuibin0.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"方法学, 读书笔记","wordcount":1264,"url":"https:\/\/wanghuibin0.github.io\/posts\/2022\/02\/design-pattern-2\/","datePublished":"2022-02-06T16:41:00+08:00","dateModified":"2022-02-06T16:42:01+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"hibert","logo":"https:\/\/wanghuibin0.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"hibert"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://wanghuibin0.github.io/posts/2022/02/design-pattern-2/><link rel=prev href=https://wanghuibin0.github.io/posts/2022/02/design-pattern-1/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"读书笔记-设计模式-创建型模式","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/wanghuibin0.github.io\/posts\/2022\/02\/design-pattern-2\/"},"image":["https:\/\/wanghuibin0.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"方法学, 读书笔记","wordcount":1304,"url":"https:\/\/wanghuibin0.github.io\/posts\/2022\/02\/design-pattern-2\/","datePublished":"2022-02-06T16:41:00+08:00","dateModified":"2022-02-06T17:07:15+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"hibert","logo":"https:\/\/wanghuibin0.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"hibert"},"description":""}</script></head>
 <body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -85,7 +85,7 @@
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">读书笔记-设计模式-创建型模式</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>hibert</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/><i class="far fa-folder fa-fw"></i>软件设计</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-02-06>2022-02-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1264 字&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-02-06>2022-02-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1304 字&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id=/posts/2022/02/design-pattern-2/ class=leancloud_visitors data-flag-title=读书笔记-设计模式-创建型模式>
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
 </span>&nbsp;</div>
@@ -109,6 +109,7 @@
 <li><a href=#场景>场景</a></li>
 <li><a href=#方案>方案</a></li>
 <li><a href=#uml表示>UML表示</a></li>
+<li><a href=#其他>其他</a></li>
 </ul>
 </li>
 <li><a href=#抽象工厂模式>抽象工厂模式</a>
@@ -171,6 +172,10 @@
 <h3 id=uml表示>UML表示</h3>
 <figure><img src=/ox-hugo/2022-02-06_15-21-44_screenshot.png>
 </figure>
+<h3 id=其他>其他</h3>
+<p>在C++中可以利用模板将产品和对应的工厂联系起来（将产品作为工厂模板的参数）</p>
+<figure><img src=/ox-hugo/2022-02-06_17-06-34_screenshot.png>
+</figure>
 <h2 id=抽象工厂模式>抽象工厂模式</h2>
 <h3 id=场景>场景</h3>
 <p>产品不再是只有同一类了，产品也有多类，但是这些不同类的产品又需要同时对客户提供</p>
@@ -225,8 +230,8 @@
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>更新于 2022-02-06&nbsp;<a class=git-hash href=https://github.com/dillonzq/LoveIt/commit/7e5342a4ff46297a704eb3a34862a8a2b719bf6e target=_blank title="commit by hibert(fighter9010@gmail.com) 7e5342a4ff46297a704eb3a34862a8a2b719bf6e: new post">
-<i class="fas fa-hashtag fa-fw"></i>7e5342a</a></span>
+<span>更新于 2022-02-06&nbsp;<a class=git-hash href=https://github.com/dillonzq/LoveIt/commit/c9a38b1e2adb7fbc73adab197a596b7dbb87e2a8 target=_blank title="commit by hibert(fighter9010@gmail.com) c9a38b1e2adb7fbc73adab197a596b7dbb87e2a8: edit a post">
+<i class="fas fa-hashtag fa-fw"></i>c9a38b1</a></span>
 </div>
 <div class=post-info-license></div>
 </div>
