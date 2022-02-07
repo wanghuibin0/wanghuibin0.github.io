@@ -44,3 +44,8 @@
 2.  做成这个事情的收益是大还是小？
 3.  这个收益对未来的影响是否深远？
 
+
+## 参考 {#参考}
+
+-   [收益值与半衰期 | Notes](https://yzhang-gh.github.io/notes/reading/reward-and-half-life.html)
+
