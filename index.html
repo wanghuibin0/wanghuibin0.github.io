@@ -82,6 +82,16 @@
 <main class=main>
 <div class=container><div class="page home" posts><div class=home-profile><div class=home-avatar><a href=/posts/ title=所有文章><img class=lazyload src=/svg/loading.min.svg data-src=/images/avatar.jpg data-srcset="/images/avatar.jpg, /images/avatar.jpg 1.5x, /images/avatar.jpg 2x" data-sizes=auto alt=/images/avatar.jpg title=/images/avatar.jpg></a></div><h2 class=home-subtitle><div id=id-1 class=typeit></div></h2><div class=links><a href=https://github.com/wanghuibin0 title=GitHub target=_blank rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a><a href=https://www.zhihu.com/people/hb-wang title=知乎 target=_blank rel="noopener noreffer me"><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/zhihu.svg></i></a><a href=mailto:fighter9010@gmail.com title=Email rel=me><i class="far fa-envelope fa-fw"></i></a><a href=/index.xml title=RSS target=_blank rel="noopener noreffer me"><i class="fas fa-rss fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
+<a href=/posts/2022/02/cpp-stdmove/>从语义的角度理解std::move</a>
+</h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>hibert</a></span>&nbsp;<span class=post-publish>发布于 <time datetime=2022-02-16>2022-02-16</time></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/><i class="far fa-folder fa-fw"></i>编程语言</a></span></div><div class=content>问题 所谓右值rvalue，表明这个对象是一个临时对象，它所拥有的资源可以随时被回收。 而对于左值，机器会保证它所拥有的资源在生存期内一直有效。</div><div class=post-footer>
+<a href=/posts/2022/02/cpp-stdmove/>阅读全文</a><div class=post-tags>
+<i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/cpp/>cpp</a></div></div>
+</article><article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
+<a href=/posts/2022/02/cpp-stdforward/>完美转发与std::forward</a>
+</h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>hibert</a></span>&nbsp;<span class=post-publish>发布于 <time datetime=2022-02-16>2022-02-16</time></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/><i class="far fa-folder fa-fw"></i>编程语言</a></span></div><div class=content>问题 一个模板函数f调用另一个函数g时，要将自己的参数转发给g，在转发过程中，有时我们想要保持被转发参数的类型不变，包括是否是const，是左</div><div class=post-footer>
+<a href=/posts/2022/02/cpp-stdforward/>阅读全文</a><div class=post-tags>
+<i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/cpp/>cpp</a></div></div>
+</article><article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
 <a href=/posts/2022/02/cpp-value-category/>C++值分类</a>
 </h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>hibert</a></span>&nbsp;<span class=post-publish>发布于 <time datetime=2022-02-16>2022-02-16</time></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/><i class="far fa-folder fa-fw"></i>编程语言</a></span></div><div class=content>xvalue代表将亡值。典型的就是std::move形成的值。 参考：Value categories - cppreference.com</div><div class=post-footer>
 <a href=/posts/2022/02/cpp-value-category/>阅读全文</a><div class=post-tags>
@@ -120,16 +130,6 @@
 <a href=/posts/2022/02/design-pattern-3/>读书笔记-设计模式-结构型模式</a>
 </h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>hibert</a></span>&nbsp;<span class=post-publish>发布于 <time datetime=2022-02-06>2022-02-06</time></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/><i class="far fa-folder fa-fw"></i>软件设计</a></span></div><div class=content>适配器模式 场景 想使用一个已经存在的类，而它的接口不符合需求 方案 基于多重继承的 Adaptor类实现需要的接口，同时私有继承（实现继承）那个已经</div><div class=post-footer>
 <a href=/posts/2022/02/design-pattern-3/>阅读全文</a><div class=post-tags>
-<i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/%E6%96%B9%E6%B3%95%E5%AD%A6/>方法学</a>,&nbsp;<a href=/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/>读书笔记</a></div></div>
-</article><article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
-<a href=/posts/2022/02/design-pattern-2/>读书笔记-设计模式-创建型模式</a>
-</h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>hibert</a></span>&nbsp;<span class=post-publish>发布于 <time datetime=2022-02-06>2022-02-06</time></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/><i class="far fa-folder fa-fw"></i>软件设计</a></span></div><div class=content>简单工厂模式 场景 创建一系列类似的产品，这些产品有差异，但属于同一类 方案 创建产品的基类，为抽象产品 一系列具体的产品继承自抽象产品 创建一个工厂类</div><div class=post-footer>
-<a href=/posts/2022/02/design-pattern-2/>阅读全文</a><div class=post-tags>
-<i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/%E6%96%B9%E6%B3%95%E5%AD%A6/>方法学</a>,&nbsp;<a href=/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/>读书笔记</a></div></div>
-</article><article class="single summary" itemscope itemtype=http://schema.org/Article><h1 class=single-title itemprop="name headline">
-<a href=/posts/2022/02/design-pattern-1/>读书笔记-设计模式-引言</a>
-</h1><div class=post-meta><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>hibert</a></span>&nbsp;<span class=post-publish>发布于 <time datetime=2022-02-06>2022-02-06</time></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/><i class="far fa-folder fa-fw"></i>软件设计</a></span></div><div class=content>什么是设计模式 特定场景下一类问题的通用解决方案。 需要说明的是，设计模式跟所使用的编程语言是很相关的。 比如，面向对象语言中的一些行为型模式在函</div><div class=post-footer>
-<a href=/posts/2022/02/design-pattern-1/>阅读全文</a><div class=post-tags>
 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/%E6%96%B9%E6%B3%95%E5%AD%A6/>方法学</a>,&nbsp;<a href=/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/>读书笔记</a></div></div>
 </article><ul class=pagination><li class="page-item active">
 <span class=page-link>
