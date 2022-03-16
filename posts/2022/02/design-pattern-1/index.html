@@ -1,280 +1,33 @@
-<!doctype html><html lang=zh-cn>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=robots content="noodp">
-<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>读书笔记-设计模式-引言 - Hibert's blog</title><meta name=Description content="关于 LoveIt 主题"><meta property="og:title" content="读书笔记-设计模式-引言">
-<meta property="og:description" content="什么是设计模式 特定场景下一类问题的通用解决方案。 需要说明的是，设计模式跟所使用的编程语言是很相关的。 比如，面向对象语言中的一些行为型模式在函">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://wanghuibin0.github.io/posts/2022/02/design-pattern-1/"><meta property="og:image" content="https://wanghuibin0.github.io/logo.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2022-02-06T09:30:00+08:00">
-<meta property="article:modified_time" content="2022-02-07T09:32:19+08:00">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://wanghuibin0.github.io/logo.png">
-<meta name=twitter:title content="读书笔记-设计模式-引言">
-<meta name=twitter:description content="什么是设计模式 特定场景下一类问题的通用解决方案。 需要说明的是，设计模式跟所使用的编程语言是很相关的。 比如，面向对象语言中的一些行为型模式在函">
-<meta name=application-name content="LoveIt">
-<meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
-<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://wanghuibin0.github.io/posts/2022/02/design-pattern-1/><link rel=prev href=https://wanghuibin0.github.io/posts/2022/02/better-decision/><link rel=next href=https://wanghuibin0.github.io/posts/2022/02/design-pattern-2/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"读书笔记-设计模式-引言","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/wanghuibin0.github.io\/posts\/2022\/02\/design-pattern-1\/"},"image":["https:\/\/wanghuibin0.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"方法学, 读书笔记","wordcount":1665,"url":"https:\/\/wanghuibin0.github.io\/posts\/2022\/02\/design-pattern-1\/","datePublished":"2022-02-06T09:30:00+08:00","dateModified":"2022-02-07T09:32:19+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"hibert","logo":"https:\/\/wanghuibin0.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"hibert"},"description":""}</script></head>
-<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
-<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=/ title="Hibert's blog"><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span>Practice, Rethink, Improve</a>
-</div>
-<div class=menu>
-<div class=menu-inner><a class=menu-item href=/posts/> 所有文章 </a><a class=menu-item href=/tags/> 标签 </a><a class=menu-item href=/categories/> 分类 </a><a class=menu-item href=/categories/documentation/> 文档 </a><a class=menu-item href=/about/> 关于 </a><a class=menu-item href=https://github.com/wanghuibin0 title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>读书笔记-设计模式-引言 - Hibert's blog</title><meta name=Description content="关于 LoveIt 主题"><meta property="og:title" content="读书笔记-设计模式-引言"><meta property="og:description" content="什么是设计模式 特定场景下一类问题的通用解决方案。 需要说明的是，设计模式跟所使用的编程语言是很相关的。 比如，面向对象语言中的一些行为型模式在函"><meta property="og:type" content="article"><meta property="og:url" content="https://wanghuibin0.github.io/posts/2022/02/design-pattern-1/"><meta property="og:image" content="https://wanghuibin0.github.io/logo.png"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-02-06T09:30:00+08:00"><meta property="article:modified_time" content="2022-02-07T09:32:19+08:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://wanghuibin0.github.io/logo.png"><meta name=twitter:title content="读书笔记-设计模式-引言"><meta name=twitter:description content="什么是设计模式 特定场景下一类问题的通用解决方案。 需要说明的是，设计模式跟所使用的编程语言是很相关的。 比如，面向对象语言中的一些行为型模式在函"><meta name=application-name content="LoveIt"><meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://wanghuibin0.github.io/posts/2022/02/design-pattern-1/><link rel=prev href=https://wanghuibin0.github.io/posts/2022/02/better-decision/><link rel=next href=https://wanghuibin0.github.io/posts/2022/02/design-pattern-2/><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"读书笔记-设计模式-引言","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/wanghuibin0.github.io\/posts\/2022\/02\/design-pattern-1\/"},"image":["https:\/\/wanghuibin0.github.io\/images\/Apple-Devices-Preview.png"],"genre":"posts","keywords":"方法学, 读书笔记","wordcount":1665,"url":"https:\/\/wanghuibin0.github.io\/posts\/2022\/02\/design-pattern-1\/","datePublished":"2022-02-06T09:30:00+08:00","dateModified":"2022-02-07T09:32:19+08:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"hibert","logo":"https:\/\/wanghuibin0.github.io\/images\/avatar.jpg"},"author":{"@type":"Person","name":"hibert"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"auto"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"auto"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="Hibert's blog"><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span>Practice, Rethink, Improve</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>所有文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><a class=menu-item href=/categories/documentation/>文档 </a><a class=menu-item href=/about/>关于 </a><a class=menu-item href=https://github.com/wanghuibin0 title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=搜索>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=清空>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-desktop>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</span><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
-<i class="fas fa-adjust fa-fw"></i>
-</a>
-</div>
-</div>
-</div>
-</header><header class=mobile id=header-mobile>
-<div class=header-container>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=/ title="Hibert's blog"><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span>Practice, Rethink, Improve</a>
-</div>
-<div class=menu-toggle id=menu-toggle-mobile>
-<span></span><span></span><span></span>
-</div>
-</div>
-<div class=menu id=menu-mobile><div class=search-wrapper>
-<div class="search mobile" id=search-mobile>
-<input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=搜索>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=清空>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-mobile>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</div>
-<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
-取消
-</a>
-</div><a class=menu-item href=/posts/ title>所有文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a class=menu-item href=/categories/documentation/ title>文档</a><a class=menu-item href=/about/ title>关于</a><a class=menu-item href=https://github.com/wanghuibin0 title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
-<i class="fas fa-adjust fa-fw"></i>
-</a></div>
-</div>
-</header>
-<div class="search-dropdown desktop">
-<div id=search-dropdown-desktop></div>
-</div>
-<div class="search-dropdown mobile">
-<div id=search-dropdown-mobile></div>
-</div>
-<main class=main>
-<div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>目录</h2>
-<div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">读书笔记-设计模式-引言</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>hibert</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/><i class="far fa-folder fa-fw"></i>软件设计</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-02-06>2022-02-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1665 字&nbsp;
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=清空><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="Hibert's blog"><span class=header-title-pre><i class="far fa-kiss-wink-heart fa-fw"></i></span>Practice, Rethink, Improve</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=搜索><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=清空><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>取消</a></div><a class=menu-item href=/posts/ title>所有文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a class=menu-item href=/categories/documentation/ title>文档</a><a class=menu-item href=/about/ title>关于</a><a class=menu-item href=https://github.com/wanghuibin0 title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">读书笔记-设计模式-引言</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>hibert</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/><i class="far fa-folder fa-fw"></i>软件设计</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-02-06>2022-02-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1665 字&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id=/posts/2022/02/design-pattern-1/ class=leancloud_visitors data-flag-title=读书笔记-设计模式-引言>
 <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
-</span>&nbsp;</div>
-</div><div class="details toc" id=toc-static kept>
-<div class="details-summary toc-title">
-<span>目录</span>
-<span><i class="details-icon fas fa-angle-right"></i></span>
-</div>
-<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
-<ul>
-<li><a href=#什么是设计模式>什么是设计模式</a>
-<ul>
-<li><a href=#四个基本要素>四个基本要素</a></li>
-</ul>
-</li>
-<li><a href=#设计模式怎样解决设计问题>设计模式怎样解决设计问题</a>
-<ul>
-<li><a href=#寻找合适的对象>寻找合适的对象</a>
-<ul>
-<li><a href=#面向对象设计方法学>面向对象设计方法学</a></li>
-<li><a href=#设计模式如何起作用>设计模式如何起作用</a></li>
-</ul>
-</li>
-<li><a href=#决定对象的粒度>决定对象的粒度</a></li>
-<li><a href=#指定对象接口>指定对象接口</a>
-<ul>
-<li><a href=#操作的型构signature>操作的型构signature</a></li>
-<li><a href=#对象的接口interface>对象的接口interface</a></li>
-<li><a href=#类型type>类型type</a></li>
-<li><a href=#接口的实现>接口的实现</a></li>
-<li><a href=#动态绑定>动态绑定</a></li>
-<li><a href=#多态polymorphism>多态polymorphism</a></li>
-<li><a href=#设计模式如何起作用>设计模式如何起作用</a></li>
-</ul>
-</li>
-<li><a href=#描述对象的实现>描述对象的实现</a>
-<ul>
-<li><a href=#实例化>实例化</a></li>
-<li><a href=#类继承>类继承</a></li>
-<li><a href=#抽象类>抽象类</a></li>
-<li><a href=#混入类mixin>混入类mixin</a></li>
-<li><a href=#类class和类型type的区别>类class和类型type的区别</a></li>
-<li><a href=#类继承和接口继承的区别>类继承和接口继承的区别</a></li>
-<li><a href=#针对接口编程>针对接口编程</a></li>
-</ul>
-</li>
-<li><a href=#运用复用机制>运用复用机制</a>
-<ul>
-<li><a href=#继承与组合>继承与组合</a></li>
-<li><a href=#委托>委托</a></li>
-<li><a href=#继承和参数化类型>继承和参数化类型</a></li>
-</ul>
-</li>
-<li><a href=#关联运行时刻和编译时刻的结构>关联运行时刻和编译时刻的结构</a></li>
-<li><a href=#设计应支持变化>设计应支持变化</a></li>
-</ul>
-</li>
-<li><a href=#设计模式的分类>设计模式的分类</a></li>
-</ul>
-</nav></div>
-</div><div class=content id=content><h2 id=什么是设计模式>什么是设计模式</h2>
-<p>特定场景下一类问题的通用解决方案。</p>
-<p>需要说明的是，设计模式跟所使用的编程语言是很相关的。
+</span>&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#什么是设计模式>什么是设计模式</a><ul><li><a href=#四个基本要素>四个基本要素</a></li></ul></li><li><a href=#设计模式怎样解决设计问题>设计模式怎样解决设计问题</a><ul><li><a href=#寻找合适的对象>寻找合适的对象</a><ul><li><a href=#面向对象设计方法学>面向对象设计方法学</a></li><li><a href=#设计模式如何起作用>设计模式如何起作用</a></li></ul></li><li><a href=#决定对象的粒度>决定对象的粒度</a></li><li><a href=#指定对象接口>指定对象接口</a><ul><li><a href=#操作的型构signature>操作的型构signature</a></li><li><a href=#对象的接口interface>对象的接口interface</a></li><li><a href=#类型type>类型type</a></li><li><a href=#接口的实现>接口的实现</a></li><li><a href=#动态绑定>动态绑定</a></li><li><a href=#多态polymorphism>多态polymorphism</a></li><li><a href=#设计模式如何起作用>设计模式如何起作用</a></li></ul></li><li><a href=#描述对象的实现>描述对象的实现</a><ul><li><a href=#实例化>实例化</a></li><li><a href=#类继承>类继承</a></li><li><a href=#抽象类>抽象类</a></li><li><a href=#混入类mixin>混入类mixin</a></li><li><a href=#类class和类型type的区别>类class和类型type的区别</a></li><li><a href=#类继承和接口继承的区别>类继承和接口继承的区别</a></li><li><a href=#针对接口编程>针对接口编程</a></li></ul></li><li><a href=#运用复用机制>运用复用机制</a><ul><li><a href=#继承与组合>继承与组合</a></li><li><a href=#委托>委托</a></li><li><a href=#继承和参数化类型>继承和参数化类型</a></li></ul></li><li><a href=#关联运行时刻和编译时刻的结构>关联运行时刻和编译时刻的结构</a></li><li><a href=#设计应支持变化>设计应支持变化</a></li></ul></li><li><a href=#设计模式的分类>设计模式的分类</a></li></ul></nav></div></div><div class=content id=content><h2 id=什么是设计模式>什么是设计模式</h2><p>特定场景下一类问题的通用解决方案。</p><p>需要说明的是，设计模式跟所使用的编程语言是很相关的。
 比如，面向对象语言中的一些行为型模式在函数式语言中就不需要，而在面向对象语言直接支持「继承」、「封装」和「多态」，如果要在过程式语言中实现，也就需要特殊的「模式」了。
-所以，所谓的模式跟编程语言自身的能力息息相关。</p>
-<h3 id=四个基本要素>四个基本要素</h3>
-<ol>
-<li>模式名</li>
-<li>问题
-解决的是什么样的问题</li>
-<li>解决方案</li>
-<li>效果</li>
-</ol>
-<h2 id=设计模式怎样解决设计问题>设计模式怎样解决设计问题</h2>
-<h3 id=寻找合适的对象>寻找合适的对象</h3>
-<p>面向对象程序由对象组成，对象包括数据和对数据进行操作的方法。对象在受到客户的请求（消息）后，执行相应的操作。
-客户请求是使对象执行操作的唯一方法，操作又是改变对象内部状态的唯一方法。</p>
-<p>面向对象设计最困难的部分是将系统分解为对象集合。</p>
-<h4 id=面向对象设计方法学>面向对象设计方法学</h4>
-<ul>
-<li>写出问题描述，挑出名词和动词，进而创建相应的类和操作</li>
-<li>关注于系统的协作和职责关系</li>
-<li>对现实世界进行建模，再将分析时发现的对象转化到设计中</li>
-</ul>
-<p>各方法的优劣并无定论</p>
-<h4 id=设计模式如何起作用>设计模式如何起作用</h4>
-<p>帮你确定并不明显的抽象和描述这些抽象的对象，使设计更灵活、复用性更好。</p>
-<h3 id=决定对象的粒度>决定对象的粒度</h3>
-<h3 id=指定对象接口>指定对象接口</h3>
-<h4 id=操作的型构signature>操作的型构signature</h4>
-<p>对象声明的每一个操作指定操作名、作为参数的对象和返回值</p>
-<h4 id=对象的接口interface>对象的接口interface</h4>
-<p>所定义的所有操作型构的集合。描述了该对象所能接受的全部请求的集合。</p>
-<h4 id=类型type>类型type</h4>
-<p>是用来标识特定接口的一个名字。
+所以，所谓的模式跟编程语言自身的能力息息相关。</p><h3 id=四个基本要素>四个基本要素</h3><ol><li>模式名</li><li>问题
+解决的是什么样的问题</li><li>解决方案</li><li>效果</li></ol><h2 id=设计模式怎样解决设计问题>设计模式怎样解决设计问题</h2><h3 id=寻找合适的对象>寻找合适的对象</h3><p>面向对象程序由对象组成，对象包括数据和对数据进行操作的方法。对象在受到客户的请求（消息）后，执行相应的操作。
+客户请求是使对象执行操作的唯一方法，操作又是改变对象内部状态的唯一方法。</p><p>面向对象设计最困难的部分是将系统分解为对象集合。</p><h4 id=面向对象设计方法学>面向对象设计方法学</h4><ul><li>写出问题描述，挑出名词和动词，进而创建相应的类和操作</li><li>关注于系统的协作和职责关系</li><li>对现实世界进行建模，再将分析时发现的对象转化到设计中</li></ul><p>各方法的优劣并无定论</p><h4 id=设计模式如何起作用>设计模式如何起作用</h4><p>帮你确定并不明显的抽象和描述这些抽象的对象，使设计更灵活、复用性更好。</p><h3 id=决定对象的粒度>决定对象的粒度</h3><h3 id=指定对象接口>指定对象接口</h3><h4 id=操作的型构signature>操作的型构signature</h4><p>对象声明的每一个操作指定操作名、作为参数的对象和返回值</p><h4 id=对象的接口interface>对象的接口interface</h4><p>所定义的所有操作型构的集合。描述了该对象所能接受的全部请求的集合。</p><h4 id=类型type>类型type</h4><p>是用来标识特定接口的一个名字。
 一个对象可以有许多类型，且不同的对象可以共享同一个类型。
 当一个类型的接口包含另一个类型的接口时，我们说它是另一个类型的子类型subtype，另一个类型则称为它的超类型supertype。
-子类型继承了它的超类型的接口。</p>
-<h4 id=接口的实现>接口的实现</h4>
-<p>对象接口和其功能实现是分离的，两个具有相同接口的对象可以有完全不同的实现。</p>
-<h4 id=动态绑定>动态绑定</h4>
-<p>客户发送请求只需要看接口，但请求具体怎么被处理，要到运行时刻才受具体对象的具体实现约束。</p>
-<h4 id=多态polymorphism>多态polymorphism</h4>
-<p>动态绑定允许你在运行时刻彼此替换有相同接口的对象，这种可替换性叫多态。</p>
-<h4 id=设计模式如何起作用>设计模式如何起作用</h4>
-<ul>
-<li>通过确定接口的主要组成部分以及经接口发送的数据类型，来帮我们定义接口。</li>
-<li>指定接口之间的关系。</li>
-</ul>
-<h3 id=描述对象的实现>描述对象的实现</h3>
-<h4 id=实例化>实例化</h4>
-<p>由类创建一个对象，需要分配存储空间，并将操作与对象的内部数据联系起来。</p>
-<h4 id=类继承>类继承</h4>
-<p>子类包含父类定义的所有数据和操作。子类能够改进和重新定义它们父类的操作。</p>
-<h4 id=抽象类>抽象类</h4>
-<p>为子类定义公共接口。</p>
-<h4 id=混入类mixin>混入类mixin</h4>
-<p>是给其他类提供可选择的接口或功能的类。与抽象类一样不能被实例化。mixin要求多继承。</p>
-<h4 id=类class和类型type的区别>类class和类型type的区别</h4>
-<p>一个对象的类定义了对象是怎样实现的，同时也定义了对象的内部状态和操作的实现。
-对象的类型只与它的接口有关，接口即对象能响应的请求的集合。</p>
-<h4 id=类继承和接口继承的区别>类继承和接口继承的区别</h4>
-<p>类继承根据一个对象的实现定义了另一个对象的实现，是代码和表示的共享机制。主要为了复用。
+子类型继承了它的超类型的接口。</p><h4 id=接口的实现>接口的实现</h4><p>对象接口和其功能实现是分离的，两个具有相同接口的对象可以有完全不同的实现。</p><h4 id=动态绑定>动态绑定</h4><p>客户发送请求只需要看接口，但请求具体怎么被处理，要到运行时刻才受具体对象的具体实现约束。</p><h4 id=多态polymorphism>多态polymorphism</h4><p>动态绑定允许你在运行时刻彼此替换有相同接口的对象，这种可替换性叫多态。</p><h4 id=设计模式如何起作用>设计模式如何起作用</h4><ul><li>通过确定接口的主要组成部分以及经接口发送的数据类型，来帮我们定义接口。</li><li>指定接口之间的关系。</li></ul><h3 id=描述对象的实现>描述对象的实现</h3><h4 id=实例化>实例化</h4><p>由类创建一个对象，需要分配存储空间，并将操作与对象的内部数据联系起来。</p><h4 id=类继承>类继承</h4><p>子类包含父类定义的所有数据和操作。子类能够改进和重新定义它们父类的操作。</p><h4 id=抽象类>抽象类</h4><p>为子类定义公共接口。</p><h4 id=混入类mixin>混入类mixin</h4><p>是给其他类提供可选择的接口或功能的类。与抽象类一样不能被实例化。mixin要求多继承。</p><h4 id=类class和类型type的区别>类class和类型type的区别</h4><p>一个对象的类定义了对象是怎样实现的，同时也定义了对象的内部状态和操作的实现。
+对象的类型只与它的接口有关，接口即对象能响应的请求的集合。</p><h4 id=类继承和接口继承的区别>类继承和接口继承的区别</h4><p>类继承根据一个对象的实现定义了另一个对象的实现，是代码和表示的共享机制。主要为了复用。
 接口继承描述了一个对象什么时候能被用来替代另一个对象。主要为了多态。
-C++中，纯接口继承，接近于公有继承纯抽象类；纯实现继承或纯类继承接近于私有继承。</p>
-<h4 id=针对接口编程>针对接口编程</h4>
-<p>不将变量声明为某个特定的具体类的实例对象。不得已时，用创建型模式。</p>
-<h3 id=运用复用机制>运用复用机制</h3>
-<h4 id=继承与组合>继承与组合</h4>
-<p>实现功能复用的两种最常用技术是：类继承和对象组合，前者为白箱复用，后者为黑箱复用。
+C++中，纯接口继承，接近于公有继承纯抽象类；纯实现继承或纯类继承接近于私有继承。</p><h4 id=针对接口编程>针对接口编程</h4><p>不将变量声明为某个特定的具体类的实例对象。不得已时，用创建型模式。</p><h3 id=运用复用机制>运用复用机制</h3><h4 id=继承与组合>继承与组合</h4><p>实现功能复用的两种最常用技术是：类继承和对象组合，前者为白箱复用，后者为黑箱复用。
 对象组合使设计更灵活，但是动态的、高度参数化的软件比静态软件更难以理解，而且还有运行低效的问题。
 应该优先使用对象组合。
-经验表明，设计者往往过度使用了继承这种复用技术。</p>
-<h4 id=委托>委托</h4>
-<p>委托是对象组合的特例。</p>
-<h4 id=继承和参数化类型>继承和参数化类型</h4>
-<p>C++ template</p>
-<h3 id=关联运行时刻和编译时刻的结构>关联运行时刻和编译时刻的结构</h3>
-<p>如果将编译时刻的代码结构比作静态的动植物分类，那么运行时刻结构就如活生生的生态系统。</p>
-<h3 id=设计应支持变化>设计应支持变化</h3>
-<p>先预测可能会发生哪些方面的变化，然后将这些变化抽象出来。</p>
-<h2 id=设计模式的分类>设计模式的分类</h2>
-<ul>
-<li>创建型模式
-单例模式、抽象工厂模式、建造者模式、工厂模式、原型模式。</li>
-<li>结构型模式
-适配器模式、桥接模式、装饰模式、组合模式、外观模式、享元模式、代理模式。</li>
-<li>行为型模式
-模版方法模式、命令模式、迭代器模式、观察者模式、中介者模式、备忘录模式、解释器模式、状态模式、策略模式、职责链模式、访问者模式。</li>
-</ul>
-</div><div class=post-footer id=post-footer>
-<div class=post-info>
-<div class=post-info-line>
-<div class=post-info-mod>
-<span>更新于 2022-02-07&nbsp;<a class=git-hash href=https://github.com/dillonzq/LoveIt/commit/d7d32a912fa39ff555e3969ab4c7d0bd555fe820 target=_blank title="commit by hibert(fighter9010@gmail.com) d7d32a912fa39ff555e3969ab4c7d0bd555fe820: edit the date">
-<i class="fas fa-hashtag fa-fw"></i>d7d32a9</a></span>
-</div>
-<div class=post-info-license></div>
-</div>
-<div class=post-info-line>
-<div class=post-info-md><span>
-<a class=link-to-markdown href=/posts/2022/02/design-pattern-1/index.md target=_blank>阅读原始文档</a>
-</span></div>
-<div class=post-info-share>
-<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-1/ data-title=读书笔记-设计模式-引言 data-hashtags=方法学,读书笔记><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-1/ data-hashtag=方法学><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 Hacker News" data-sharer=hackernews data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-1/ data-title=读书笔记-设计模式-引言><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-1/ data-title=读书笔记-设计模式-引言><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-1/ data-title=读书笔记-设计模式-引言><i class="fab fa-weibo fa-fw"></i></a></span>
-</div>
-</div>
-</div>
-<div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/%E6%96%B9%E6%B3%95%E5%AD%A6/>方法学</a>,&nbsp;<a href=/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/>读书笔记</a></section>
-<section>
-<span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
-</section>
-</div>
-<div class=post-nav><a href=/posts/2022/02/better-decision/ class=prev rel=prev title=如何做更好的决定><i class="fas fa-angle-left fa-fw"></i>如何做更好的决定</a>
-<a href=/posts/2022/02/design-pattern-2/ class=next rel=next title=读书笔记-设计模式-创建型模式>读书笔记-设计模式-创建型模式<i class="fas fa-angle-right fa-fw"></i></a></div>
-</div>
-<div id=comments><div id=valine class=comment></div><noscript>
-Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.
-</noscript></div></article></div>
-</main><footer class=footer>
-<div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.92.2">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>hibert</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
-</div>
-</footer></div>
-<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部>
-<i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title=查看评论>
-<i class="fas fa-comment fa-fw"></i>
-</a>
-</div><link rel=stylesheet href=/lib/valine/valine.min.css><script type=text/javascript src=https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{valine:{appId:"CWrfhbHf7nxbzTGpJAIgMOhN-MdYXbMMI",appKey:"whMCd9lbIJgD3ipYVBHdNH5s",avatar:"mp",el:"#valine",emojiCDN:"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/",emojiMaps:{100:"1f4af.png",alien:"1f47d.png",anger:"1f4a2.png",angry:"1f620.png",anguished:"1f627.png",astonished:"1f632.png",black_heart:"1f5a4.png",blue_heart:"1f499.png",blush:"1f60a.png",bomb:"1f4a3.png",boom:"1f4a5.png",broken_heart:"1f494.png",brown_heart:"1f90e.png",clown_face:"1f921.png",cold_face:"1f976.png",cold_sweat:"1f630.png",confounded:"1f616.png",confused:"1f615.png",cry:"1f622.png",crying_cat_face:"1f63f.png",cupid:"1f498.png",dash:"1f4a8.png",disappointed:"1f61e.png",disappointed_relieved:"1f625.png",dizzy:"1f4ab.png",dizzy_face:"1f635.png",drooling_face:"1f924.png",exploding_head:"1f92f.png",expressionless:"1f611.png",face_vomiting:"1f92e.png",face_with_cowboy_hat:"1f920.png",face_with_hand_over_mouth:"1f92d.png",face_with_head_bandage:"1f915.png",face_with_monocle:"1f9d0.png",face_with_raised_eyebrow:"1f928.png",face_with_rolling_eyes:"1f644.png",face_with_symbols_on_mouth:"1f92c.png",face_with_thermometer:"1f912.png",fearful:"1f628.png",flushed:"1f633.png",frowning:"1f626.png",ghost:"1f47b.png",gift_heart:"1f49d.png",green_heart:"1f49a.png",grimacing:"1f62c.png",grin:"1f601.png",grinning:"1f600.png",hankey:"1f4a9.png",hear_no_evil:"1f649.png",heart:"2764-fe0f.png",heart_decoration:"1f49f.png",heart_eyes:"1f60d.png",heart_eyes_cat:"1f63b.png",heartbeat:"1f493.png",heartpulse:"1f497.png",heavy_heart_exclamation_mark_ornament:"2763-fe0f.png",hole:"1f573-fe0f.png",hot_face:"1f975.png",hugging_face:"1f917.png",hushed:"1f62f.png",imp:"1f47f.png",innocent:"1f607.png",japanese_goblin:"1f47a.png",japanese_ogre:"1f479.png",joy:"1f602.png",joy_cat:"1f639.png",kiss:"1f48b.png",kissing:"1f617.png",kissing_cat:"1f63d.png",kissing_closed_eyes:"1f61a.png",kissing_heart:"1f618.png",kissing_smiling_eyes:"1f619.png",laughing:"1f606.png",left_speech_bubble:"1f5e8-fe0f.png",love_letter:"1f48c.png",lying_face:"1f925.png",mask:"1f637.png",money_mouth_face:"1f911.png",nauseated_face:"1f922.png",nerd_face:"1f913.png",neutral_face:"1f610.png",no_mouth:"1f636.png",open_mouth:"1f62e.png",orange_heart:"1f9e1.png",partying_face:"1f973.png",pensive:"1f614.png",persevere:"1f623.png",pleading_face:"1f97a.png",pouting_cat:"1f63e.png",purple_heart:"1f49c.png",rage:"1f621.png",relaxed:"263a-fe0f.png",relieved:"1f60c.png",revolving_hearts:"1f49e.png",right_anger_bubble:"1f5ef-fe0f.png",robot_face:"1f916.png",rolling_on_the_floor_laughing:"1f923.png",scream:"1f631.png",scream_cat:"1f640.png",see_no_evil:"1f648.png",shushing_face:"1f92b.png",skull:"1f480.png",skull_and_crossbones:"2620-fe0f.png",sleeping:"1f634.png",sleepy:"1f62a.png",slightly_frowning_face:"1f641.png",slightly_smiling_face:"1f642.png",smile:"1f604.png",smile_cat:"1f638.png",smiley:"1f603.png",smiley_cat:"1f63a.png",smiling_face_with_3_hearts:"1f970.png",smiling_imp:"1f608.png",smirk:"1f60f.png",smirk_cat:"1f63c.png",sneezing_face:"1f927.png",sob:"1f62d.png",space_invader:"1f47e.png",sparkling_heart:"1f496.png",speak_no_evil:"1f64a.png",speech_balloon:"1f4ac.png","star-struck":"1f929.png",stuck_out_tongue:"1f61b.png",stuck_out_tongue_closed_eyes:"1f61d.png",stuck_out_tongue_winking_eye:"1f61c.png",sunglasses:"1f60e.png",sweat:"1f613.png",sweat_drops:"1f4a6.png",sweat_smile:"1f605.png",thinking_face:"1f914.png",thought_balloon:"1f4ad.png",tired_face:"1f62b.png",triumph:"1f624.png",two_hearts:"1f495.png",unamused:"1f612.png",upside_down_face:"1f643.png",weary:"1f629.png",white_frowning_face:"2639-fe0f.png",white_heart:"1f90d.png",wink:"1f609.png",woozy_face:"1f974.png",worried:"1f61f.png",yawning_face:"1f971.png",yellow_heart:"1f49b.png",yum:"1f60b.png",zany_face:"1f92a.png",zipper_mouth_face:"1f910.png",zzz:"1f4a4.png"},enableQQ:!1,highlight:!0,lang:"zh-cn",pageSize:10,placeholder:"你的评论 ...",recordIP:!0,serverURLs:"https://cwrfhbhf.api.lncldglobal.com",visitor:!0}},search:{algoliaAppID:"6LB2PFCE6R",algoliaIndex:"blog-search-idx",algoliaSearchKey:"7fa19d250614899e5f012ebf464deafc",highlightTag:"em",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"algolia"}}</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','268304114',{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=268304114" async></script></body>
-</html>
+经验表明，设计者往往过度使用了继承这种复用技术。</p><h4 id=委托>委托</h4><p>委托是对象组合的特例。</p><h4 id=继承和参数化类型>继承和参数化类型</h4><p>C++ template</p><h3 id=关联运行时刻和编译时刻的结构>关联运行时刻和编译时刻的结构</h3><p>如果将编译时刻的代码结构比作静态的动植物分类，那么运行时刻结构就如活生生的生态系统。</p><h3 id=设计应支持变化>设计应支持变化</h3><p>先预测可能会发生哪些方面的变化，然后将这些变化抽象出来。</p><h2 id=设计模式的分类>设计模式的分类</h2><ul><li>创建型模式
+单例模式、抽象工厂模式、建造者模式、工厂模式、原型模式。</li><li>结构型模式
+适配器模式、桥接模式、装饰模式、组合模式、外观模式、享元模式、代理模式。</li><li>行为型模式
+模版方法模式、命令模式、迭代器模式、观察者模式、中介者模式、备忘录模式、解释器模式、状态模式、策略模式、职责链模式、访问者模式。</li></ul></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2022-02-07&nbsp;<a class=git-hash href=https://github.com/dillonzq/LoveIt/commit/d7d32a912fa39ff555e3969ab4c7d0bd555fe820 target=_blank title="commit by hibert(fighter9010@gmail.com) d7d32a912fa39ff555e3969ab4c7d0bd555fe820: edit the date">
+<i class="fas fa-hashtag fa-fw"></i>d7d32a9</a></span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=/posts/2022/02/design-pattern-1/index.md target=_blank>阅读原始文档</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-1/ data-title=读书笔记-设计模式-引言 data-hashtags=方法学,读书笔记><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-1/ data-hashtag=方法学><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 Hacker News" data-sharer=hackernews data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-1/ data-title=读书笔记-设计模式-引言><i class="fab fa-hacker-news fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-1/ data-title=读书笔记-设计模式-引言><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://wanghuibin0.github.io/posts/2022/02/design-pattern-1/ data-title=读书笔记-设计模式-引言><i class="fab fa-weibo fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/%E6%96%B9%E6%B3%95%E5%AD%A6/>方法学</a>,&nbsp;<a href=/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/>读书笔记</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/posts/2022/02/better-decision/ class=prev rel=prev title=如何做更好的决定><i class="fas fa-angle-left fa-fw"></i>如何做更好的决定</a>
+<a href=/posts/2022/02/design-pattern-2/ class=next rel=next title=读书笔记-设计模式-创建型模式>读书笔记-设计模式-创建型模式<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=valine class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://valine.js.org/>Valine</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.94.2">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank>hibert</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/valine/valine.min.css><script type=text/javascript src=https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js></script><script type=text/javascript src=https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{valine:{appId:"CWrfhbHf7nxbzTGpJAIgMOhN-MdYXbMMI",appKey:"whMCd9lbIJgD3ipYVBHdNH5s",avatar:"mp",el:"#valine",emojiCDN:"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/",emojiMaps:{100:"1f4af.png",alien:"1f47d.png",anger:"1f4a2.png",angry:"1f620.png",anguished:"1f627.png",astonished:"1f632.png",black_heart:"1f5a4.png",blue_heart:"1f499.png",blush:"1f60a.png",bomb:"1f4a3.png",boom:"1f4a5.png",broken_heart:"1f494.png",brown_heart:"1f90e.png",clown_face:"1f921.png",cold_face:"1f976.png",cold_sweat:"1f630.png",confounded:"1f616.png",confused:"1f615.png",cry:"1f622.png",crying_cat_face:"1f63f.png",cupid:"1f498.png",dash:"1f4a8.png",disappointed:"1f61e.png",disappointed_relieved:"1f625.png",dizzy:"1f4ab.png",dizzy_face:"1f635.png",drooling_face:"1f924.png",exploding_head:"1f92f.png",expressionless:"1f611.png",face_vomiting:"1f92e.png",face_with_cowboy_hat:"1f920.png",face_with_hand_over_mouth:"1f92d.png",face_with_head_bandage:"1f915.png",face_with_monocle:"1f9d0.png",face_with_raised_eyebrow:"1f928.png",face_with_rolling_eyes:"1f644.png",face_with_symbols_on_mouth:"1f92c.png",face_with_thermometer:"1f912.png",fearful:"1f628.png",flushed:"1f633.png",frowning:"1f626.png",ghost:"1f47b.png",gift_heart:"1f49d.png",green_heart:"1f49a.png",grimacing:"1f62c.png",grin:"1f601.png",grinning:"1f600.png",hankey:"1f4a9.png",hear_no_evil:"1f649.png",heart:"2764-fe0f.png",heart_decoration:"1f49f.png",heart_eyes:"1f60d.png",heart_eyes_cat:"1f63b.png",heartbeat:"1f493.png",heartpulse:"1f497.png",heavy_heart_exclamation_mark_ornament:"2763-fe0f.png",hole:"1f573-fe0f.png",hot_face:"1f975.png",hugging_face:"1f917.png",hushed:"1f62f.png",imp:"1f47f.png",innocent:"1f607.png",japanese_goblin:"1f47a.png",japanese_ogre:"1f479.png",joy:"1f602.png",joy_cat:"1f639.png",kiss:"1f48b.png",kissing:"1f617.png",kissing_cat:"1f63d.png",kissing_closed_eyes:"1f61a.png",kissing_heart:"1f618.png",kissing_smiling_eyes:"1f619.png",laughing:"1f606.png",left_speech_bubble:"1f5e8-fe0f.png",love_letter:"1f48c.png",lying_face:"1f925.png",mask:"1f637.png",money_mouth_face:"1f911.png",nauseated_face:"1f922.png",nerd_face:"1f913.png",neutral_face:"1f610.png",no_mouth:"1f636.png",open_mouth:"1f62e.png",orange_heart:"1f9e1.png",partying_face:"1f973.png",pensive:"1f614.png",persevere:"1f623.png",pleading_face:"1f97a.png",pouting_cat:"1f63e.png",purple_heart:"1f49c.png",rage:"1f621.png",relaxed:"263a-fe0f.png",relieved:"1f60c.png",revolving_hearts:"1f49e.png",right_anger_bubble:"1f5ef-fe0f.png",robot_face:"1f916.png",rolling_on_the_floor_laughing:"1f923.png",scream:"1f631.png",scream_cat:"1f640.png",see_no_evil:"1f648.png",shushing_face:"1f92b.png",skull:"1f480.png",skull_and_crossbones:"2620-fe0f.png",sleeping:"1f634.png",sleepy:"1f62a.png",slightly_frowning_face:"1f641.png",slightly_smiling_face:"1f642.png",smile:"1f604.png",smile_cat:"1f638.png",smiley:"1f603.png",smiley_cat:"1f63a.png",smiling_face_with_3_hearts:"1f970.png",smiling_imp:"1f608.png",smirk:"1f60f.png",smirk_cat:"1f63c.png",sneezing_face:"1f927.png",sob:"1f62d.png",space_invader:"1f47e.png",sparkling_heart:"1f496.png",speak_no_evil:"1f64a.png",speech_balloon:"1f4ac.png","star-struck":"1f929.png",stuck_out_tongue:"1f61b.png",stuck_out_tongue_closed_eyes:"1f61d.png",stuck_out_tongue_winking_eye:"1f61c.png",sunglasses:"1f60e.png",sweat:"1f613.png",sweat_drops:"1f4a6.png",sweat_smile:"1f605.png",thinking_face:"1f914.png",thought_balloon:"1f4ad.png",tired_face:"1f62b.png",triumph:"1f624.png",two_hearts:"1f495.png",unamused:"1f612.png",upside_down_face:"1f643.png",weary:"1f629.png",white_frowning_face:"2639-fe0f.png",white_heart:"1f90d.png",wink:"1f609.png",woozy_face:"1f974.png",worried:"1f61f.png",yawning_face:"1f971.png",yellow_heart:"1f49b.png",yum:"1f60b.png",zany_face:"1f92a.png",zipper_mouth_face:"1f910.png",zzz:"1f4a4.png"},enableQQ:!1,highlight:!0,lang:"zh-cn",pageSize:10,placeholder:"你的评论 ...",recordIP:!0,serverURLs:"https://cwrfhbhf.api.lncldglobal.com",visitor:!0}},search:{algoliaAppID:"6LB2PFCE6R",algoliaIndex:"blog-search-idx",algoliaSearchKey:"7fa19d250614899e5f012ebf464deafc",highlightTag:"em",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"algolia"}}</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","268304114",{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=268304114" async></script></body></html>
