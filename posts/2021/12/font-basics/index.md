@@ -47,7 +47,7 @@ fc-list :lang=zh | cut -d: -f1
 
 从笔画风格对字体的分类。
 
-{{< figure src="https://pic2.zhimg.com/80/v2-e333ab0a7917943caee92344e1090781%5F720w.jpg" >}}
+{{< figure src="https://pic2.zhimg.com/80/v2-e333ab0a7917943caee92344e1090781_720w.jpg" >}}
 
 
 ### serif是衬线体 {#serif是衬线体}
@@ -74,4 +74,9 @@ fc-list :lang=zh | cut -d: -f1
 -   东亚语言中，方块字基本上都作为等宽字体处理。
 -   代码以及文字接口的程序，如代码编辑器、虚拟终端等也经常使用等宽字体，可以提高可读性。
 -   与等宽字体相对应的是 **比例字体** 。
+
+
+## Reference {#reference}
+
+一篇关于字体的好文章.<https://sspai.com/post/71957>
 
