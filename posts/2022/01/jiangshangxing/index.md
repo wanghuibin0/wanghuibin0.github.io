@@ -2,6 +2,7 @@
 
 
 <p class="verse">
+
 好江风<br />
 将这轻舟催送<br />
 波翻浪涌<br />
@@ -16,6 +17,7 @@
 弟兄山海盟<br />
 早把这七尺身躯青龙偃月<br />
 付于苍生<br />
+
 </p>
 
 {{< figure src="/ox-hugo/2022-01-05_11-13-43_screenshot.png" >}}
