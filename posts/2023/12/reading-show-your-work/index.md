@@ -1,7 +1,7 @@
 # 读 Show Your Work
 
 
-最近读了Austin Kleon的[Show your work](https://book.douban.com/subject/25857796/)，我读的是英文版，书中的观点和方法很值得借鉴。如果你想在互联网上分享自己的工作和生活，但没有动力或者不得其法，可以看一下这本小书，会很有帮助。下面是我读这本书时所做的一些摘录笔记：
+最近读了Austin Kleon的[Show your work](https://book.douban.com/subject/25857796/)，我读的是英文版，书中的观点和方法很值得借鉴。在这个互联网时代，如果你想扩大自己的影响力，或者单纯想在网上分享自己的知识和见解，但不得其法，可以看一下这本小书，会很有帮助。下面是我读这本书时所做的一些摘录笔记：
 
 >In order to be found, you have to be findable.
 
