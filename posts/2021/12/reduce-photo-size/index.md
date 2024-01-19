@@ -10,8 +10,8 @@
 Linux 上用 ffmpeg 就可以很容易做到这件事。步骤如下：
 
 ```bash
-mkdir output # output目录用来存放压缩后的照片文件 ls *.jpg | xargs -I{}
-ffmpeg -i {} output/{}; # 用ffmpeg默认的参数效果就已经很好了
+mkdir output # output目录用来存放压缩后的照片文件 
+ls *.jpg | xargs -I{} ffmpeg -i {} output/{}; # 用ffmpeg默认的参数效果就已经很好了
 ```
 
 经过亲测，原先20M的照片，转换完成后只有1.8M，原先的 1/10
