@@ -22,7 +22,7 @@ ssh reverse tunnel 可以在远程机器和本地机器之间建立一个通道�
 ```bash
 ssh user@remote-server.com -R 5689:localhost:5689
 ```
-也可以将此配置写入`.ssh/config`，在对应的ssh条目里添加下面这行，以后登录ssh都会自动建立这个通道。
+也可以将此配置写入`.ssh/config`，在对应的host条目里添加下面这行，以后登录ssh都会自动建立这个通道。
 ```bash
 RemoteForward 5689 localhost:5689
 ```
@@ -63,3 +63,8 @@ function cp2l {
 cp2l file
 ```
 就可以将远程机器上的file文件复制到本地了。
+
+## 参考
+- https://gist.github.com/dergachev/8259104
+- https://qbee.io/misc/reverse-ssh-tunneling-the-ultimate-guide/
+
