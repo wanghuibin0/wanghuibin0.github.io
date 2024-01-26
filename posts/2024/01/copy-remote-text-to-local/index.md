@@ -22,9 +22,9 @@ ssh reverse tunnel 可以在远程机器和本地机器之间建立一个通道�
 ```bash
 ssh user@remote-server.com -R 5689:localhost:5689
 ```
-也可以将此配置写入`.ssh/config`，这样以后登录ssh都会自动建立这个通道。
+也可以将此配置写入`.ssh/config`，在对应的ssh条目里添加下面这行，以后登录ssh都会自动建立这个通道。
 ```bash
-echo "RemoteForward 5689 localhost:5689" >> ~/.ssh/config
+RemoteForward 5689 localhost:5689
 ```
 现在，可以在远程机器上执行以下命令测试一下效果：
 ```bash
