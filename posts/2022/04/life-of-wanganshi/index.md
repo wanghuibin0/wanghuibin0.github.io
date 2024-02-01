@@ -31,3 +31,9 @@
 -   1085年，六十五岁，神宗崩，新法遭全面否定
 -   1086年，六十六岁，安石病死于金陵
 
+
+---
+
+> 作者: hybert  
+> URL: https://simplecoding.fun/posts/2022/04/life-of-wanganshi/  
+

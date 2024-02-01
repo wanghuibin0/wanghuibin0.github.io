@@ -23,10 +23,10 @@
 
 -   基于多重继承的
 
-    {{< figure src="/ox-hugo/2022-02-06_18-50-27_screenshot.png" >}}
+    {{&lt; figure src=&#34;/ox-hugo/2022-02-06_18-50-27_screenshot.png&#34; &gt;}}
 -   基于对象组合的
 
-    {{< figure src="/ox-hugo/2022-02-06_18-50-57_screenshot.png" >}}
+    {{&lt; figure src=&#34;/ox-hugo/2022-02-06_18-50-57_screenshot.png&#34; &gt;}}
 
 
 ### 两种方案的权衡 {#两种方案的权衡}
@@ -50,7 +50,7 @@
 
 ### UML表示 {#uml表示}
 
-{{< figure src="/ox-hugo/2022-02-06_19-04-45_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-06_19-04-45_screenshot.png&#34; &gt;}}
 
 
 ### 其他 {#其他}
@@ -78,12 +78,12 @@
 
 #### 类图 {#类图}
 
-{{< figure src="/ox-hugo/2022-02-06_19-17-13_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-06_19-17-13_screenshot.png&#34; &gt;}}
 
 
 #### 动态对象图 {#动态对象图}
 
-{{< figure src="/ox-hugo/2022-02-06_19-18-19_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-06_19-18-19_screenshot.png&#34; &gt;}}
 
 
 ## 装饰模式 {#装饰模式}
@@ -103,7 +103,7 @@
 
 ### UML表示 {#uml表示}
 
-{{< figure src="/ox-hugo/2022-02-06_19-32-11_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-06_19-32-11_screenshot.png&#34; &gt;}}
 
 
 ### 其他 {#其他}
@@ -126,7 +126,7 @@
 
 ### UML表示 {#uml表示}
 
-{{< figure src="/ox-hugo/2022-02-06_19-43-44_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-06_19-43-44_screenshot.png&#34; &gt;}}
 
 
 ## 享元模式 {#享元模式}
@@ -146,7 +146,7 @@
 
 ### UML表示 {#uml表示}
 
-{{< figure src="/ox-hugo/2022-02-06_20-34-22_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-06_20-34-22_screenshot.png&#34; &gt;}}
 
 
 ## 代理模式 {#代理模式}
@@ -164,7 +164,7 @@
 
 ### UML表示 {#uml表示}
 
-{{< figure src="/ox-hugo/2022-02-06_20-43-37_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-06_20-43-37_screenshot.png&#34; &gt;}}
 
 
 ## 结构型模式的讨论 {#结构型模式的讨论}
@@ -173,4 +173,10 @@
     适配器用于解决两个已有接口不匹配的问题。桥接模式是为了将抽象和实现两者独立演化。
 2.  组合模式和装饰模式
     都基于递归组合来组织可变数目的对象，但目的不同。组合模式旨在使整体与部分统一处理，而装饰模式旨在给对象添加职责。
+
+
+---
+
+> 作者: hybert  
+> URL: https://simplecoding.fun/posts/2022/02/design-pattern-3/  
 

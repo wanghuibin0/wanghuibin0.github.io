@@ -87,3 +87,9 @@ else:
 
 能从记忆中重建全文的结构，并指出其优缺点。能正确指出论文的隐含假设，以及其实验或理论分析方面潜在的问题。
 
+
+---
+
+> 作者: hybert  
+> URL: https://simplecoding.fun/posts/2021/12/reading-a-paper/  
+

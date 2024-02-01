@@ -3,5 +3,11 @@
 
 道理与解数学题是类似的。
 
-{{< figure src="/ox-hugo/2022-02-08_16-38-05_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-08_16-38-05_screenshot.png&#34; &gt;}}
+
+
+---
+
+> 作者: hybert  
+> URL: https://simplecoding.fun/posts/2022/02/how-to-solve-problems/  
 

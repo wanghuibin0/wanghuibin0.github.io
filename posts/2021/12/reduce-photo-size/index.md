@@ -21,3 +21,9 @@ ps: 照片文件最好还是用 jpg 格式，体积最小；我曾试了 png 和
 webp，效果都不好，其中 png 采用无损压缩算法，还膨胀了好多倍，20M
 转出来成了 60M。摄影图片一般色彩笔记丰富，jpg 才是最适合的格式。
 
+
+---
+
+> 作者: hybert  
+> URL: https://simplecoding.fun/posts/2021/12/reduce-photo-size/  
+

@@ -17,7 +17,7 @@
 
 ### UML表示 {#uml表示}
 
-{{< figure src="/ox-hugo/2022-02-06_21-09-41_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-06_21-09-41_screenshot.png&#34; &gt;}}
 
 
 ## 命令模式 {#命令模式}
@@ -36,12 +36,12 @@
 
 ### UML表示 {#uml表示}
 
-{{< figure src="/ox-hugo/2022-02-06_22-32-19_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-06_22-32-19_screenshot.png&#34; &gt;}}
 
 
 #### 动态活动图 {#动态活动图}
 
-{{< figure src="/ox-hugo/2022-02-06_22-37-10_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-06_22-37-10_screenshot.png&#34; &gt;}}
 
 
 ### 其他 {#其他}
@@ -64,7 +64,7 @@
 
 ### UML表示 {#uml表示}
 
-{{< figure src="/ox-hugo/2022-02-06_22-44-00_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-06_22-44-00_screenshot.png&#34; &gt;}}
 
 
 ### 其他 {#其他}
@@ -82,12 +82,12 @@
 
 ### 方案 {#方案}
 
-C++标准库里对所有容器都提供了迭代器
+C&#43;&#43;标准库里对所有容器都提供了迭代器
 
 
 ### UML表示 {#uml表示}
 
-{{< figure src="/ox-hugo/2022-02-06_22-48-18_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-06_22-48-18_screenshot.png&#34; &gt;}}
 
 
 ## 中介者模式 {#中介者模式}
@@ -105,7 +105,7 @@ C++标准库里对所有容器都提供了迭代器
 
 ### UML表示 {#uml表示}
 
-{{< figure src="/ox-hugo/2022-02-06_22-57-34_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-06_22-57-34_screenshot.png&#34; &gt;}}
 
 
 ## 备忘录模式 {#备忘录模式}
@@ -124,7 +124,7 @@ C++标准库里对所有容器都提供了迭代器
 
 ### UML表示 {#uml表示}
 
-{{< figure src="/ox-hugo/2022-02-06_23-12-19_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-06_23-12-19_screenshot.png&#34; &gt;}}
 
 
 ## 观察者模式 {#观察者模式}
@@ -143,7 +143,7 @@ C++标准库里对所有容器都提供了迭代器
 
 ### UML表示 {#uml表示}
 
-{{< figure src="/ox-hugo/2022-02-06_23-28-27_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-06_23-28-27_screenshot.png&#34; &gt;}}
 
 
 ## 状态模式 {#状态模式}
@@ -161,7 +161,7 @@ C++标准库里对所有容器都提供了迭代器
 
 ### UML表示 {#uml表示}
 
-{{< figure src="/ox-hugo/2022-02-06_23-43-29_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-06_23-43-29_screenshot.png&#34; &gt;}}
 
 
 ## 策略模式 {#策略模式}
@@ -179,7 +179,7 @@ C++标准库里对所有容器都提供了迭代器
 
 ### UML表示 {#uml表示}
 
-{{< figure src="/ox-hugo/2022-02-06_23-51-04_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-06_23-51-04_screenshot.png&#34; &gt;}}
 
 
 ## 模板方法模式 {#模板方法模式}
@@ -197,7 +197,7 @@ C++标准库里对所有容器都提供了迭代器
 
 ### UML表示 {#uml表示}
 
-{{< figure src="/ox-hugo/2022-02-06_23-54-21_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-06_23-54-21_screenshot.png&#34; &gt;}}
 
 
 ## 访问者模式 {#访问者模式}
@@ -218,10 +218,16 @@ C++标准库里对所有容器都提供了迭代器
 
 ### UML表示 {#uml表示}
 
-{{< figure src="/ox-hugo/2022-02-07_00-06-36_screenshot.png" >}}
+{{&lt; figure src=&#34;/ox-hugo/2022-02-07_00-06-36_screenshot.png&#34; &gt;}}
 
 
 ### 其他 {#其他}
 
 1.  添加新操作只需要增加一个对应的visitor，其中定义对各种数据类型的访问处理。
+
+
+---
+
+> 作者: hybert  
+> URL: https://simplecoding.fun/posts/2022/02/design-pattern-4/  
 

@@ -41,12 +41,18 @@ xelatex test-zh.tex
 如果是markdown或org mode文件，用pandoc转。
 
 ```bash
-pandoc test-zh.tex -o test-zh.pdf --pdf-engine=xelatex -V CJKmainfont="WenQuanYi Zen Hei"
+pandoc test-zh.tex -o test-zh.pdf --pdf-engine=xelatex -V CJKmainfont=&#34;WenQuanYi Zen Hei&#34;
 ```
 
 
 ## refs: {#refs}
 
--   <https://wiki.archlinux.org/title/TeX_Live_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>
+-   &lt;https://wiki.archlinux.org/title/TeX_Live_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&gt;
 -   一份（不太）简短的 LATEX2ε 介绍
+
+
+---
+
+> 作者: hybert  
+> URL: https://simplecoding.fun/posts/2021/12/handle-chinese-in-latex/  
 

@@ -14,7 +14,7 @@ while (true); do nc -l -p 5689 | xclip -selection c; done
 
 现在，可以在本地测试一下效果：
 ```bash
-echo "send me to local clipboard" | nc -q0 localhost 5689
+echo &#34;send me to local clipboard&#34; | nc -q0 localhost 5689
 # -q0 是为了去除文本末尾的eof
 ```
 ## 将服务暴露给远程机器
@@ -28,13 +28,13 @@ RemoteForward 5689 localhost:5689
 ```
 现在，可以在远程机器上执行以下命令测试一下效果：
 ```bash
-echo "send me to local clipboard" | nc -q0 localhost 5689
+echo &#34;send me to local clipboard&#34; | nc -q0 localhost 5689
 ```
 ## 从远程机器发送文本
 经过以上步骤，只要在远程机器上将数据发往其5689端口，数据就会出现在本地剪贴板了。不过我最常用的场景是在vim中复制文本，把这部分操作进一步简化就很有必要了。为此，我在.vimrc中添加如下代码：
 ```vim
-" :CL copy from remote ssh to local
-command! -range CL execute '<line1>,<line2>w !nc -N localhost 5689'
+&#34; :CL copy from remote ssh to local
+command! -range CL execute &#39;&lt;line1&gt;,&lt;line2&gt;w !nc -N localhost 5689&#39;
 ```
 添加了一个自定义命令CL，执行这个命令时，被选中的文本就会发送到5689端口，进而传回到本机的剪贴板。
 
@@ -54,7 +54,7 @@ cp2l() {
 在本地机器的.bashrc中设置以下命令：
 ```bash
 function cp2l {
-  xclip -selection c -o | base64 -d > $1
+  xclip -selection c -o | base64 -d &gt; $1
 }
 ```
 
@@ -67,4 +67,10 @@ cp2l file
 ## 参考
 - https://gist.github.com/dergachev/8259104
 - https://qbee.io/misc/reverse-ssh-tunneling-the-ultimate-guide/
+
+
+---
+
+> 作者: [Hybert](https://github.com/wanghuibin0)  
+> URL: https://simplecoding.fun/posts/2024/01/copy-remote-text-to-local/  
 

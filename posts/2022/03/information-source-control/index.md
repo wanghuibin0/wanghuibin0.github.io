@@ -13,3 +13,9 @@
 
 强调一下,当然不是要完全不关心时事,否则,大家在讨论什么,你一点也不知道,一问三不知.时间久了确实会脱节的.所以说,要关注,只是关注的程度要足够低罢了.
 
+
+---
+
+> 作者: hybert  
+> URL: https://simplecoding.fun/posts/2022/03/information-source-control/  
+

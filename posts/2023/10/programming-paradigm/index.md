@@ -9,3 +9,9 @@
 
 注意，编程范式不完全跟特定的编程语言绑定，更多强调的是一种思维方式，是看待目标系统的视角。
 
+
+---
+
+> 作者: hybert  
+> URL: https://simplecoding.fun/posts/2023/10/programming-paradigm/  
+

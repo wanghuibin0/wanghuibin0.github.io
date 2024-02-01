@@ -35,9 +35,9 @@ error。但是如果是well-behaved，那么一定safe。
 排除程序中错误的手段有多种，type system只是其中一种。TAPL中对type
 system的定义如下：
 
-> A type system is a tractable syntactic method for proving the absence of
-> certain program behaviors by classifying phrases according to the kinds
-> of values they compute.
+&gt; A type system is a tractable syntactic method for proving the absence of
+&gt; certain program behaviors by classifying phrases according to the kinds
+&gt; of values they compute.
 
 根据以上定义，做三点说明：
 
@@ -77,4 +77,10 @@ error。由于是在运行时检查的，所以叫dynamic checking。
 behaviour，也就是说它们并不保证检查出所有的untrapped
 error，我们称这类语言为weakly
 checked，而称提供了这种保证的语言为strongly checked。
+
+
+---
+
+> 作者: hybert  
+> URL: https://simplecoding.fun/posts/2022/11/type-system/  
 

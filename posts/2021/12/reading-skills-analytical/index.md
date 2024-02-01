@@ -34,3 +34,9 @@
 -   分析阅读应该用于阅读对自己有高价值的书籍。
 -   先经由检视阅读，判断书籍的价值，筛选出高价值的书籍。
 
+
+---
+
+> 作者: hybert  
+> URL: https://simplecoding.fun/posts/2021/12/reading-skills-analytical/  
+

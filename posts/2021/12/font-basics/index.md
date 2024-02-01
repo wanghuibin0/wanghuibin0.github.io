@@ -47,7 +47,7 @@ fc-list :lang=zh | cut -d: -f1
 
 从笔画风格对字体的分类。
 
-{{< figure src="https://pic2.zhimg.com/80/v2-e333ab0a7917943caee92344e1090781_720w.jpg" >}}
+{{&lt; figure src=&#34;https://pic2.zhimg.com/80/v2-e333ab0a7917943caee92344e1090781_720w.jpg&#34; &gt;}}
 
 
 ### serif是衬线体 {#serif是衬线体}
@@ -78,5 +78,11 @@ fc-list :lang=zh | cut -d: -f1
 
 ## Reference {#reference}
 
-一篇关于字体的好文章.<https://sspai.com/post/71957>
+一篇关于字体的好文章.&lt;https://sspai.com/post/71957&gt;
+
+
+---
+
+> 作者: hybert  
+> URL: https://simplecoding.fun/posts/2021/12/font-basics/  
 

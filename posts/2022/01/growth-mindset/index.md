@@ -53,3 +53,9 @@
 -   认清目标，不要为小事分心
 -   养成一系列好习惯
 
+
+---
+
+> 作者: hybert  
+> URL: https://simplecoding.fun/posts/2022/01/growth-mindset/  
+

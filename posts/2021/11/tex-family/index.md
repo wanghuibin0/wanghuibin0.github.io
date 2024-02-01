@@ -8,12 +8,12 @@ TeX 是 Donald Knuth 编写的一套排版系统，尤其擅长排版复杂的�
 语言的易用性。TeX 编译器用于编译 TeX文件，初期生成的文件为dvi格式。
 
 
-## pdfTeX, XeTeX &amp; LuaTeX {#pdftex-xetex-and-luatex}
+## pdfTeX, XeTeX &amp;amp; LuaTeX {#pdftex-xetex-and-luatex}
 
 Donald Knuth 认为 TeX 已经够用，不希望 TeX
 变得太复杂，决定不再往里面添加新功能，只接受bug fix。
 随着新技术的发展，以及现代化排版的需要，一些人创建了几个TeX的变体：pdfTeX,
-XeTeX &amp;
+XeTeX &amp;amp;
 LuaTeX。这些变体其实是在TeX的基础上，扩展了TeX的能力，增加了新的原语和特性。虽然这些变体都继承了TeX，但这些变体之间，相互是不兼容的。
 
 
@@ -36,7 +36,7 @@ LuaTeX。这些变体其实是在TeX的基础上，扩展了TeX的能力，增�
 3.  支持UTF-8编码
 4.  可以处理OpenType字体，但处理机制和XeTeX不同
 5.  支持MetaPost画图语言
-6.  支持通过C/C++写的.dll或.so插件来添加扩展功能
+6.  支持通过C/C&#43;&#43;写的.dll或.so插件来添加扩展功能
 
 
 ## LaTeX {#latex}
@@ -48,11 +48,17 @@ LuaTeX。这些变体其实是在TeX的基础上，扩展了TeX的能力，增�
 2.  可以方便地添加其他宏包，以便解决特定领域的排版问题
 
 
-## pdfLaTeX, XeLaTeX &amp; LuaLaTeX {#pdflatex-xelatex-and-lualatex}
+## pdfLaTeX, XeLaTeX &amp;amp; LuaLaTeX {#pdflatex-xelatex-and-lualatex}
 
--   pdfLaTeX = LaTeX macro package + pdfTeX engine
+-   pdfLaTeX = LaTeX macro package &#43; pdfTeX engine
 
--   XeLaTeX = LaTeX macro package + XeTeX engine
+-   XeLaTeX = LaTeX macro package &#43; XeTeX engine
 
--   LuaLaTeX = LaTeX macro package + LuaTeX engine
+-   LuaLaTeX = LaTeX macro package &#43; LuaTeX engine
+
+
+---
+
+> 作者: hybert  
+> URL: https://simplecoding.fun/posts/2021/11/tex-family/  
 

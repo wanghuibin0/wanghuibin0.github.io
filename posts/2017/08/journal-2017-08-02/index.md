@@ -9,3 +9,9 @@
 于众名家中，尤爱苏辛豪放，太祖气势。
 
 当常诵其词，养英雄气。
+
+---
+
+> 作者: [Hybert](https://github.com/wanghuibin0)  
+> URL: https://simplecoding.fun/posts/2017/08/journal-2017-08-02/  
+

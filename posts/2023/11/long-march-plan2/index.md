@@ -12,3 +12,9 @@
 有时，看着跑步记录里不断增长的数字，还是很有些成就感的。也会感觉到更多的安心、踏实，那些跑过的路，都成为了自己人生之路的一部分。
 ![](/ox-hugo/keep2.jpg)
 
+
+---
+
+> 作者: hybert  
+> URL: https://simplecoding.fun/posts/2023/11/long-march-plan2/  
+

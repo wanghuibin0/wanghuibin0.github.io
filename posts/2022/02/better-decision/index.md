@@ -26,3 +26,9 @@
 
 最后需要说明的是，要把这套方法放在触手可及的地方，比如钱包里，每当需要做决定的时候，就拿出来看看。
 
+
+---
+
+> 作者: hybert  
+> URL: https://simplecoding.fun/posts/2022/02/better-decision/  
+
