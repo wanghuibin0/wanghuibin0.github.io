@@ -81,6 +81,6 @@ checked，而称提供了这种保证的语言为strongly checked。
 
 ---
 
-> 作者: hybert  
+> 作者: [lazypanda](https://github.com/wanghuibin0)  
 > URL: https://simplecoding.fun/posts/2022/11/type-system/  
 

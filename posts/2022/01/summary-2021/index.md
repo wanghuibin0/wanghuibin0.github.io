@@ -34,6 +34,6 @@
 
 ---
 
-> 作者: [Hybert](https://github.com/wanghuibin0)  
+> 作者: [lazypanda](https://github.com/wanghuibin0)  
 > URL: https://simplecoding.fun/posts/2022/01/summary-2021/  
 

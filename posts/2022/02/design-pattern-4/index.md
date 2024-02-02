@@ -228,6 +228,6 @@ C&#43;&#43;标准库里对所有容器都提供了迭代器
 
 ---
 
-> 作者: hybert  
+> 作者: [lazypanda](https://github.com/wanghuibin0)  
 > URL: https://simplecoding.fun/posts/2022/02/design-pattern-4/  
 

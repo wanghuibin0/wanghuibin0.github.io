@@ -24,6 +24,6 @@ webp，效果都不好，其中 png 采用无损压缩算法，还膨胀了好�
 
 ---
 
-> 作者: hybert  
+> 作者: [lazypanda](https://github.com/wanghuibin0)  
 > URL: https://simplecoding.fun/posts/2021/12/reduce-photo-size/  
 

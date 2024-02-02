@@ -53,6 +53,6 @@ pandoc test-zh.tex -o test-zh.pdf --pdf-engine=xelatex -V CJKmainfont=&#34;WenQu
 
 ---
 
-> 作者: hybert  
+> 作者: [lazypanda](https://github.com/wanghuibin0)  
 > URL: https://simplecoding.fun/posts/2021/12/handle-chinese-in-latex/  
 

@@ -15,6 +15,6 @@
 
 ---
 
-> 作者: hybert  
+> 作者: [lazypanda](https://github.com/wanghuibin0)  
 > URL: https://simplecoding.fun/posts/2023/11/long-march-plan2/  
 

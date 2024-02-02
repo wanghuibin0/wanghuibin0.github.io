@@ -19,6 +19,6 @@
 
 ---
 
-> 作者: [Hybert](https://github.com/wanghuibin0)  
+> 作者: [lazypanda](https://github.com/wanghuibin0)  
 > URL: https://simplecoding.fun/posts/2024/01/what-to-do/  
 

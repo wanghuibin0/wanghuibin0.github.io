@@ -83,6 +83,6 @@ fc-list :lang=zh | cut -d: -f1
 
 ---
 
-> 作者: hybert  
+> 作者: [lazypanda](https://github.com/wanghuibin0)  
 > URL: https://simplecoding.fun/posts/2021/12/font-basics/  
 

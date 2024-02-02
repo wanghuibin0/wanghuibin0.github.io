@@ -20,6 +20,6 @@
 
 ---
 
-> 作者: [Hybert](https://github.com/wanghuibin0)  
+> 作者: [lazypanda](https://github.com/wanghuibin0)  
 > URL: https://simplecoding.fun/posts/2017/08/journal-2017-08-03/  
 

@@ -59,6 +59,6 @@ LuaTeX。这些变体其实是在TeX的基础上，扩展了TeX的能力，增�
 
 ---
 
-> 作者: hybert  
+> 作者: [lazypanda](https://github.com/wanghuibin0)  
 > URL: https://simplecoding.fun/posts/2021/11/tex-family/  
 

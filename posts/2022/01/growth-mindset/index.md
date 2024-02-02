@@ -56,6 +56,6 @@
 
 ---
 
-> 作者: hybert  
+> 作者: [lazypanda](https://github.com/wanghuibin0)  
 > URL: https://simplecoding.fun/posts/2022/01/growth-mindset/  
 
