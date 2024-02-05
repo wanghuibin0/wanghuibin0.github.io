@@ -41,5 +41,5 @@
 ---
 
 > 作者: [lazypanda](https://github.com/wanghuibin0)  
-> URL: https://simplecoding.fun/posts/2021/11/personality-control-point/  
+> URL: https://simplecoding.fun/posts/2016/12/personality-control-point/  
 
