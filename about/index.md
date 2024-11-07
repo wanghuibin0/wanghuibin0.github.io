@@ -31,6 +31,6 @@
 
 ---
 
-> 作者: [lazypanda](https://github.com/wanghuibin0)  
+> 作者:   
 > URL: https://simplecoding.fun/about/  
 

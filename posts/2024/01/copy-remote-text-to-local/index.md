@@ -1,5 +1,7 @@
-# 利用ssh reverse tunnel从远程向本机复制文本
+# 利用ssh Reverse Tunnel从远程向本机复制文本
 
+
+PS: 这篇文章已经过时，最新解决方案请参考：https://www.reddit.com/r/vim/comments/k1ydpn/a_guide_on_how_to_copy_text_from_anywhere/
 
 软件开发工作中，用ssh登录后在远程机器上操作，常常需要从远程机器上往本地复制文本。如果是小段的文本，一般在终端选中即可在本地粘贴；但是如果是大段的文本（超过一个屏幕），就没法一次性选中，复制操作变得很麻烦。这里提供一种方法，利用ssh reverse tunnel，可以很方便地将远程大段文本拷贝到本地。
 

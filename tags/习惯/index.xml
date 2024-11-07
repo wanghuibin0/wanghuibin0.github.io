@@ -1,1 +1,57 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>习惯 - 标签 - 子来园</title><link>https://simplecoding.fun/tags/%E4%B9%A0%E6%83%AF/</link><description>习惯 - 标签 | 子来园</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>fighter9010@gmail.com (lazypanda)</managingEditor><webMaster>fighter9010@gmail.com (lazypanda)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 16 Nov 2023 13:21:00 +0800</lastBuildDate><atom:link href="https://simplecoding.fun/tags/%E4%B9%A0%E6%83%AF/" rel="self" type="application/rss+xml"/><item><title>“长征”计划-第二个500公里</title><link>https://simplecoding.fun/posts/2023/11/long-march-plan2/</link><pubDate>Thu, 16 Nov 2023 13:21:00 +0800</pubDate><author>lazypanda</author><guid>https://simplecoding.fun/posts/2023/11/long-march-plan2/</guid><description>不知不觉已经跑了一千多公里了。 上半年在云谷园区，每天晚饭前围着北边的小球场跑上几圈。下半年来到了南京，最开始是围着百家湖跑，后来去秦淮河对岸</description></item><item><title>关于写博客</title><link>https://simplecoding.fun/posts/2022/10/blogging/</link><pubDate>Sun, 23 Oct 2022 00:45:00 +0800</pubDate><author>lazypanda</author><guid>https://simplecoding.fun/posts/2022/10/blogging/</guid><description>为什么写博客 书写帮助自己思考 把自己有价值的思考/知识分享给别人 提高表达能力 交志同道合的朋友 通过接受反馈认识和改善自己 以什么原则写 要真诚，不写</description></item><item><title>数字大扫除</title><link>https://simplecoding.fun/posts/2022/10/digital-clean/</link><pubDate>Wed, 05 Oct 2022 00:42:00 +0800</pubDate><author>lazypanda</author><guid>https://simplecoding.fun/posts/2022/10/digital-clean/</guid><description>最近刚换了新电脑。趁此辞旧迎新之际，我做了一次数字大扫除。 笔记。之前的笔记散落各处：onenote，有道云，语雀，obsidian，org-</description></item><item><title>"长征"计划-第一个500公里</title><link>https://simplecoding.fun/posts/2022/08/long-march-plan/</link><pubDate>Sat, 20 Aug 2022 10:40:00 +0800</pubDate><author>lazypanda</author><guid>https://simplecoding.fun/posts/2022/08/long-march-plan/</guid><description>实际上是我的跑步计划。之所以名为“长征”，是因为我目标跑步距离是25000里，刚好是红军长征的距离。 我给实现这个目标的时限是30年。这个时间</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>习惯 - 标签 - 子来园</title><link>https://simplecoding.fun/tags/%E4%B9%A0%E6%83%AF/</link><description>子来园</description><generator>Hugo 0.138.0 &amp; FixIt v0.3.14</generator><language>zh-CN</language><managingEditor>fighter9010@gmail.com (lazypanda)</managingEditor><webMaster>fighter9010@gmail.com (lazypanda)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 02 Feb 2024 14:12:00 +0800</lastBuildDate><atom:link href="https://simplecoding.fun/tags/%E4%B9%A0%E6%83%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>“长征”计划-第二个500公里</title><link>https://simplecoding.fun/posts/2023/11/long-march-plan2/</link><pubDate>Thu, 16 Nov 2023 13:21:00 +0800</pubDate><author>fighter9010@gmail.com (lazypanda)</author><guid>https://simplecoding.fun/posts/2023/11/long-march-plan2/</guid><category domain="https://simplecoding.fun/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;p>不知不觉已经跑了一千多公里了。&lt;/p>
+&lt;p>上半年在云谷园区，每天晚饭前围着北边的小球场跑上几圈。下半年来到了南京，最开始是围着百家湖跑，后来去秦淮河对岸的那条宽敞跑道跑。最近天冷了，计划每天晚上围着单位园区跑几圈。&lt;/p></description></item><item><title>关于写博客</title><link>https://simplecoding.fun/posts/2022/10/blogging/</link><pubDate>Sun, 23 Oct 2022 00:45:00 +0800</pubDate><author>fighter9010@gmail.com (lazypanda)</author><guid>https://simplecoding.fun/posts/2022/10/blogging/</guid><category domain="https://simplecoding.fun/categories/%E6%80%9D%E7%BB%B4/">思维</category><description>&lt;h2 id="为什么写博客" class="heading-element">&lt;span>为什么写博客&lt;/span>
+ &lt;a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e5%86%99%e5%8d%9a%e5%ae%a2" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>书写帮助自己思考&lt;/li>
+&lt;li>把自己有价值的思考/知识分享给别人&lt;/li>
+&lt;li>提高表达能力&lt;/li>
+&lt;li>交志同道合的朋友&lt;/li>
+&lt;li>通过接受反馈认识和改善自己&lt;/li>
+&lt;/ol>
+&lt;h2 id="以什么原则写" class="heading-element">&lt;span>以什么原则写&lt;/span>
+ &lt;a href="#%e4%bb%a5%e4%bb%80%e4%b9%88%e5%8e%9f%e5%88%99%e5%86%99" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>要真诚，不写违心的话&lt;/li>
+&lt;li>要追求质量，为读者增加价值&lt;/li>
+&lt;li>忽略非建设性的批评&lt;/li>
+&lt;li>保持简洁&lt;/li>
+&lt;/ol>
+&lt;h2 id="写什么" class="heading-element">&lt;span>写什么&lt;/span>
+ &lt;a href="#%e5%86%99%e4%bb%80%e4%b9%88" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>对某个问题的有价值的思考&lt;/li>
+&lt;li>专业领域的知识&lt;/li>
+&lt;li>读书笔记&lt;/li>
+&lt;li>某个实际问题的解决方案&lt;/li>
+&lt;li>生活中有重要意义的事件&lt;/li>
+&lt;li>生活理念、价值观、感悟&lt;/li>
+&lt;/ol>
+&lt;h2 id="不写什么" class="heading-element">&lt;span>不写什么&lt;/span>
+ &lt;a href="#%e4%b8%8d%e5%86%99%e4%bb%80%e4%b9%88" class="heading-mark">
+ &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
+ &lt;/a>
+&lt;/h2>&lt;ol>
+&lt;li>心情碎碎念&lt;/li>
+&lt;li>流水账&lt;/li>
+&lt;/ol></description></item><item><title>数字大扫除</title><link>https://simplecoding.fun/posts/2022/10/digital-clean/</link><pubDate>Wed, 05 Oct 2022 00:42:00 +0800</pubDate><author>fighter9010@gmail.com (lazypanda)</author><guid>https://simplecoding.fun/posts/2022/10/digital-clean/</guid><category domain="https://simplecoding.fun/categories/%E6%80%9D%E7%BB%B4/">思维</category><description>&lt;p>最近刚换了新电脑。趁此辞旧迎新之际，我做了一次数字大扫除。&lt;/p>
+&lt;ol>
+&lt;li>笔记。之前的笔记散落各处：onenote，有道云，语雀，obsidian，org-roam，flomo，手机便笺&amp;hellip;&amp;hellip;
+这次做了一次系统性的整理，全部收归到onenote来。删除了一部分，合并了一部分，还根据已有的笔记内容重新分了类，清爽了许多。今后打算以onenote为核心做知识管理，其他分散的笔记会定期（比如每周）整理到onenote中来。需要记忆的导入到anki中去。&lt;/li>
+&lt;li>照片。删了许多没用的照片，值得留下来的照片也分类存放，分类的主要标准是时间，其次是主题，照片备份到nas。有价值的截图直接贴到onenote统一管理。&lt;/li>
+&lt;li>电子书。之前用来管理电子书的calibre有个很大的缺点：无法对电子书用层级分类。于是决定回归最原始的方法&amp;mdash;&amp;mdash;电脑文件夹。我把所有电子书导出，去重，删除了许多没用的，然后重新分类。然后备份到nas。&lt;/li>
+&lt;li>影视资源。包括电影电视剧还有很多视频教程，删了大部分，只留下很小一部分真正有用的。&lt;/li>
+&lt;li>邮件订阅。很多从来不看的邮件直接unsubscribe了。&lt;/li>
+&lt;li>RSS。价值不高的RSS源直接取消关注了。&lt;/li>
+&lt;li>浏览器书签。删。&lt;/li>
+&lt;li>手机app。消息通知全部禁止。&lt;/li>
+&lt;li>网盘。减少网盘的使用，删除了网盘里大量现在用不到的资源。&lt;/li>
+&lt;li>知乎、b站、油管收藏夹。重温收藏夹的内容，发现大部分已经没有收藏的价值了，删除。有价值的我会整理到onenote中。还在进行中。&lt;/li>
+&lt;/ol>
+&lt;p>在这个信息泛滥的时代，很多人都有信息松鼠病（我也是其中一员），囤积了很多数字资源，觉得以后会用到，然而大多数资源都静静地躺在硬盘里从未打开过。数字大扫除是一个费力劳神的事情，过程中需要重温自己想要什么，需要思考东西的分类，需要判断东西是去还是留，要留在哪里。在大扫除过程中，面对许多文件，我常常觉得“这个以后会用到吧”而不舍得，最后还是狠心删了，也有一些文件，犹豫了几下还是没舍得删。&lt;/p></description></item><item><title>"长征"计划-第一个500公里</title><link>https://simplecoding.fun/posts/2022/08/long-march-plan/</link><pubDate>Sat, 20 Aug 2022 10:40:00 +0800</pubDate><author>fighter9010@gmail.com (lazypanda)</author><guid>https://simplecoding.fun/posts/2022/08/long-march-plan/</guid><category domain="https://simplecoding.fun/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;p>实际上是我的跑步计划。之所以名为“长征”，是因为我目标跑步距离是25000里，刚好是红军长征的距离。&lt;/p>
+&lt;p>我给实现这个目标的时限是30年。这个时间足够长，一方面是为了将跑步作为此后生活中重要的一部分，保证我身体健康，精力充沛；另一方面，生活中总会有各种意外，一小段时间没跑也不至于影响大局，有足够的余地灵活安排，不会给自己带来额外的心理压力。&lt;/p></description></item></channel></rss>
