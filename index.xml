@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>子来园</title><link>https://simplecoding.fun/</link><description>子来园</description><generator>Hugo 0.138.0 &amp; FixIt v0.3.14</generator><language>zh-CN</language><managingEditor>fighter9010@gmail.com (lazypanda)</managingEditor><webMaster>fighter9010@gmail.com (lazypanda)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 09 Nov 2024 09:35:24 +0800</lastBuildDate><atom:link href="https://simplecoding.fun/index.xml" rel="self" type="application/rss+xml"/><item><title>LLVM目标无关代码生成器（下）（译）</title><link>https://simplecoding.fun/posts/2024/02/llvm-code-generator-1/</link><pubDate>Tue, 06 Feb 2024 11:46:00 +0800</pubDate><author>fighter9010@gmail.com (lazypanda)</author><guid>https://simplecoding.fun/posts/2024/02/llvm-code-generator-1/</guid><category domain="https://simplecoding.fun/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;p>&lt;strong>提示&lt;/strong> ： &lt;em>本文翻译了LLVM官方文档中的&lt;a href="https://llvm.org/docs/CodeGenerator.html"target="_blank" rel="external nofollow noopener noreferrer">The LLVM Target-Independent Code Generator&lt;/a>一文，主要为个人学习之用。根据个人的理解，删繁就简，所以有些地方跟原文有所出入，幸勿见怪。如果需要更准确的信息，请参照原文。&lt;/em>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>子来园</title><link>https://simplecoding.fun/</link><description>子来园</description><generator>Hugo 0.138.0 &amp; FixIt v0.3.14</generator><language>zh-CN</language><managingEditor>fighter9010@gmail.com (lazypanda)</managingEditor><webMaster>fighter9010@gmail.com (lazypanda)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 04 Nov 2024 12:52:03 +0000</lastBuildDate><atom:link href="https://simplecoding.fun/index.xml" rel="self" type="application/rss+xml"/><item><title>LLVM目标无关代码生成器（下）（译）</title><link>https://simplecoding.fun/posts/2024/02/llvm-code-generator-1/</link><pubDate>Tue, 06 Feb 2024 11:46:00 +0800</pubDate><author>fighter9010@gmail.com (lazypanda)</author><guid>https://simplecoding.fun/posts/2024/02/llvm-code-generator-1/</guid><category domain="https://simplecoding.fun/categories/%E6%8A%80%E6%9C%AF/">技术</category><description>&lt;p>&lt;strong>提示&lt;/strong> ： &lt;em>本文翻译了LLVM官方文档中的&lt;a href="https://llvm.org/docs/CodeGenerator.html"target="_blank" rel="external nofollow noopener noreferrer">The LLVM Target-Independent Code Generator&lt;/a>一文，主要为个人学习之用。根据个人的理解，删繁就简，所以有些地方跟原文有所出入，幸勿见怪。如果需要更准确的信息，请参照原文。&lt;/em>&lt;/p>
 &lt;h2 id="机器无关代码生成算法" class="heading-element">&lt;span>机器无关代码生成算法&lt;/span>
  &lt;a href="#%e6%9c%ba%e5%99%a8%e6%97%a0%e5%85%b3%e4%bb%a3%e7%a0%81%e7%94%9f%e6%88%90%e7%ae%97%e6%b3%95" class="heading-mark">
  &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
@@ -1214,84 +1214,7 @@ emitValue等，这些都对应着汇编级别的概念。还有一个EmitInstruc
 &lt;/h2>&lt;ul>
 &lt;li>&lt;a href="https://gist.github.com/dergachev/8259104"target="_blank" rel="external nofollow noopener noreferrer">https://gist.github.com/dergachev/8259104&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://qbee.io/misc/reverse-ssh-tunneling-the-ultimate-guide/"target="_blank" rel="external nofollow noopener noreferrer">https://qbee.io/misc/reverse-ssh-tunneling-the-ultimate-guide/&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>2023总结</title><link>https://simplecoding.fun/posts/2024/01/summary-2023/</link><pubDate>Thu, 18 Jan 2024 21:08:27 +0800</pubDate><author>fighter9010@gmail.com (lazypanda)</author><guid>https://simplecoding.fun/posts/2024/01/summary-2023/</guid><category domain="https://simplecoding.fun/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;p>时光易逝，伟业难成。写此总结，回顾2023，以挥别过去，喜迎将来。&lt;/p>
-&lt;h2 id="健康" class="heading-element">&lt;span>健康&lt;/span>
- &lt;a href="#%e5%81%a5%e5%ba%b7" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;ul>
-&lt;li>饮食。多数时候能够做到食不过饱，饮不过量，会有意识地多吃蔬菜，平时常备坚果、维生素片、鱼油等补充，注重营养均衡。偶尔比较放纵，不过尚不影响大局。体重近期有反弹倾向，需要注意控制。尤其需要注意少油少盐少糖。&lt;/li>
-&lt;li>运动。运动保持在还可以的状态，在条件允许时，坚持推进了&lt;a href="https://simplecoding.fun/posts/2023/11/long-march-plan2/">长征计划&lt;/a>。美中不足的是，天冷之后户外跑步不太方便。相比于围着园区慢跑，我还是更喜欢换上运动装，出去大汗淋漓一场。近期重新捡起了八段锦，但时有时无，应加大频率。无氧运动中断了，需要捡起来，卷腹、俯卧撑、深蹲均可，这些活动室内就可以做。平时精力都还不错。上班期间常常一坐就是很久，对颈椎、腰椎、视力都不好，应该隔半小时站起来活动一下，养成习惯。&lt;/li>
-&lt;li>睡眠。熬夜还是比较严重，多数时候要到1点才睡着。早上一般8点多起，天冷之后有赖床倾向。总的睡眠时间还算够，整体睡眠质量也还不错，白天基本不困。睡眠是典型的越想控制越做不好的事情，怎么办？顺其自然吧。慢慢把入睡时间往前提一点。&lt;/li>
-&lt;li>打坐。今年打坐的次数很少，屈指可数。作为最好的大脑保健项目，我觉得还是需要捡起来。两点需注意，一是心要静，二是不需要追求时间多长，三五分钟即可，太高的目标难以坚持，失败了打击积极性，于长远是不利的。&lt;/li>
-&lt;li>心态。论对健康的影响，还是心态最大。这些年经过自己的摸索，以及周老师的指导熏陶，我对治心方法还算有些心得。去年总体上保持心态良好，在最困难的日子里，也保证自己不至于崩溃。有时还是会有焦虑，但总体可控，也能很快调节。&lt;/li>
-&lt;/ul>
-&lt;h2 id="工作" class="heading-element">&lt;span>工作&lt;/span>
- &lt;a href="#%e5%b7%a5%e4%bd%9c" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>五月份跟同事朋友约饭告别，离开前公司。七月份开始到南京上班，做NPU编译器方面的工作。摆脱了上一段工作的束缚，颇有点「海阔凭鱼跃，天高任鸟飞」的感觉。&lt;/p>
-&lt;p>入职后的半年，工作内容主要集中在LLVM，也看了几本LLVM相关书籍，现在基本上对LLVM后端比较熟悉了，遇到问题能够很快解决了。另外还学习了陈天奇的MLC课程，在工作中也看了一部分TVM源码，对深度学习工具链有了一定的认识。今后会在这一领域深耕。&lt;/p>
-&lt;p>这个过程中，对于职业生涯有了更多的思考，期间看了几本书，&lt;a href="https://book.douban.com/subject/27609489/"target="_blank" rel="external nofollow noopener noreferrer">远见&lt;/a>、&lt;a href="https://book.douban.com/subject/23238270/"target="_blank" rel="external nofollow noopener noreferrer">权力与领导力&lt;/a>、&lt;a href="https://book.douban.com/subject/36044253/"target="_blank" rel="external nofollow noopener noreferrer">软技能&lt;/a>给了我很大的启发。&lt;/p>
-&lt;h2 id="家庭" class="heading-element">&lt;span>家庭&lt;/span>
- &lt;a href="#%e5%ae%b6%e5%ba%ad" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;ul>
-&lt;li>入职前待在家的一个多月，学会了一些家常菜的做法。今后不怕会饿死了\^o^/。另外，亲手做饭给亲爱的人品尝，并得到认可，真的是一件超有幸福感的事！&lt;/li>
-&lt;li>入职前回了趟老家，刚好老爸生病了，在医院陪着照顾几天。父母年纪渐渐大了，身体难免会出问题，希望趁着有机会多为他们做些事情，少留遗憾。&lt;/li>
-&lt;li>十一月份办了婚礼。现在想来，婚礼前和老婆一起准备的场景，婚礼中各个环节的身心参与，都宛如发生在昨日。婚礼时各路亲朋好友咸来祝贺，希望他们玩得开心。当时无比认真地写了誓言卡，读了誓言卡，尽管已经无数次预想过婚礼上的各种场景，在实际参与的时候，仍然体会到了诸多感动。从此，木棉和橡树，根紧握在地下，叶相触在云里。&lt;/li>
-&lt;/ul>
-&lt;h2 id="技能" class="heading-element">&lt;span>技能&lt;/span>
- &lt;a href="#%e6%8a%80%e8%83%bd" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;ul>
-&lt;li>C++。C++是开发LLVM时使用的主要语言，另外还读了两本书《&lt;a href="https://book.douban.com/subject/26857943/"target="_blank" rel="external nofollow noopener noreferrer">C++程序设计语言（第 1 - 3 部分）&lt;/a>》《&lt;a href="https://book.douban.com/subject/26900000/"target="_blank" rel="external nofollow noopener noreferrer">C++ 程序设计语言（第 4 部分：标准库）&lt;/a>》，是C++作者写的，相当不错。&lt;/li>
-&lt;li>Python。在给TVM写测试时用了Python，读了懒猫推荐的这本《&lt;a href="https://book.douban.com/subject/3112503/"target="_blank" rel="external nofollow noopener noreferrer">Python核心编程&lt;/a>》。&lt;/li>
-&lt;li>Vim。在服务器上写代码，我都是用Vim作为编辑器。像LLVM这样的大型项目，使用Vim加上一些插件，完全可以胜任，操作起来特别方便。&lt;/li>
-&lt;li>tmux。也是在服务器上做软件开发的神器。&lt;/li>
-&lt;li>chatgpt。AI时代来临，在工作中开始越来越多地使用chatgpt。以前需要使用搜索引擎的地方，很多都可以用chatgpt更快速更准确的得到答案，效率提高了一大截。&lt;/li>
-&lt;li>笔记。更多地使用flomo做各种笔记，看了少楠写的《&lt;a href="https://book.douban.com/subject/36615020/"target="_blank" rel="external nofollow noopener noreferrer">笔记的方法&lt;/a>》，对自己的笔记系统做了一些调整。另外也在用纸笔做子弹笔记。&lt;/li>
-&lt;li>写作。看了两本小书《&lt;a href="https://book.douban.com/subject/3284547/"target="_blank" rel="external nofollow noopener noreferrer">文心&lt;/a>》《&lt;a href="https://book.douban.com/subject/2283714/"target="_blank" rel="external nofollow noopener noreferrer">文章作法&lt;/a>》。平时看文章开始留意他们的写作技巧。开始学习《&lt;a href="https://book.douban.com/subject/1119156/"target="_blank" rel="external nofollow noopener noreferrer">古代汉语&lt;/a>》。&lt;/li>
-&lt;li>治心。全年参与了「&lt;a href="https://simplecoding.fun/posts/2023/12/solar-terms-life-practice/">节气生活修行&lt;/a>」。虽然参与时没有特别认真，但是有个长者经常在耳边提醒着「生活不止眼前的苟且，还有诗和远方」，对我也是挺有帮助的。&lt;/li>
-&lt;/ul>
-&lt;h2 id="旅行" class="heading-element">&lt;span>旅行&lt;/span>
- &lt;a href="#%e6%97%85%e8%a1%8c" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;ul>
-&lt;li>一月份，到良渚遗址公园玩，参观了良渚博物馆。&lt;/li>
-&lt;li>四月份，乘船游西湖，上岸后去了太子湾公园，赶上了末班郁金香的盛开。四月底在亚运会体育馆现场看了张信哲演唱会，是平生看的第一场演唱会。&lt;/li>
-&lt;li>五月份，去新疆伊犁自驾游，驰骋于辽阔的大西北，看到了绝美的赛里木湖，邂逅了五月的大雪纷飞。&lt;/li>
-&lt;li>六月份，去了绍兴，看了周恩来祖居和王阳明故居；去了湘湖，游船赏荷，然后参观了跨湖桥遗址博物馆；回了趟老家，在陪在医院的老爸的间隙，骑着电动车把小县城足足转了几圈，看了西平宝岩寺塔、小洪河公园、嫘祖文华苑。&lt;/li>
-&lt;li>八月份，一个闲适的下午，散步于位于西溪湿地的太极禅苑。&lt;/li>
-&lt;li>十月份，在杭州半山上远眺。十月末，趁着去成都出差的机会，独自去了乐山、峨眉山（&lt;a href="https://simplecoding.fun/posts/2023/12/travel-mount-emei/">乐山峨眉山之旅&lt;/a>），看到了壮丽的峨眉日出。&lt;/li>
-&lt;li>十一月份，趁着在宜兴办婚宴的机会，游玩了龙背山公园，看到了壁画上那些风光一时的佳人才子们，他们也消失在历史的长河中，很难不有所感慨。带父母逛了玉泉校区，看到了曾经的宿舍、曾经的食堂、曾经的教室。&lt;/li>
-&lt;li>十二月份，参观了南京博物院。&lt;/li>
-&lt;/ul>
-&lt;h2 id="读书观影" class="heading-element">&lt;span>读书观影&lt;/span>
- &lt;a href="#%e8%af%bb%e4%b9%a6%e8%a7%82%e5%bd%b1" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;ul>
-&lt;li>读书。读了65本书，其中20本专业书，其他涉及佛学、心理学、语文、传记、理财、思维方法等各若干。就不一一列举了。&lt;/li>
-&lt;li>观影。看了18个影视作品，大多是电影，少量纪录片、电视剧。&lt;/li>
-&lt;/ul>
-&lt;h2 id="2024展望" class="heading-element">&lt;span>2024展望&lt;/span>
- &lt;a href="#2024%e5%b1%95%e6%9c%9b" class="heading-mark">
- &lt;svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">&lt;path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z">&lt;/path>&lt;/svg>
- &lt;/a>
-&lt;/h2>&lt;p>给自己的最大祝愿是：不要怕犯错。培养勇气的唯一途径是直面挑战，直面恐惧。&lt;/p>
-&lt;p>引用作家尼尔.盖曼在2011年的新年祝福：&lt;/p>
-&lt;blockquote>
-&lt;p>希望在新的一年里，你可以多多犯错。&lt;br>
-因为当你犯错时，意味着你正在创造崭新的事物，尝试崭新的可能，你在汲取，跃动，让自己前行，也让自己改变，甚至也把自己所生活的世界撬动。你在尝试一些此前从未做过的事情，更重要的是，你在做一些事情。&lt;br>
-所以这是我对你的新年祝福，也是对我们所有人的祝福:犯一些崭新的错误，犯一些灼目耀眼的错误，一些令人瞠目结舌的错误，一些别人还未曾犯过的错误。不要望而却步，不要就此打住，不要担心它不够好，不够完美无缺，无论这错误是什么:艺术，爱，工作，家庭还是生活。&lt;br>
-无论它是你恐惧的任何事，迎头直上。&lt;br>
-祝福你在新的一年，勇于犯错，接下来每一年也是如此。&lt;/p>
-&lt;/blockquote>
-&lt;p>愿所有人都能被温柔以待~&lt;/p></description></item><item><title>人生要做什么</title><link>https://simplecoding.fun/posts/2024/01/what-to-do/</link><pubDate>Fri, 12 Jan 2024 00:53:56 +0800</pubDate><author>fighter9010@gmail.com (lazypanda)</author><guid>https://simplecoding.fun/posts/2024/01/what-to-do/</guid><category domain="https://simplecoding.fun/categories/%E6%80%9D%E7%BB%B4/">思维</category><description>&lt;p>关于人生的意义，《活出生命的意义》一书中说：“人不应该问他的生命之意义是什么，而必须承认是生命向他提出了问题。简单地说，生命对每个人都提出了问题，他必须通过对自己生命的理解来回答生命的提问。”你会如何回答这个问题呢？&lt;/p>
+&lt;/ul></description></item><item><title>人生要做什么</title><link>https://simplecoding.fun/posts/2024/01/what-to-do/</link><pubDate>Fri, 12 Jan 2024 00:53:56 +0800</pubDate><author>fighter9010@gmail.com (lazypanda)</author><guid>https://simplecoding.fun/posts/2024/01/what-to-do/</guid><category domain="https://simplecoding.fun/categories/%E6%80%9D%E7%BB%B4/">思维</category><description>&lt;p>关于人生的意义，《活出生命的意义》一书中说：“人不应该问他的生命之意义是什么，而必须承认是生命向他提出了问题。简单地说，生命对每个人都提出了问题，他必须通过对自己生命的理解来回答生命的提问。”你会如何回答这个问题呢？&lt;/p>
 &lt;p>于我而言，人生中最重要的是体验，体验到一种成就感、意义感、幸福感。回顾我自己的人生经历，结合对历史上我所敬佩的那些人的观察，我发现我长久以来孜孜以求的，就是这几种感觉。当我通过运用自己的能力，做好一件事，或者完成一件作品，我会体验到一种成就感，这种成就感会给我长久的满足。当我知道我为什么做一件事，知道我做的事情会对他人产生正面影响，我会感到这件事是有意义的，这种意义感也会给我长久的满足。这些都是幸福感的重要来源。相反，如果做事时常常挫败，或者不知道自己做的事是为了什么，就很容易陷入沮丧和消沉。&lt;/p>
 &lt;p>那么怎么更多获得这样的正面体验呢？根据著名的马斯洛需求层次理论，越高层次需求的满足，特别是自我实现，越能给我们带来成就感、意义感和幸福感。而自我决定论指出，人的三种内在动机包括自主感、胜任感和归属感，当我们在做一件事的过程中，感到这件事不是被迫做的，感到自己有足够的能力做好这件事，感到做好这件事能给他人带来正面影响，我们就会由衷地感到满足。我们应该尽可能多做这样的事情。&lt;/p>
 &lt;p>《象与骑象人》指出，幸福的两大原则是：进展原则和适应原则。进展原则是说，达到目标后的幸福是短暂的，朝着目标不断前进比达到目标更幸福。适应原则是说，从长远来看，我们总会适应所遇到的“顺境”或“逆境”。因此不可能存在一个能永保幸福的标准，不可能说得到了某件事物，做成了某件事情，就保证幸福了。在我们的一生中，我们必须不停地做事情，制定目标，全力以赴去实现目标。但是须谨记，应该在这整个过程中去体验幸福感，而不是寄希望于达成目标的那一刹那。&lt;/p>
@@ -1727,4 +1650,9 @@ emitValue等，这些都对应着汇编级别的概念。还有一个EmitInstruc
 &lt;/blockquote>
 &lt;blockquote>
 &lt;p>Look for something new to learn, and when you find it, dedicate yourself to learning it out in the open. Document your progress and share as you go so that others can learn along with you. Show your work, and when the right people show up, pay close attention to them, because they’ll have a lot to show you.&lt;/p>
-&lt;/blockquote></description></item></channel></rss>
+&lt;/blockquote></description></item><item><title>“长征”计划-第二个500公里</title><link>https://simplecoding.fun/posts/2023/11/long-march-plan2/</link><pubDate>Thu, 16 Nov 2023 13:21:00 +0800</pubDate><author>fighter9010@gmail.com (lazypanda)</author><guid>https://simplecoding.fun/posts/2023/11/long-march-plan2/</guid><category domain="https://simplecoding.fun/categories/%E7%94%9F%E6%B4%BB/">生活</category><description>&lt;p>不知不觉已经跑了一千多公里了。&lt;/p>
+&lt;p>上半年在云谷园区，每天晚饭前围着北边的小球场跑上几圈。下半年来到了南京，最开始是围着百家湖跑，后来去秦淮河对岸的那条宽敞跑道跑。最近天冷了，计划每天晚上围着单位园区跑几圈。&lt;/p>
+&lt;p>这一年，跑步慢慢变成了生活中的一个习惯，如果一段时间没跑，就会觉得生活好像少了点什么。&lt;/p>
+&lt;p>这一年，比较少追求跑步速度了，更多的是随心所欲，跑累了就走一段，看看路边的风景，听听路上的行人在聊些什么，走一会儿再接着跑。&lt;/p>
+&lt;p>有时，看着跑步记录里不断增长的数字，还是很有些成就感的。也会感觉到更多的安心、踏实，那些跑过的路，都成为了自己人生之路的一部分。
+&lt;img loading="lazy" src="https://simplecoding.fun/ox-hugo/keep2.jpg" alt="/ox-hugo/keep2.jpg" srcset="https://simplecoding.fun/ox-hugo/keep2.jpg?size=small, https://simplecoding.fun/ox-hugo/keep2.jpg?size=medium 1.5x, https://simplecoding.fun/ox-hugo/keep2.jpg?size=large 2x" data-title="/ox-hugo/keep2.jpg" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/>&lt;/p></description></item></channel></rss>
