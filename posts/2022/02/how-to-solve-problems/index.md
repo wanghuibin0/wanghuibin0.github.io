@@ -2,6 +2,7 @@
 
 
 道理与解数学题是类似的。
+&lt;!--more--&gt;
 
 {{&lt; figure src=&#34;/ox-hugo/2022-02-08_16-38-05_screenshot.png&#34; &gt;}}
 
