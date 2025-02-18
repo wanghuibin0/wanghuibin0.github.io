@@ -1,7 +1,7 @@
 # LLVM目标无关代码生成器（下）（译）
 
 
-**提示** ： _本文翻译了LLVM官方文档中的[The LLVM Target-Independent Code Generator](https://llvm.org/docs/CodeGenerator.html)一文，主要为个人学习之用。根据个人的理解，删繁就简，所以有些地方跟原文有所出入，幸勿见怪。如果需要更准确的信息，请参照原文。_
+**提示** ： *本文是LLVM官方文档[The LLVM Target-Independent Code Generator](https://llvm.org/docs/CodeGenerator.html)的译文下半部分*
 
 ## 机器无关代码生成算法
 
