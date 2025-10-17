@@ -11,7 +11,7 @@
 
 指令选择是将LLVM IR转换为特定机器指令的过程。学术界有多种指令选择算法，而LLVM使用了基于SelectionDAG的指令选择器。
 
-目前，DAG指令选择器的一部分是由.td文件生成的，另一部分还是需要用C&#43;&#43;代码实现。
+目前，DAG指令选择器的一部分是由.td文件生成的，另一部分还是需要用C++代码实现。
 
 GlobalISel是另一个指令选择框架，目前还是实验版本。
 
@@ -21,7 +21,7 @@ SelectionDAG提供了一种代码表示方式，对于用自动化的指令选�
 
 SelectionDAG是一种有向无环图，其结点是SDNode实例。SDNode主要包含了操作码和操作数。include/llvm/ISDOpcodes.h文件中描述各种操作节点类型。
 
-实际中大多结点只是定义一个值，但每个结点都有可能定义多个值。比如，一个div/rem操作同时定义了商和余数。很多其他情形也需要多个值。每个结点还有若干操作数，表示为指向定义这些操作数的结点的边。因为结点可能定义多个值，这些边要表示为SDValue实例，即&lt;SDNode, unsigned&gt;序对，SDNode表示来自哪个结点，unsigned表示来自其哪个结果。SDNode产生的每个值都有关联的MVT (Machine Value Type)，表示该值的类型。
+实际中大多结点只是定义一个值，但每个结点都有可能定义多个值。比如，一个div/rem操作同时定义了商和余数。很多其他情形也需要多个值。每个结点还有若干操作数，表示为指向定义这些操作数的结点的边。因为结点可能定义多个值，这些边要表示为SDValue实例，即<SDNode, unsigned>序对，SDNode表示来自哪个结点，unsigned表示来自其哪个结果。SDNode产生的每个值都有关联的MVT (Machine Value Type)，表示该值的类型。
 
 SelectionDAG包含两种类型的值：表示数据依赖的，表示控制依赖的。数据值就是整数或浮点数类型的边，控制依赖边就是MVT::Other类型的chain边。这些边为有副作用的结点(load/store/call/return)提供了顺序。根据约定，chain输入总是0号操作数，chain输出总是该操作产生的最后一个值。然而，经过指令选择，机器结点也会有在指令操作数后面的chain输入，而且后面可能跟着glue结点。
 
@@ -56,7 +56,7 @@ SelectionDAG指定有Entry和Root结点，Entry结点是一个标记结点，其
 
 #### 初始DAG构建
 
-SelectionDAGBuilder类负责从LLVM IR构建SelectionDAG，这个Pass大部分都是硬编码的（LLVM add -&gt; SDNode add, getelementptr -&gt; 显式的算术运算），过程中需要用到机器特定hooks来lower calls, returns, varargs等。
+SelectionDAGBuilder类负责从LLVM IR构建SelectionDAG，这个Pass大部分都是硬编码的（LLVM add -> SDNode add, getelementptr -> 显式的算术运算），过程中需要用到机器特定hooks来lower calls, returns, varargs等。
 
 #### SelectionDAG类型合法化
 
@@ -113,23 +113,23 @@ SelectionDAGBuilder类负责从LLVM IR构建SelectionDAG，这个Pass大部分�
 
 PowerPC的后端会包含以下指令定义：
 ```
-def FMADDS : AForm_1&lt;59, 29,
+def FMADDS : AForm_1<59, 29,
                     (ops F4RC:$FRT, F4RC:$FRA, F4RC:$FRC, F4RC:$FRB),
-                    &#34;fmadds $FRT, $FRA, $FRC, $FRB&#34;,
+                    "fmadds $FRT, $FRA, $FRC, $FRB",
                     [(set F4RC:$FRT, (fadd (fmul F4RC:$FRA, F4RC:$FRC),
-                                           F4RC:$FRB))]&gt;;
-def FADDS : AForm_2&lt;59, 21,
+                                           F4RC:$FRB))]>;
+def FADDS : AForm_2<59, 21,
                     (ops F4RC:$FRT, F4RC:$FRA, F4RC:$FRB),
-                    &#34;fadds $FRT, $FRA, $FRB&#34;,
-                    [(set F4RC:$FRT, (fadd F4RC:$FRA, F4RC:$FRB))]&gt;;
+                    "fadds $FRT, $FRA, $FRB",
+                    [(set F4RC:$FRT, (fadd F4RC:$FRA, F4RC:$FRB))]>;
 ```
 
 TableGen DAG指令选择器从.td文件中读取指令模式，并自动构建模式匹配代码。它具有以下优势：
 
 - 在编译器自身的编译阶段，可以分析指令模式并告诉你该模式是否有意义。
 
-- 在模式匹配时处理操作数约束。比如，很方便表达&#34;匹配一个13
-bit的符号扩展立即数&#34;。
+- 在模式匹配时处理操作数约束。比如，很方便表达"匹配一个13
+bit的符号扩展立即数"。
 
 - 知悉关于模式一些重要性质。比如，知悉加法符合交换律。
 
@@ -140,25 +140,25 @@ bit的符号扩展立即数&#34;。
 - 除了指令，目标机还可以利用Pat类指定可以映射到单个或多个指令模式。比如，PowerPC不具有在一条指令中奖任意整型立即数搬到寄存器的方式，那么就可以在tblgen中做如下定义：
 ```
 // Arbitrary immediate support.  Implement in terms of LIS/ORI.
-def : Pat&lt;(i32 imm:$imm),
-          (ORI (LIS (HI16 imm:$imm)), (LO16 imm:$imm))&gt;;
+def : Pat<(i32 imm:$imm),
+          (ORI (LIS (HI16 imm:$imm)), (LO16 imm:$imm))>;
 ```
 
 - 当使用Pat类将一个模式映射为一条具有单个或多个操作数的指令时，该模式要么用ComplexPattern指定为一个整体，要么分开指定操作数的各个部分。比如，使用后者的PowerPC的后端做了如下定义：
 ```
-def STWU  : DForm_1&lt;37, (outs ptr_rc:$ea_res), (ins GPRC:$rS, memri:$dst),
-                &#34;stwu $rS, $dst&#34;, LdStStoreUpd, []&gt;,
-                RegConstraint&lt;&#34;$dst.reg = $ea_res&#34;&gt;, NoEncode&lt;&#34;$ea_res&#34;&gt;;
+def STWU  : DForm_1<37, (outs ptr_rc:$ea_res), (ins GPRC:$rS, memri:$dst),
+                "stwu $rS, $dst", LdStStoreUpd, []>,
+                RegConstraint<"$dst.reg = $ea_res">, NoEncode<"$ea_res">;
 
-def : Pat&lt;(pre_store GPRC:$rS, ptr_rc:$ptrreg, iaddroff:$ptroff),
-          (STWU GPRC:$rS, iaddroff:$ptroff, ptr_rc:$ptrreg)&gt;;
+def : Pat<(pre_store GPRC:$rS, ptr_rc:$ptrreg, iaddroff:$ptroff),
+          (STWU GPRC:$rS, iaddroff:$ptroff, ptr_rc:$ptrreg)>;
 ```
 
-- 即便该系统已经很自动化了，仍然需要定制一些C&#43;&#43;代码来匹配特殊情形。
+- 即便该系统已经很自动化了，仍然需要定制一些C++代码来匹配特殊情形。
 
 尽管有很多优点，该系统目前也有一些缺陷，主要是由于还有一些未完成的工作：
 
-- 没有提供能定义多个值的SelectionDAG结点。这是仍然需要定制C&#43;&#43;代码的主要原因。
+- 没有提供能定义多个值的SelectionDAG结点。这是仍然需要定制C++代码的主要原因。
 
 - 尚未有支持复杂寻址模式的好的方式。未来将会扩展模式片段使之能够定义多个值。
 
@@ -211,22 +211,22 @@ LLVM中物理寄存器用1\~1023范围的整数来表示，可以阅读GenRegist
 一些架构含有物理位置相同的寄存器，如X86架构的EAX, AX, AL共享了前8bit。这些物理寄存器在LLVM中标记为别名。可以查阅RegisterInfo.td文件来检查某个架构的哪些寄存器是别名。而且，MCRegAliasIterator类可以枚举出跟某一个寄存器别名的所有物理寄存器。
 
 物理寄存器在LLVM中被分组为寄存器类。同一个寄存器类中的寄存器是功能等价的，可以互换使用。每个虚拟寄存器只能被映射到某个寄存器类中的物理寄存器。例如，X86上，一些虚拟寄存器只能分配到8bit寄存器中。寄存器类用TargetRegisterClass对象描述，要想检查一个虚拟寄存器跟物理寄存器是否兼容，可以使用以下代码：
-```c&#43;&#43;
-bool RegMapping_Fer::compatible_class(MachineFunction &amp;mf,
+```c++
+bool RegMapping_Fer::compatible_class(MachineFunction &mf,
                                       unsigned v_reg,
                                       unsigned p_reg) {
-  assert(TargetRegisterInfo::isPhysicalRegister(p_reg) &amp;&amp;
-         &#34;Target register must be physical&#34;);
+  assert(TargetRegisterInfo::isPhysicalRegister(p_reg) &&
+         "Target register must be physical");
   const TargetRegisterClass *trc = mf.getRegInfo().getRegClass(v_reg);
-  return trc-&gt;contains(p_reg);
+  return trc->contains(p_reg);
 }
 ```
 
 有时为了调试需求，需要改变目标机可用的物理寄存器数量。这项任务必须在TargetRegisterInfo.td中静态完成，RegisterClass的最后一个参数就是寄存器列表，如果需要避免使用某些寄存器，就从这里注释掉。
 
-虚拟寄存器也是用整数表示的。与物理寄存器不同，不同的虚拟寄存器从来不会共享编号。物理寄存器是在TargetRegisterInfo.td中事先定义好的，不能由应用开发者创建，而虚拟寄存器不是这样。为了创建新的虚拟寄存器，可以使用MachineRegisterInfo::createVirtualRegister()方法，它会返回一个新的虚拟寄存器。用IndexedMap&lt;Foo, VirtReg2IndexFunctor&gt;来容纳每个虚拟寄存器的信息。如果需要枚举所有的虚拟寄存器，就使用TargetRegisterInfo::index2VirtReg()方法来找到虚拟寄存器编号：
-```c&#43;&#43;
-for (unsigned i = 0, e = MRI-&gt;getNumVirtRegs(); i != e; &#43;&#43;i) {
+虚拟寄存器也是用整数表示的。与物理寄存器不同，不同的虚拟寄存器从来不会共享编号。物理寄存器是在TargetRegisterInfo.td中事先定义好的，不能由应用开发者创建，而虚拟寄存器不是这样。为了创建新的虚拟寄存器，可以使用MachineRegisterInfo::createVirtualRegister()方法，它会返回一个新的虚拟寄存器。用IndexedMap<Foo, VirtReg2IndexFunctor>来容纳每个虚拟寄存器的信息。如果需要枚举所有的虚拟寄存器，就使用TargetRegisterInfo::index2VirtReg()方法来找到虚拟寄存器编号：
+```c++
+for (unsigned i = 0, e = MRI->getNumVirtRegs(); i != e; ++i) {
   unsigned VirtReg = TargetRegisterInfo::index2VirtReg(i);
   stuff(VirtReg);
 }
@@ -250,7 +250,7 @@ slot，要用VirtRegMap::assignVirt2StackSlot(vreg, stack_location)。需要注�
 
 #### 处理二地址指令
 
-LLVM机器码指令一般都是三地址指令，也就是说，最多定义一个寄存器，使用两个寄存器。但是有些架构使用二地址指令，被定义的寄存器同时也是被使用的寄存器中的一个，例如，X86中的ADD %EAX, %EBX表示%EAX = %EAX &#43; %EBX.。
+LLVM机器码指令一般都是三地址指令，也就是说，最多定义一个寄存器，使用两个寄存器。但是有些架构使用二地址指令，被定义的寄存器同时也是被使用的寄存器中的一个，例如，X86中的ADD %EAX, %EBX表示%EAX = %EAX + %EBX.。
 
 为了生成正确代码，LLVM必须将这类指令转化为二地址指令。LLVM提供了TwoAddressInstructionPass
 来处理这种情况，且需要在寄存器分配前调用。调用之后生成的代码不再是SSA形式了，比如，%a = ADD %b %c会被转化为如下代码：
@@ -323,7 +323,7 @@ MC层属于obj文件的抽象，不再有函数、全局变量等概念。相反
 
 2. 其次，需要为你的目标机实现指令打印器。指令打印器以MCInst为输入，将其渲染成文本输出到raw_ostream。这里大部分都可以从.td文件中自动生成，但是仍然需要实现打印操作数的例程。
 
-3. 再次，需要实现从MachineInstr到MCInst的向下转换，常常实现在\&lt;target\&gt;MCInstLower.cpp文件中。这个向下转换过程经常是目标机相关的，负责将跳转表条目、常量池索引、全局变量地址转换为MCLabels。该转换层负责将代码生成器使用的微操作扩展为对应的实际机器指令，生成的MCInsts会交给指令打印器或者编码器。
+3. 再次，需要实现从MachineInstr到MCInst的向下转换，常常实现在\<target\>MCInstLower.cpp文件中。这个向下转换过程经常是目标机相关的，负责将跳转表条目、常量池索引、全局变量地址转换为MCLabels。该转换层负责将代码生成器使用的微操作扩展为对应的实际机器指令，生成的MCInsts会交给指令打印器或者编码器。
 
 最后，根据你的选择，你也可以为MCCodeEmitter实现一个子类，将MCInst向下转换为机器码字节和重定位。如果你想要支持.o文件输出，或者想实现一个汇编器，这一步就很重要。
 
@@ -361,17 +361,17 @@ LLVM支持实现完整的独立汇编器。其大部分代码都是从td文件�
 
 别名处理的第一步是简单的指令助记符重映射，它就是一种简单的从一种输入助记符到输出助记符的无条件重映射。这种别名不会去看操作数，所以这种重映射必须对给定的助记符的所有形式都适用。助记符别名的定义是很简单的，比如X86如下：
 ```
-def : MnemonicAlias&lt;&#34;cbw&#34;,     &#34;cbtw&#34;&gt;;
-def : MnemonicAlias&lt;&#34;smovq&#34;,   &#34;movsq&#34;&gt;;
-def : MnemonicAlias&lt;&#34;fldcww&#34;,  &#34;fldcw&#34;&gt;;
-def : MnemonicAlias&lt;&#34;fucompi&#34;, &#34;fucomip&#34;&gt;;
-def : MnemonicAlias&lt;&#34;ud2a&#34;,    &#34;ud2&#34;&gt;;
+def : MnemonicAlias<"cbw",     "cbtw">;
+def : MnemonicAlias<"smovq",   "movsq">;
+def : MnemonicAlias<"fldcww",  "fldcw">;
+def : MnemonicAlias<"fucompi", "fucomip">;
+def : MnemonicAlias<"ud2a",    "ud2">;
 ```
 
 有了这类定义，助记符就可以简单直接地重映射。虽然助记符别名不会看指令内部信息，但是它们会通过Requires子句依赖于全局模式：
 ```
-def : MnemonicAlias&lt;&#34;pushf&#34;, &#34;pushfq&#34;&gt;, Requires&lt;[In64BitMode]&gt;;
-def : MnemonicAlias&lt;&#34;pushf&#34;, &#34;pushfl&#34;&gt;, Requires&lt;[In32BitMode]&gt;;
+def : MnemonicAlias<"pushf", "pushfq">, Requires<[In64BitMode]>;
+def : MnemonicAlias<"pushf", "pushfl">, Requires<[In32BitMode]>;
 ```
 
 该例子中，根据当前指令集，助记符被映射到不同的指令。
@@ -380,33 +380,33 @@ def : MnemonicAlias&lt;&#34;pushf&#34;, &#34;pushfl&#34;&gt;, Requires&lt;[In32B
 
 别名处理的最一般步骤发生在匹配时：它提供了匹配器的新形式来匹配特定的指令生成。指令别名有两部分：要匹配的字符串和要生成的指令。例如：
 ```
-def : InstAlias&lt;&#34;movsx $src, $dst&#34;, (MOVSX16rr8W GR16:$dst, GR8  :$src)&gt;;
-def : InstAlias&lt;&#34;movsx $src, $dst&#34;, (MOVSX16rm8W GR16:$dst, i8mem:$src)&gt;;
-def : InstAlias&lt;&#34;movsx $src, $dst&#34;, (MOVSX32rr8  GR32:$dst, GR8  :$src)&gt;;
-def : InstAlias&lt;&#34;movsx $src, $dst&#34;, (MOVSX32rr16 GR32:$dst, GR16 :$src)&gt;;
-def : InstAlias&lt;&#34;movsx $src, $dst&#34;, (MOVSX64rr8  GR64:$dst, GR8  :$src)&gt;;
-def : InstAlias&lt;&#34;movsx $src, $dst&#34;, (MOVSX64rr16 GR64:$dst, GR16 :$src)&gt;;
-def : InstAlias&lt;&#34;movsx $src, $dst&#34;, (MOVSX64rr32 GR64:$dst, GR32 :$src)&gt;;
+def : InstAlias<"movsx $src, $dst", (MOVSX16rr8W GR16:$dst, GR8  :$src)>;
+def : InstAlias<"movsx $src, $dst", (MOVSX16rm8W GR16:$dst, i8mem:$src)>;
+def : InstAlias<"movsx $src, $dst", (MOVSX32rr8  GR32:$dst, GR8  :$src)>;
+def : InstAlias<"movsx $src, $dst", (MOVSX32rr16 GR32:$dst, GR16 :$src)>;
+def : InstAlias<"movsx $src, $dst", (MOVSX64rr8  GR64:$dst, GR8  :$src)>;
+def : InstAlias<"movsx $src, $dst", (MOVSX64rr16 GR64:$dst, GR16 :$src)>;
+def : InstAlias<"movsx $src, $dst", (MOVSX64rr32 GR64:$dst, GR32 :$src)>;
 ```
 
 这展示了一个强大的指令别名例子，根据汇编中存在哪些操作数，以多种不同的方式匹配相同的助记符。指令别名的结果可以包含以不同于目标指令的顺序排列的操作数,并且可以多次使用同一个输入，例如：
 ```
-def : InstAlias&lt;&#34;clrb $reg&#34;, (XOR8rr  GR8 :$reg, GR8 :$reg)&gt;;
-def : InstAlias&lt;&#34;clrw $reg&#34;, (XOR16rr GR16:$reg, GR16:$reg)&gt;;
-def : InstAlias&lt;&#34;clrl $reg&#34;, (XOR32rr GR32:$reg, GR32:$reg)&gt;;
-def : InstAlias&lt;&#34;clrq $reg&#34;, (XOR64rr GR64:$reg, GR64:$reg)&gt;;
+def : InstAlias<"clrb $reg", (XOR8rr  GR8 :$reg, GR8 :$reg)>;
+def : InstAlias<"clrw $reg", (XOR16rr GR16:$reg, GR16:$reg)>;
+def : InstAlias<"clrl $reg", (XOR32rr GR32:$reg, GR32:$reg)>;
+def : InstAlias<"clrq $reg", (XOR64rr GR64:$reg, GR64:$reg)>;
 ```
 
 这个例子也展示了绑定的操作数只列出一次。在X86后端,XOR8rr有两个输入GR8和一个输出GR8(其中一个输入与输出绑定)。InstAliases 获取一个简化的不重复的操作数列表，指令别名的结果也可以使用立即数和固定的物理寄存器,它们在结果中会被添加为简单的立即数操作数，例如：
 ```
 // Fixed Immediate operand.
-def : InstAlias&lt;&#34;aad&#34;, (AAD8i8 10)&gt;;
+def : InstAlias<"aad", (AAD8i8 10)>;
 
 // Fixed register operand.
-def : InstAlias&lt;&#34;fcomi&#34;, (COM_FIr ST1)&gt;;
+def : InstAlias<"fcomi", (COM_FIr ST1)>;
 
 // Simple alias.
-def : InstAlias&lt;&#34;fcomi $reg&#34;, (COM_FIr RST:$reg)&gt;;
+def : InstAlias<"fcomi $reg", (COM_FIr RST:$reg)>;
 ```
 
 指令别名也可以使用Requires子句来使它们特定于具体的子目标机器。

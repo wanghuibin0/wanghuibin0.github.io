@@ -1,6 +1,6 @@
 # 
 
-# Here &amp; Now
+# Here & Now
 - 万物一体，缘起性空
 
 
@@ -31,6 +31,6 @@
 
 ---
 
-> 作者:   
+> 作者: [lazypanda](https://github.com/wanghuibin0)  
 > URL: https://simplecoding.fun/about/  
 

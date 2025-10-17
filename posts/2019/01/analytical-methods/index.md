@@ -19,7 +19,7 @@
 
 6.  What else might this same pattern of details mean? How else could it be explained?
 
-7.  What details don&#39;t seem to fit? How might they be connected with other details to form a different pattern?
+7.  What details don't seem to fit? How might they be connected with other details to form a different pattern?
 
 8.  What does this new pattern mean? How might it cause me to read the meaning of individual details differently?
 

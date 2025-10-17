@@ -17,7 +17,7 @@
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_21-09-41_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_21-09-41_screenshot.png" >}}
 
 
 ## 命令模式 {#命令模式}
@@ -36,12 +36,12 @@
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_22-32-19_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_22-32-19_screenshot.png" >}}
 
 
 #### 动态活动图 {#动态活动图}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_22-37-10_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_22-37-10_screenshot.png" >}}
 
 
 ### 其他 {#其他}
@@ -64,7 +64,7 @@
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_22-44-00_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_22-44-00_screenshot.png" >}}
 
 
 ### 其他 {#其他}
@@ -82,12 +82,12 @@
 
 ### 方案 {#方案}
 
-C&#43;&#43;标准库里对所有容器都提供了迭代器
+C++标准库里对所有容器都提供了迭代器
 
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_22-48-18_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_22-48-18_screenshot.png" >}}
 
 
 ## 中介者模式 {#中介者模式}
@@ -105,7 +105,7 @@ C&#43;&#43;标准库里对所有容器都提供了迭代器
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_22-57-34_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_22-57-34_screenshot.png" >}}
 
 
 ## 备忘录模式 {#备忘录模式}
@@ -124,7 +124,7 @@ C&#43;&#43;标准库里对所有容器都提供了迭代器
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_23-12-19_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_23-12-19_screenshot.png" >}}
 
 
 ## 观察者模式 {#观察者模式}
@@ -143,7 +143,7 @@ C&#43;&#43;标准库里对所有容器都提供了迭代器
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_23-28-27_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_23-28-27_screenshot.png" >}}
 
 
 ## 状态模式 {#状态模式}
@@ -161,7 +161,7 @@ C&#43;&#43;标准库里对所有容器都提供了迭代器
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_23-43-29_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_23-43-29_screenshot.png" >}}
 
 
 ## 策略模式 {#策略模式}
@@ -179,7 +179,7 @@ C&#43;&#43;标准库里对所有容器都提供了迭代器
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_23-51-04_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_23-51-04_screenshot.png" >}}
 
 
 ## 模板方法模式 {#模板方法模式}
@@ -197,7 +197,7 @@ C&#43;&#43;标准库里对所有容器都提供了迭代器
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_23-54-21_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_23-54-21_screenshot.png" >}}
 
 
 ## 访问者模式 {#访问者模式}
@@ -218,7 +218,7 @@ C&#43;&#43;标准库里对所有容器都提供了迭代器
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-07_00-06-36_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-07_00-06-36_screenshot.png" >}}
 
 
 ### 其他 {#其他}

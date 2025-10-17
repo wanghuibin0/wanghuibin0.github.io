@@ -9,9 +9,9 @@ LLVM的代码生成器是一个框架，提供了一系列可重用组件，将L
 
 1. 抽象目标机描述接口：关于目标机器的重要属性（不包括这些属性是如何使用的）。位于include/llvm/Target。
 
-2. 用于表示目标机器代码的类：使之足够抽象以便能表达任意目标机的机器代码。位于include/llvm/CodeGen。例如，可以表达&#34;常量池条目&#34;和&#34;跳转表&#34;的概念。
+2. 用于表示目标机器代码的类：使之足够抽象以便能表达任意目标机的机器代码。位于include/llvm/CodeGen。例如，可以表达"常量池条目"和"跳转表"的概念。
 
-3. 用于在目标文件（MC层）表示代码的类和算法：可以表达汇编级的概念如：label, section, instruction. 而&#34;常量池条目&#34;和&#34;跳转表&#34;的概念不在这层表达。
+3. 用于在目标文件（MC层）表示代码的类和算法：可以表达汇编级的概念如：label, section, instruction. 而"常量池条目"和"跳转表"的概念不在这层表达。
 
 4. 目标无关算法。用于实现不同阶段的本地代码生成，如：寄存器分配、指令调度、栈帧表示。位于lib/CodeGen
 
@@ -121,11 +121,11 @@ llvm使用MachineFunction, MachineBasicBlock, MachineInstr (include/llvm/CodeGen
 #### 使用MachineInstrBuilder.h中的函数
 
 可以使用BuildMI (include/llvm/CodeGen/MachineInstrBuilder.h)来创建机器指令。用法如下：
-```c&#43;&#43;
-// Create a &#39;DestReg = mov 42&#39; (rendered in X86 assembly as &#39;mov DestReg, 42&#39;)
+```c++
+// Create a 'DestReg = mov 42' (rendered in X86 assembly as 'mov DestReg, 42')
 // instruction and insert it at the end of the given MachineBasicBlock.
-const TargetInstrInfo &amp;TII = ...
-MachineBasicBlock &amp;MBB = ...
+const TargetInstrInfo &TII = ...
+MachineBasicBlock &MBB = ...
 DebugLoc DL;
 MachineInstr *MI = BuildMI(MBB, DL, TII.get(X86::MOV32ri), DestReg).addImm(42);
 
@@ -133,18 +133,18 @@ MachineInstr *MI = BuildMI(MBB, DL, TII.get(X86::MOV32ri), DestReg).addImm(42);
 MachineBasicBlock::iterator MBBI = ...
 BuildMI(MBB, MBBI, DL, TII.get(X86::MOV32ri), DestReg).addImm(42);
 
-// Create a &#39;cmp Reg, 0&#39; instruction, no destination reg.
+// Create a 'cmp Reg, 0' instruction, no destination reg.
 MI = BuildMI(MBB, DL, TII.get(X86::CMP32ri8)).addReg(Reg).addImm(42);
 
-// Create an &#39;sahf&#39; instruction which takes no operands and stores nothing.
+// Create an 'sahf' instruction which takes no operands and stores nothing.
 MI = BuildMI(MBB, DL, TII.get(X86::SAHF));
 
 // Create a self looping branch instruction.
-BuildMI(MBB, DL, TII.get(X86::JNE)).addMBB(&amp;MBB);
+BuildMI(MBB, DL, TII.get(X86::JNE)).addMBB(&MBB);
 ```
 
 若要增加额外的def操作数，必须要显式标记出来。
-```c&#43;&#43;
+```c++
 MI.addReg(Reg, RegState::Define);
 ```
 
@@ -289,7 +289,7 @@ bar:
 
 ### MCInst类
 
-该类是一条指令的机器无关表示。这是一个很简单的类（相对于MachineInstr来说），只包含了特定机器的操作码和一系列MCOperands。而MCOperand只是一个包含了三种情况的union：1) 简单立即数 2）寄存器ID 3) 符号表达式MCExpr（如Lfoo-Lbar&#43;42）
+该类是一条指令的机器无关表示。这是一个很简单的类（相对于MachineInstr来说），只包含了特定机器的操作码和一系列MCOperands。而MCOperand只是一个包含了三种情况的union：1) 简单立即数 2）寄存器ID 3) 符号表达式MCExpr（如Lfoo-Lbar+42）
 
 ### 目标文件格式
 

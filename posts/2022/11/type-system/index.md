@@ -35,9 +35,9 @@ error。但是如果是well-behaved，那么一定safe。
 排除程序中错误的手段有多种，type system只是其中一种。TAPL中对type
 system的定义如下：
 
-&gt; A type system is a tractable syntactic method for proving the absence of
-&gt; certain program behaviors by classifying phrases according to the kinds
-&gt; of values they compute.
+> A type system is a tractable syntactic method for proving the absence of
+> certain program behaviors by classifying phrases according to the kinds
+> of values they compute.
 
 根据以上定义，做三点说明：
 

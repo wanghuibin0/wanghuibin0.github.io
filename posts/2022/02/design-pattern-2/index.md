@@ -19,7 +19,7 @@
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_14-59-16_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_14-59-16_screenshot.png" >}}
 
 
 ### 其他 {#其他}
@@ -48,14 +48,14 @@
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_15-21-44_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_15-21-44_screenshot.png" >}}
 
 
 ### 其他 {#其他}
 
-在C&#43;&#43;中可以利用模板将产品和对应的工厂联系起来（将产品作为工厂模板的参数）
+在C++中可以利用模板将产品和对应的工厂联系起来（将产品作为工厂模板的参数）
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_17-06-34_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_17-06-34_screenshot.png" >}}
 
 
 ## 抽象工厂模式 {#抽象工厂模式}
@@ -79,7 +79,7 @@
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_15-32-45_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_15-32-45_screenshot.png" >}}
 
 
 ## 建造者模式 {#建造者模式}
@@ -103,7 +103,7 @@
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_16-19-54_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_16-19-54_screenshot.png" >}}
 
 
 ## 原型模式 {#原型模式}
@@ -122,7 +122,7 @@
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_16-28-42_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_16-28-42_screenshot.png" >}}
 
 
 ## 单例模式 {#单例模式}
@@ -144,7 +144,7 @@
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_16-34-11_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_16-34-11_screenshot.png" >}}
 
 
 ## 对创建型模式的讨论 {#对创建型模式的讨论}

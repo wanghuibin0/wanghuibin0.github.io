@@ -27,7 +27,7 @@ type int_pair = (int * int) [@@deriving yojson]
 ### Extension nodes和extenders
 Extension nodes相当于Parsetree中的“空洞”，其语法形式为`[%extension_name payload]`，其中`%`的数量决定了extension node的类型：`%`表示内部节点，例如表达式或模式；`%%`表示顶层节点，例如structure中的条目。例如：
 ```ocaml
-let v = [%html &#34;&lt;a href=&#39;ocaml.org&#39;&gt;OCaml!&lt;/a&gt;&#34;]
+let v = [%html "<a href='ocaml.org'>OCaml!</a>"]
 ```
 一个extension node相当于一个空位，它会被一种特殊的PPX填充，而这种PPX就叫extender。具体而言，extenders会匹配extension node的名字，匹配到之后就会根据它的`payload`来生成代码，并将生成的代码替换到extension node本来的位置。需要注意的是，这个生成代码的过程只依赖于`payload`，而不会考虑该node的上下文信息。常见的extenders例子包括：`ppx_expect`可以从`payload`直接生成CRAM tests。
 
@@ -53,24 +53,24 @@ type shape =
   | Person of person
 [@@deriving show]
 let () =
-  let p = { name = &#34;Alice&#34;; age = 30 } in
+  let p = { name = "Alice"; age = 30 } in
   let s = Circle 3.0 in
   let s2 = Person p in
-  (* Printf.printf &#34;%s\n&#34; (show_person p); *)
-  Printf.printf &#34;%s\n&#34; (show_shape s);
-  Printf.printf &#34;%s\n&#34; (show_shape s2)
+  (* Printf.printf "%s\n" (show_person p); *)
+  Printf.printf "%s\n" (show_shape s);
+  Printf.printf "%s\n" (show_shape s2)
 ```
 
 这将自动为`person`类型和shape类型生成`show`函数，用于将其转换为字符串表示。这种自动化的代码生成大大提高了开发效率。
 3. 编写代码调用show
 ```ocaml
 let () =
-  let p = { name = &#34;Alice&#34;; age = 30 } in
+  let p = { name = "Alice"; age = 30 } in
   let s = Circle 3.0 in
   let s2 = Person p in
-  (* Printf.printf &#34;%s\n&#34; (show_person p); *)
-  Printf.printf &#34;%s\n&#34; (show_shape s);
-  Printf.printf &#34;%s\n&#34; (show_shape s2)
+  (* Printf.printf "%s\n" (show_person p); *)
+  Printf.printf "%s\n" (show_shape s);
+  Printf.printf "%s\n" (show_shape s2)
 ```
 4. 调用ocamlopt编译
 ```bash
@@ -80,7 +80,7 @@ $ ocamlfind ocamlopt -o main -package ppx_deriving.show -linkpkg main.ml
 ```
 $ ./main
 (Circle 3.)
-(Person { name = &#34;Alice&#34;; age = 30 })
+(Person { name = "Alice"; age = 30 })
 ```
 
 ## 编写自定义PPX扩展
@@ -95,7 +95,7 @@ $ ./main
 本节通过两个示例来直观展示PPX扩展的编写方法。示例1针对extension nodes，示例2针对attributes。
 
 #### 示例1
-假设我们要通过PPX机制，将源码中的`[%get_env &#34;SOME_ENV_VAR&#34;]`在编译期替换成环境变量`SOME_ENV_VAR`的值，我们可以这样做：
+假设我们要通过PPX机制，将源码中的`[%get_env "SOME_ENV_VAR"]`在编译期替换成环境变量`SOME_ENV_VAR`的值，我们可以这样做：
 1. 安装ppxlib
 ```bash
 opam install ppxlib
@@ -106,24 +106,24 @@ open Ppxlib
 let expand ~ctxt env_var =
   let loc = Expansion_context.Extension.extension_point_loc ctxt in
   match Sys.getenv env_var with
-  | value -&gt; Ast_builder.Default.estring ~loc value
-  | exception Not_found -&gt;
+  | value -> Ast_builder.Default.estring ~loc value
+  | exception Not_found ->
       let ext =
-        Location.error_extensionf ~loc &#34;The environement variable %s is unbound&#34;
+        Location.error_extensionf ~loc "The environement variable %s is unbound"
           env_var
       in
       Ast_builder.Default.pexp_extension ~loc ext
 let my_extension =
-  Extension.V3.declare &#34;get_env&#34; Extension.Context.expression
+  Extension.V3.declare "get_env" Extension.Context.expression
     Ast_pattern.(single_expr_payload (estring __))
     expand
 let rule = Ppxlib.Context_free.Rule.extension my_extension
-let () = Driver.register_transformation ~rules:[ rule ] &#34;get_env&#34;
+let () = Driver.register_transformation ~rules:[ rule ] "get_env"
 ```
 解释一下，最后一行`Driver.register_transformation`将自定义的转换规则注册到ppxlib中。此外，通过`Extension.V3.declare`来声明一个PPX extension，其第一个参数就是extension名，最后一个参数是一个函数expand，它实现真正的转换逻辑。
 3. 编写main.ml
 ```ocaml
-let () = print_string [%get_env &#34;MY_VAR&#34;]
+let () = print_string [%get_env "MY_VAR"]
 ```
 4. 编写构建脚本dune文件
 ```dune
@@ -157,9 +157,9 @@ let accessor_impl (ld : label_declaration) =
         pvb_pat = ppat_var ~loc ld.pld_name;
         pvb_expr =
           pexp_fun ~loc Nolabel None
-            (ppat_var ~loc { loc; txt = &#34;x&#34; })
+            (ppat_var ~loc { loc; txt = "x" })
             (pexp_field ~loc
-               (pexp_ident ~loc { loc; txt = lident &#34;x&#34; })
+               (pexp_ident ~loc { loc; txt = lident "x" })
                { loc; txt = lident ld.pld_name.txt });
         pvb_attributes = [];
         pvb_loc = loc;
@@ -180,42 +180,42 @@ let accessor_intf ~ptype_name (ld : label_declaration) =
     }
 let generate_impl ~ctxt (_rec_flag, type_declarations) =
   let loc = Expansion_context.Deriver.derived_item_loc ctxt in
-  List.map type_declarations ~f:(fun (td : type_declaration) -&gt;
+  List.map type_declarations ~f:(fun (td : type_declaration) ->
       match td with
       | {
        ptype_kind = Ptype_abstract | Ptype_variant _ | Ptype_open;
        ptype_loc;
        _;
-      } -&gt;
+      } ->
           let ext =
             Location.error_extensionf ~loc:ptype_loc
-              &#34;Cannot derive accessors for non record types&#34;
+              "Cannot derive accessors for non record types"
           in
           [ Ast_builder.Default.pstr_extension ~loc ext [] ]
-      | { ptype_kind = Ptype_record fields; _ } -&gt;
+      | { ptype_kind = Ptype_record fields; _ } ->
           List.map fields ~f:accessor_impl)
-  |&gt; List.concat
+  |> List.concat
 let generate_intf ~ctxt (_rec_flag, type_declarations) =
   let loc = Expansion_context.Deriver.derived_item_loc ctxt in
-  List.map type_declarations ~f:(fun (td : type_declaration) -&gt;
+  List.map type_declarations ~f:(fun (td : type_declaration) ->
       match td with
       | {
        ptype_kind = Ptype_abstract | Ptype_variant _ | Ptype_open;
        ptype_loc;
        _;
-      } -&gt;
+      } ->
           let ext =
             Location.error_extensionf ~loc:ptype_loc
-              &#34;Cannot derive accessors for non record types&#34;
+              "Cannot derive accessors for non record types"
           in
           [ Ast_builder.Default.psig_extension ~loc ext [] ]
-      | { ptype_kind = Ptype_record fields; ptype_name; _ } -&gt;
+      | { ptype_kind = Ptype_record fields; ptype_name; _ } ->
           List.map fields ~f:(accessor_intf ~ptype_name))
-  |&gt; List.concat
+  |> List.concat
 let impl_generator = Deriving.Generator.V2.make_noarg generate_impl
 let intf_generator = Deriving.Generator.V2.make_noarg generate_intf
 let my_deriver =
-  Deriving.add &#34;accessors&#34; ~str_type_decl:impl_generator
+  Deriving.add "accessors" ~str_type_decl:impl_generator
     ~sig_type_decl:intf_generator
 ```
 最后一句通过`Deriving.add`将自定义的生成器告知ppxlib。代码中我们通过Deriving.Generator.V2.make_noarg定义了两个生成器，其中generate_impl为record定义生成访问fields的函数体，generate_intf为之生成访问fields函数的类型签名。
@@ -226,8 +226,8 @@ type t =
   ; b : int
   }
   [@@deriving accessors]
-let x = { a = &#34;ssss&#34;; b = 1 }
-let () = a x |&gt; print_endline; b x |&gt; string_of_int |&gt; print_endline;
+let x = { a = "ssss"; b = 1 }
+let () = a x |> print_endline; b x |> string_of_int |> print_endline;
 ```
 3. 编写构建脚本dune
 ```dune

@@ -23,10 +23,10 @@
 
 -   基于多重继承的
 
-    {{&lt; figure src=&#34;/ox-hugo/2022-02-06_18-50-27_screenshot.png&#34; &gt;}}
+    {{< figure src="/ox-hugo/2022-02-06_18-50-27_screenshot.png" >}}
 -   基于对象组合的
 
-    {{&lt; figure src=&#34;/ox-hugo/2022-02-06_18-50-57_screenshot.png&#34; &gt;}}
+    {{< figure src="/ox-hugo/2022-02-06_18-50-57_screenshot.png" >}}
 
 
 ### 两种方案的权衡 {#两种方案的权衡}
@@ -50,7 +50,7 @@
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_19-04-45_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_19-04-45_screenshot.png" >}}
 
 
 ### 其他 {#其他}
@@ -78,12 +78,12 @@
 
 #### 类图 {#类图}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_19-17-13_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_19-17-13_screenshot.png" >}}
 
 
 #### 动态对象图 {#动态对象图}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_19-18-19_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_19-18-19_screenshot.png" >}}
 
 
 ## 装饰模式 {#装饰模式}
@@ -103,7 +103,7 @@
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_19-32-11_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_19-32-11_screenshot.png" >}}
 
 
 ### 其他 {#其他}
@@ -126,7 +126,7 @@
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_19-43-44_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_19-43-44_screenshot.png" >}}
 
 
 ## 享元模式 {#享元模式}
@@ -146,7 +146,7 @@
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_20-34-22_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_20-34-22_screenshot.png" >}}
 
 
 ## 代理模式 {#代理模式}
@@ -164,7 +164,7 @@
 
 ### UML表示 {#uml表示}
 
-{{&lt; figure src=&#34;/ox-hugo/2022-02-06_20-43-37_screenshot.png&#34; &gt;}}
+{{< figure src="/ox-hugo/2022-02-06_20-43-37_screenshot.png" >}}
 
 
 ## 结构型模式的讨论 {#结构型模式的讨论}

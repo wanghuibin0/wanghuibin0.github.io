@@ -37,7 +37,7 @@ LLVM IR中有两个特殊的关键字：undef和poison，它们分别代表两�
 
 ## refs {#refs}
 
--   &lt;https://llvm.org/docs/LangRef.html#undefined-values&gt;
+-   <https://llvm.org/docs/LangRef.html#undefined-values>
 
 
 ---
